@@ -1,0 +1,40 @@
+<div class="carousel__main">
+    <div class="container">
+        <div class="title_btn">
+            <span data-slide="0" class="active">Новинки</span>
+            <span data-slide="1">Лучший выбор</span>
+            <span data-slide="2">Товары со скидкой</span>
+        </div>
+        <div class="nav_btn">
+            <div class="prev">[[IncSvg? &svg=`elements/arrow.svg`]]</div>
+            <div class="next">[[IncSvg? &svg=`elements/arrow.svg`]]</div>
+        </div>
+        <div class="carousel__main_container">
+            <div class="carousel__main_wrap active" slide="0">
+                [[msProducts?
+                &parents=`16`
+                &limit=`10`
+                &tpl = `CarouselItem`
+                &where=`{"Data.favorite":1}`
+                ]]
+            </div>
+            <div class="carousel__main_wrap" slide="0">
+                [[msProducts?
+                &parents=`16`
+                &limit=`10`
+                &tpl = `CarouselItem`
+                &where=`{"Data.popular":1}`
+                ]]
+            </div>
+            <div class="carousel__main_wrap" slide="0">
+                [[msProducts?
+                &parents=`16`
+                &limit=`10`
+                &tpl = `CarouselItem`
+                &where=`{"Data.old_price:>":"Data.price"}`
+                ]]
+            </div>
+        </div>
+    </div>
+</div>
+

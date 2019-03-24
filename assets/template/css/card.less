@@ -1,0 +1,50 @@
+//-------------------------------------------------------------------------//
+    // Catalog //
+//-------------------------------------------------------------------------//
+
+& .card {
+
+  & .container { 
+
+    & .card__wrap {
+      .flex();
+
+      & .card__main {
+        .cols(12);
+        padding-left: 20px;
+
+        @media @t {
+          .cols(16);
+        }
+        @media @m {
+          .cols(16);
+          padding-left: 0;
+        }
+
+        & .card__main_top {
+          .flex();
+          align-items: center;
+          margin: 0 0 50px 0;
+          
+          @media @t, @m {
+            margin: 20px 0;
+          }
+
+          & .card__main_title {
+
+            & h1 {
+              text-transform: uppercase;
+              font-size: 19pt;
+              letter-spacing: 1px;
+              font-weight: 100;
+
+              @media @m {
+                font-size: 12pt;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

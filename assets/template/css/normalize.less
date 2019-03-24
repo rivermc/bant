@@ -1,0 +1,71 @@
+//-------------------------------------------------------------------------//
+		// Normalize // 
+//-------------------------------------------------------------------------//
+
+html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  outline: none;
+}
+html { height: 101%; margin: 0 !important; } /* always display scrollbars */
+body { font-size: 62.5%; line-height: 1.2em; font-family: sans-serif; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+ol, ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+input { outline: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+img { border: 0; max-width: 100%; }
+
+a { text-decoration: none; }
+a:hover { text-decoration: none; }
+
+a, b, p, span, h1, h2, h3, h4, h5, li, td {
+    letter-spacing: 0;
+    line-height: 1.4em;
+}
+
+h1, h2, h3, h4, h5 {
+	line-height: 1.2em;
+}
+
+*:focus, *:hover, *:active, a:focus  {
+    outline: 0;
+    text-decoration: none;
+}
+
+s {
+    text-decoration: line-through;
+}
+
+* {
+    padding: 0;
+    margin:0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+a {
+	&:focus {
+		background: transparent;
+		outline: 0;
+	}
+	&:active {
+		background: transparent;
+		outline: 0;
+	}
+	&:visited {
+		background: transparent;
+		outline: 0;
+	}
+}
+
+html {
+    font-size: 10pt;
+}

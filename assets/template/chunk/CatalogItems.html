@@ -1,0 +1,67 @@
+<div class="catalog__main_wrap">
+    [[+pagetitle]]
+    <div class="catalog__page">
+            [[!mFilter2?
+                &parents =`[[*id:is=`2`:then=`7`:else=`[[*id:is=`5`:then=`7`:else=`[[+parentID:empty=`[[*id]]`:else=`7`]]`]]`]]`
+                &tpl=`CatalogItem`
+                &element=`msProducts`
+                &limit = `15`
+                &where=`[[*id:is=`5`:then=`{"Data.old_price:>":"Data.price"}`]]`
+                &tplOuter = `mFilterOut`
+            
+                &filters=`
+                    msoption|upholdery,
+                    msoption|armrests,
+                    msoption|gaslift,
+                    msoption|rollers,
+                    msoption|swing,
+                    msoption|krest,
+                    ms|price:number
+                `
+        
+                &aliases=`
+                    msoption|upholdery==upholdery,
+                    msoption|armrests==armrests,
+                    msoption|gaslift==gaslift,
+                    msoption|rollers==rollers,
+                    msoption|swing==swing,
+                    msoption|krest==krest,
+                    ms|price==price
+                `
+        
+    
+                &tplFilter.outer.armrests=`mFilterCheckboxOut`
+                &tplFilter.row.armrests=`mFilterCheckbox`
+    
+                &tplFilter.outer.upholdery=`mFilterCheckboxOut`
+                &tplFilter.row.upholdery=`mFilterCheckbox`
+    
+                &tplFilter.outer.gaslift=`mFilterCheckboxOut`
+                &tplFilter.row.gaslift=`mFilterCheckbox`
+    
+                &tplFilter.outer.rollers=`mFilterCheckboxOut`
+                &tplFilter.row.rollers=`mFilterCheckbox`
+    
+                &tplFilter.outer.swing=`mFilterCheckboxOut`
+                &tplFilter.row.swing=`mFilterCheckbox`
+    
+                &tplFilter.outer.krest=`mFilterCheckboxOut`
+                &tplFilter.row.krest=`mFilterCheckbox`
+        
+                &tplFilter.outer.price=`mFilterSlider`
+                &tplFilter.row.price=`mFilterNumber`
+                
+                &tplPageWrapper = `@INLINE <div class="pagination"><ul>[[+first]][[+prev]][[+pages]][[+next]][[+last]]</ul></div>`
+                &tplPageFirst = `@INLINE <li class="control prev first"><a class="nopreload" href="[[+href]]">Первая</a></li>`
+                &tplPageLast = `@INLINE <li class="control next last"><a  class="nopreload" href="[[+href]]">Последняя</a></li>`
+                &tplPage = `@INLINE <li><a  class="nopreload" href="[[+href]]">[[+pageNo]]</a></li>`
+                &tplPageActive = `@INLINE <li class="active"><a  class="nopreload" href="[[+href]]">[[+pageNo]]</a></li>`
+                &tplPagePrev = `@INLINE <li class="control prev"><a class="nopreload" href="[[+href]]">Назад</a></li>`
+                &tplPageNext = `@INLINE <li class="control next"><a  class="nopreload" href="[[+href]]">Вперед</a></li>`
+                &tplPageNextEmpty = `@INLINE `
+                &tplPagePrevEmpty = `@INLINE `
+                &tplPageFirstEmpty = `@INLINE `
+
+            ]]
+    </div>
+</div>

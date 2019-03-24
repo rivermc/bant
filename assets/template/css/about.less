@@ -1,0 +1,79 @@
+//-------------------------------------------------------------------------//
+		// About //
+//-------------------------------------------------------------------------//
+
+& .about {
+	background: url('../images/about/bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin: 100px 0;
+	
+	@media @t {
+		margin: 50px 0;
+		padding: 20px 0;
+	}
+	@media @m {
+		margin: 40px 0;
+	}
+
+	& .container { 
+ 
+		& .about__wrap { 
+			.flex();
+			justify-content: space-between;
+			align-items: center;
+
+			@media @m {
+				padding: 20px 0;
+			}
+
+			& .about__text {
+				.cols(8); 
+
+				@media @m {
+					.cols(16);
+				}
+
+				& h2 {
+					color: @colorBrown;
+					font-size: 32pt;
+					text-transform: uppercase;
+					margin-bottom: 20px;
+					
+					@media @t {
+						font-size: 24pt;
+					}
+					@media @m {
+						font-size: 16pt;
+						text-align: center;
+					}
+
+				}
+
+				& p { 
+					font-size: 12pt;
+					margin-bottom: 10px;
+
+					@media @t, @m {
+						font-size: 10pt;
+					}
+
+				}
+			}
+
+			& .about_image {
+				.cols(8);
+				margin: -60px 0px;
+
+				@media @m {
+					display: none;
+				}
+
+				& img {
+
+				} 
+
+			}
+		}
+	}
+}

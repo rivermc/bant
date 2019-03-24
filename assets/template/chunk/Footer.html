@@ -1,0 +1,47 @@
+<footer>
+    <div class="container">
+        <div class="footer">
+            <div class="footer__wrap">
+                <div class="footer__logo">
+                    <a href="/">[[IncSvg? &svg=`logo-w.svg`]]</a>
+                </div>
+                <div class="footer__menu">
+                    <nav class="footer__menu_col">
+                         [[pdoMenu? 
+                            &parents =`16`
+                            &sortBy = `{"menuindex":"ASC"}`
+                            &tpl = `MenuItem`
+                        ]]
+                    </nav>
+                    <nav class="footer__menu_col">
+                         [[pdoMenu? 
+                            &parents =`0`
+                            &resources = `31, 28, 33, 25`
+                            &sortBy = `{"menuindex":"ASC"}`
+                            &tpl = `MenuItem`
+                        ]]
+                    </nav>
+                    <nav class="footer__menu_col">
+                         [[pdoMenu? 
+                            &parents =`0`
+                            &resources = `5, 4, 6, 3`
+                            &showHidden = `1`
+                            &sortBy = `{"menuindex":"ASC"}`
+                            &tpl = `MenuItem`
+                        ]]
+                    </nav>
+                </div>
+                <div class="footer__contact">
+                    <div class="footer__contact_logo">
+                        <a href="/">[[IncSvg? &svg=`logo-w.svg`]]</a>
+                    </div>
+                    [[#1.SitePhone]]
+                    [[#1.SitePhone2]]
+                    [[#1.SitePhone3]]
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</footer>
+

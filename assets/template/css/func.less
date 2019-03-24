@@ -1,0 +1,120 @@
+@m: ~"only screen and (max-width: 767px)";
+@t: ~"only screen and (min-width: 768px) and (max-width: 991px)";
+@d: ~"only screen and (min-width: 992px) and (max-width: 1199px)";
+@dMid: ~"only screen and (min-width: 1200px)and (max-width: 1439px)";
+@dBig: ~"only screen and (min-width: 1440px)";
+
+
+
+
+
+
+.animation (@animation: 0.4s, @ease: linear) { 
+   transition: all @animation @ease;
+}
+.animationKey (@key, @time, @ease, @count) {
+	animation:@key @time @ease @count;
+}
+.flex (@wrap: wrap) {
+	display: flex;
+	flex-wrap: @wrap;
+}
+
+.backgroundUrl (@url: '../images/news-bg.png', @repeat: inherit, @size: inherit, @position: inherit ) {
+	background: url(@url);
+    background-repeat: @repeat;
+    background-size: @size;
+    background-position: @position;
+}
+
+.gradient(@colorOne, @colorTwo, @persentOne, @persentTwo) {
+	background: @colorOne;
+	background: -moz-linear-gradient(top, @colorOne @persentOne, @colorTwo @persentTwo);
+	background: -webkit-linear-gradient(top, @colorOne @persentOne,@colorTwo @persentTwo);
+	background: linear-gradient(to bottom, @colorOne @persentOne,@colorTwo @persentTwo);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@colorOne', endColorstr='@colorTwo',GradientType=0 );
+}
+
+ 
+
+.font(@size: 1rem , @align: inherit, @weight: inherit) {
+	font-size: @size;
+	text-align: @align;
+	font-weight: @weight;
+}
+
+.visibility (@opacity, @visibility) {
+	opacity: @opacity;
+	visibility: @visibility;
+}
+
+.border (@sizeTop: 0, @sizeRight: 0, @sizeBottom: 0, @sizeLeft: 0, @color: @colorBlack, @borderRadius: 0) {
+	border-top: @sizeTop solid @color;
+	border-right: @sizeRight solid @color;
+	border-bottom: @sizeBottom solid @color;
+	border-left: @sizeLeft solid @color;
+	border-radius: @borderRadius;
+}
+
+.makeRandom(@min: 0, @max: @min+1, @int: 0) { 
+  .checkInt() {
+    @getNum: `Math.random() * (@{max} - @{min} + @{int})`;
+    @base: unit(`@{int} == 1 ? Math.floor(@{getNum}) : @{getNum}`);
+  }
+  .checkInt();
+  @randNum: @base + @min;
+}
+
+
+
+//-------------------------------------------------------------------------//
+		// DevilStrap Container //
+//-------------------------------------------------------------------------//
+
+
+.container {
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.container-max {
+	width: 100%;
+}
+
+@media @dBig {
+	.container {
+		width: 1200px;
+	}
+}
+
+@media @dMid {
+	.container {
+		width: 1200px;
+	}
+}
+@media @d {
+	.container {
+		width: 992px;
+	}
+}
+@media @t {
+	.container {
+		width: 768px;
+	}
+}
+
+@media @m {
+	.container {
+		width: 100%;
+	}
+}
+
+.cols(@numb) {
+	width: 6.25% * @numb;
+}
+.colsOf(@numb) {
+	margin-left: 6.25% * @numb;
+}
+.colsOfR(@numb) {
+	margin-right: 6.25% * @numb;
+}

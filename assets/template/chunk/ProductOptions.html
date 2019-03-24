@@ -1,0 +1,39 @@
+{foreach $options as $name => $values}
+    <div class="product__item_prop prop_select {$name}">
+        {foreach $values as $key => $value}
+            {if count($values) > 1}
+                {if $key == '0'}
+                    <div class="prop_title">
+                        <p>{('ms2_product_' ~ $name) | lexicon}:</p>
+                        <p class="{$name}">{$value}</p>
+                    </div>
+                    <div class="prop_img select active" data-count="{$key}" >
+                        <input checked="checked" type="radio" id="{$name}-{$key}" name="options[{$name}]" nameoption="{$name}" value="{$value}" hidden="hidden">
+                        <img src="/assets/template/images/properties/{$name}/{$value}.jpg" alt="{$value}" title="{$value}">
+                    </div>
+                {else}
+                    <div class="prop_img select"  data-count="{$key}">
+                        <input type="radio" id="{$name}-{$key}" name="options[{$name}]" nameoption="{$name}" value="{$value}" hidden="hidden">
+                        <img src="/assets/template/images/properties/{$name}/{$value}.jpg" alt="{$value}" title="{$value}">
+                    </div>
+                {/if}
+            {else}
+                {if $key == '0'}
+                    <div class="prop_title">
+                        <p>{('ms2_product_' ~ $name) | lexicon}:</p>
+                        <p class="{$name}">{$value}</p>
+                    </div>
+                {/if}
+                <div class="prop_img active">
+                    <input checked="checked" type="radio" id="{$name}-{$key}" name="options[{$name}]" nameoption="{$name}" value="{$value}" hidden="hidden">
+                    <img src="/assets/template/images/properties/{$name}/{$value}.jpg" alt="{$value}" title="{$value}">
+                </div>
+            {/if}
+        {/foreach}
+        {if $name == 'upholdery'}
+            <div id="upholdery_colors"></div>
+        {/if}
+        <input  type="text" hidden="hidden"  id="price_{$name}" class="param_price" value='0'>
+    </div>
+{/foreach}
+

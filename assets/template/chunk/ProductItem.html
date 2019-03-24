@@ -1,0 +1,58 @@
+<div id="msProduct" class="product">
+    <div class="product__item">
+        <div class="product__item_wrap">
+            <div class="product__item_left">
+                <div class="product__item_img">
+                    [[!msGallery?
+                        &tpl = `Fotorama`
+                    ]]
+                </div>
+                <div class="product__item_description">
+                    <p>[[*introtext]]</p>
+                </div>
+                <div class="product__item_size">
+                    <h2>Размеры кресла</h2>
+                    [[msOptions?options=`boxsize,boxvolume,depthbottom,heightback,maxload,weightprod,widthbottom`
+                        &tpl=`ProductOptionsText`
+                    ]]
+                </div>
+            </div>
+            <div class="product__item_right">
+                <form class="ms2_form product__item_form" method="post">
+                    <div class="product__item_price_block">
+                        <input type="number" name="count" id="product_price" hidden="hidden" class="input-sm form-control" value="1"/>
+                        <div class="product__item_price">
+                            <p class="product_price_wrap">Цена: <span id="price">[[+price]]</span> руб.</p>
+                            <p class="notification_price">в зависимости от <span>комплектации</span></p>
+                        </div>
+                        <div class="product__item_button">
+                            <button type="submit" class="btn btn-default" name="ms2_action" value="cart/add">Купить</button>
+                            [[!msMiniCart?
+                                &tpl = `MiniCartPrice`
+                            ]]
+                        </div>
+                    </div>
+                    <div class="product__item_properties">
+                        <h2>Характеристики</h2>
+                        <input type="hidden" name="id" value="[[*id]]"/>
+                        
+                        <div class="product__item_prop">
+                            <p>Артикул:</p>
+                            <p>[[+article]]</p>
+                        </div>
+                        
+                        [[msOptions?options=`country,base,brand,ergonomics`
+                            &tpl=`ProductOptionsText`
+                        ]]
+                        [[msOptions?options=`upholdery,gaslift,armrests,rollers,swing,carcas,krest`
+                            &tpl=`ProductOptions`
+                        ]]
+                        <input type="text" hidden="hidden" name="originalPrice" id="originalPrice" value="[[+price]]">
+                        <input type="text" hidden="hidden"  name="priceItem" id="priceItem" value="[[+price]]">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>  
+

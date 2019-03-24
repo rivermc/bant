@@ -1,0 +1,97 @@
+<div id="msCart">
+    {if !count($products)}
+        <div class="basket__empty_cont">
+            <div class="container">
+                <p>
+                    {'ms2_cart_is_empty' | lexicon}
+                </p>
+            </div>
+        </div>
+        [[$CarouselItems]]
+    {else}
+    {$_modx->lexicon->load('minishop2:product')}
+    
+    <div class="basket__cont">
+        <div class="container">
+            <div class="basket__title">
+                <h1>Список товаров в корзине</h1>
+            </div>
+            <div class="basket__product">
+                <div class="basket__product_title_cont basket__product_cont">
+                    <div class="basket__product_image">
+                        
+                    </div>
+                    <div class="basket__product_title">
+                        <p>Наименование</p>
+                    </div>
+                    <div class="basket__product_price">
+                        <p>Цена</p>
+                    </div>
+                    <div class="basket__product_count">
+                        <p>Количество</p>
+                    </div>
+                    <div class="basket__product_allprice">
+                        <p>Общая стоимость</p>
+                    </div>
+                    <div class="basket__product_remove">
+                    </div>
+                </div>
+                {foreach $products as $product}
+                    <div class="basket__product_cont basket__product_item" id="{$product.key}">
+                        <div class="basket__product_image">
+                            <a href="{$product.id | url}"><img src="{$product.image}" title="{$product.pagetitle}" alt="{$product.pagetitle}"></a>
+                        </div>
+                        <div class="basket__product_title">
+                            <a href="{$product.id | url}">{$product.pagetitle}</a>
+                            <p><b>Артикул</b>: {$product.article}</p>
+                            {foreach $product.options as $name => $value}
+                                <p><b>{('ms2_product_' ~ $name) | lexicon}</b>: {$value}</p>
+                            {/foreach}
+                        </div>
+                        <div class="basket__product_price">
+                            <p>{$product.price} <span class="rub">Р</span></p>
+                        </div>
+                        <div class="basket__product_count">
+                             <form method="post" class="ms2_form form-inline" role="form">
+                                    <input type="hidden" name="key" value="{$product.key}"/>
+                                    <div class="form-group">
+                                        <input type="number" name="count" value="{$product.count}"
+                                               class="input-sm form-control" data-id="{$product.key}"/>
+                                        <button class="btn btn-default" type="submit" name="ms2_action" value="cart/change">
+                                            <span class="count_product plus">+</span>
+                                            <span class="count_product minus">-</span>
+                                        </button>
+                                    </div>
+                                </form>
+                        </div>
+                        <div class="basket__product_allprice">
+                            <p><span class="product_price" data-id="{$product.key}" data-price="{$product.price}">{$product.count * $product.price}</span> <span class="rub">Р</span></p>
+                        </div>
+                        <div class="basket__product_remove">
+                            <form method="post" class="ms2_form">
+                                <input type="hidden" name="key" value="{$product.key}">
+                                <button class="btn btn-default" type="submit" name="ms2_action" value="cart/remove">
+                                </button>
+                            </form>
+                        </div>
+                    </div>           
+                {/foreach}
+            </div>
+        </div>
+            
+        <div class="basket__total">
+            <div class="container">
+                <div class="basket__total_cont">
+                    <div class="basket__total_bl">
+                        <div class="basket__total_count">
+                            <p>Товаров в корзине: <span class="ms2_total_count">{$total.count}</span> шт.</p>
+                            <p>На сумму: <span class="ms2_total_cost">{$total.cost}</span> <span class="rub">Р</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {/if}
+</div>
+

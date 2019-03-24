@@ -1,0 +1,214 @@
+//-------------------------------------------------------------------------//
+// GetOrder // template/getorder.html //
+//-------------------------------------------------------------------------//
+
+.basket { 
+  padding: 0 0 50px;
+}  
+
+#msCart {
+
+  & .getorder__empty_cont {
+    margin: 100px 0;
+
+    & .container {
+
+      & p {
+        color: @colorBlack;
+        font-size: 2rem;
+        text-align: center;
+      }
+    }
+  }
+
+  & .container {
+
+    & .getorder__cont {
+      .flex();
+      justify-content: space-between;
+
+      & .getorder__title {
+        .cols(16);
+
+        & h1 {
+          text-transform: uppercase;
+          font-size: 19pt;
+          letter-spacing: 1px;
+          font-weight: 100;
+          margin: 20px 0;
+
+          @media @m {
+            font-size: 12pt;
+          }
+        }
+      }
+
+      & .getorder__product {
+        .flex();
+        .cols(16);
+        justify-content: space-between;
+        border-bottom: 1px solid @colorGray;
+
+        & .getorder__product_cont {
+          .flex();
+          .cols(7.5);
+          align-items: center;
+          margin-bottom: 20px;
+          
+          @media @m {
+            .cols(16);
+            margin: 10px 0 20px 0;
+          }
+
+          & .getorder__product_image {
+            .cols(6);
+
+            @media @t {
+              .cols(16);
+              text-align: center;
+            }
+            @media @m {
+              .cols(16);
+              text-align: center;
+            }
+
+            & img {
+              max-height: 200px;
+            }
+
+          }
+
+          & .getorder__product_title {
+            .cols(10);
+
+            @media @t {
+              .cols(16);
+            }
+            @media @m {
+              .cols(16);
+              margin-bottom: 10px;
+            }
+
+            & a {
+              color: @colorBlack;
+              font-size: 13pt;
+              display: inline-block;
+              margin-bottom: 10px;
+              width: 90%;
+
+              @media @t {
+                font-size: 13pt;
+              }
+            }
+
+            & p {
+              font-size: 9.5pt;
+              color: @colorBlack;
+
+            }
+          }
+
+          & .getorder__product_allprice {
+            .cols(10);
+            .colsOf(6);
+            
+            @media @t, @m {
+              .cols(16);
+              .colsOf(0);
+            }
+
+            & p {
+              color: @colorBlack;
+              font-size: 14pt;
+              
+              @media @m {
+                font-size: 11pt;
+              }
+            }
+          }
+        }
+      }
+      
+      & .getorder__total {
+        .cols(8);
+        border-bottom: 1px dashed @colorGray;
+        padding-bottom: 20px;
+        
+        @media @m {
+          .cols(16);
+        }
+
+        & .getorder__total_cont {
+
+          & h2 {
+            text-transform: uppercase;
+            font-size: 19pt;
+            letter-spacing: 1px;
+            font-weight: 100;
+            margin: 20px 0;
+            text-align: right;
+
+            @media @m {
+              font-size: 12pt;
+              text-align: left;
+            }
+          }
+
+          & p {
+            font-size: 10pt;
+            color: @colorBlack;
+            text-align: right;
+            
+            @media @m {
+              text-align: left;
+            }
+
+            & span {
+              color: @colorBlack;
+              font-size: 26pt;
+            }
+          }
+        }
+      }
+      
+      & .getorder__info {
+        .cols(8);
+        
+        @media @m {
+          .cols(16);
+        }
+
+        & .getorder__info_cont {
+
+          & .getorder__info_block {
+
+            & h2 {
+              text-transform: uppercase;
+              font-size: 19pt;
+              letter-spacing: 1px;
+              font-weight: 100;
+              margin: 20px 0;
+
+              @media @m {
+                font-size: 12pt;
+              }
+            }
+
+            & p {
+              color: @colorBlack;
+              font-size: 14pt;
+              
+              @media @m {
+                font-size: 9pt;
+              }
+
+              & span {
+
+              }
+            }
+          }
+        }
+      } 
+    }
+  }
+}

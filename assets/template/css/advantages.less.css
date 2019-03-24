@@ -1,0 +1,192 @@
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.container-max {
+  width: 100%;
+}
+@media only screen and (min-width: 1440px) {
+  .container {
+    width: 1200px;
+  }
+}
+@media only screen and (min-width: 1200px)and (max-width: 1439px) {
+  .container {
+    width: 1200px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    width: 992px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .container {
+    width: 768px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .container {
+    width: 100%;
+  }
+}
+@font-face {
+  font-family: 'Geom';
+  src: url('../fonts/Geom.eot');
+  src: url('../fonts/Geom.woff') format('woff'), url('../fonts/Geom.ttf') format('truetype'), url('../fonts/Geom.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GeomBold';
+  src: url('../fonts/GeomBold.eot');
+  src: url('../fonts/GeomBold.woff') format('woff'), url('../fonts/GeomBold.ttf') format('truetype'), url('../fonts/GeomBold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GeomMed';
+  src: url('../fonts/GeomMed.eot');
+  src: url('../fonts/GeomMed.woff') format('woff'), url('../fonts/GeomMed.ttf') format('truetype'), url('../fonts/GeomMed.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GeomLight';
+  src: url('../fonts/GeomLight.eot');
+  src: url('../fonts/GeomLight.woff') format('woff'), url('../fonts/GeomLight.ttf') format('truetype'), url('../fonts/GeomLight.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'rub';
+  src: url(data:font/woff;charset=utf-8;base64,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);
+}
+.rub {
+  font-family: 'rub' !important;
+}
+.advantages {
+  background: url('../images/advantages/bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 60px 0;
+  margin: 20px 0;
+}
+.advantages .container h2 {
+  font-size: 32pt;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .advantages .container h2 {
+    font-size: 28pt;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .advantages .container h2 {
+    font-size: 22pt;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .advantages .container h2 {
+    font-size: 16pt;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+.advantages .container .advantages__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.advantages .container .advantages__wrap .advantages__item {
+  width: 31.25%;
+}
+@media only screen and (max-width: 767px) {
+  .advantages .container .advantages__wrap .advantages__item {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 10px 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .advantages .container .advantages__wrap .advantages__item .advantages__item_img {
+    width: 25%;
+  }
+}
+.advantages .container .advantages__wrap .advantages__item .advantages__item_img img {
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 767px) {
+  .advantages .container .advantages__wrap .advantages__item .advantages__item_img img {
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .advantages .container .advantages__wrap .advantages__item .advantages__item_title {
+    width: 75%;
+    padding-left: 20px;
+  }
+}
+.advantages .container .advantages__wrap .advantages__item .advantages__item_title h3 {
+  color: #ffffff;
+  font-family: 'GeomBold', sans-serif;
+  font-size: 16pt;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .advantages .container .advantages__wrap .advantages__item .advantages__item_title h3 {
+    font-size: 14pt;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .advantages .container .advantages__wrap .advantages__item .advantages__item_title h3 {
+    font-size: 13pt;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .advantages .container .advantages__wrap .advantages__item .advantages__item_title h3 {
+    margin-bottom: 10px;
+    font-size: 12pt;
+  }
+}
+.advantages .container .advantages__wrap .advantages__item .advantages__item_text div p {
+  font-size: 12pt;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .advantages .container .advantages__wrap .advantages__item .advantages__item_text div p {
+    font-size: 11pt;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .advantages .container .advantages__wrap .advantages__item .advantages__item_text div p {
+    font-size: 10pt;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .advantages .container .advantages__wrap .advantages__item .advantages__item_text div p {
+    font-size: 9pt;
+  }
+}
+.advantages .container .advantages__wrap .advantages__item .advantages__item_text div ul li {
+  font-size: 12pt;
+  list-style: none;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .advantages .container .advantages__wrap .advantages__item .advantages__item_text div ul li {
+    font-size: 11pt;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .advantages .container .advantages__wrap .advantages__item .advantages__item_text div ul li {
+    font-size: 10pt;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .advantages .container .advantages__wrap .advantages__item .advantages__item_text div ul li {
+    font-size: 9pt;
+  }
+}

@@ -1,0 +1,69 @@
+//-------------------------------------------------------------------------//
+    // Catalog Menu //
+//-------------------------------------------------------------------------//
+
+& .catalog__left {
+
+  & ul {
+    .flex();
+
+    & li {
+      .cols(16);
+      .animation();
+      list-style: none;
+      margin-bottom: 20px;
+
+      & a {
+        .animation();
+        color: @colorBlackLight;
+        font-size: 12pt;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        @media @d {
+          font-size: 10pt;
+        }
+
+        & svg {
+          margin-left: 10px;
+        }
+      }
+
+      &.active {
+
+        & > ul {
+          display: block;
+        }
+      }
+      
+      & > ul {
+        display: none;
+        padding: 10px 0 0 10px; 
+        visibility: visible;
+        transform: translateX(-40px);
+        width: ~'calc(100% + 40px)';
+
+        & > li {
+        .animation(0.2s);
+        padding: 8px 0 8px 40px;
+        margin: 0;
+
+          &:hover {
+            background: @colorBrown;
+          }
+
+          & a {
+              display: block;
+              text-transform: none;
+          }
+
+          & > ul {
+            padding: 0;
+            left: 100%;
+            top: 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+
+<header>
+    <div class="container">
+        <div class="header">
+            <div class="header__wrap">
+                <div class="header__logo">
+                    <a href="/">[[IncSvg? &svg=`logo.svg`]]</a>
+                </div>
+                [[!MobileDetect?
+                    &mobile=``
+                    &tablet = `
+                        <nav class="header__menu">
+                            [[pdoMenu? 
+                                &parents =`0`
+                                &sortBy = `{"menuindex":"ASC"}`
+                                &tpl = `MenuItem`
+                            ]]
+                        </nav>
+                    `
+                    &desktop = `
+                        <nav class="header__menu">
+                            [[pdoMenu? 
+                                &parents =`0`
+                                &sortBy = `{"menuindex":"ASC"}`
+                                &tpl = `MenuItem`
+                            ]]
+                        </nav>
+                    `
+                ]]
+                <div class="header__contact">
+                    <div class="header__contact_wrap">
+                        <div class="header__phone">
+                           [[#1.SitePhone]] 
+                        </div>
+                    </div>
+                    <p>ежедневно с 10 до 22</p>
+                </div>
+                <div class="header__search_basket">
+                    <div class="header__search">
+                        [[IncSvg? &svg=`elements/search.svg`]]
+                        [[!SimpleSearchForm? &landing=`2` &tpl=`SearchForms`]]
+                        <p>Поиск</p>
+                    </div>
+                    <div class="header__basket">
+                        [[IncSvg? &svg=`elements/basket.svg`]]
+                        [[!msMiniCart?
+                            &tpl = `MiniCart`
+                        ]]
+                        <a href="[[~3]]">Корзина</a>
+                        
+                    </div>
+                </div>
+                [[!MobileDetect?
+                    &mobile=`
+                        <div class="header__menu_burger burger__button">
+                            [[IncSvg? &svg=`elements/burger.svg`]]
+                        </div>
+                    `
+                ]]
+            </div>
+        </div>
+    </div>
+    [[!MobileDetect?
+        &mobile = `
+            <div class="header__menu header__menu_mobile menu_burger" id="header_mobile_burger">
+                <nav>
+                    [[pdoMenu? 
+                        &parents =`0`
+                        &sortBy = `{"menuindex":"ASC"}`
+                        &tpl = `MenuItem`
+                    ]]
+                </nav>
+                <div class="menu_burger_close">X</div>
+            </div>
+        `
+    ]]
+</header>

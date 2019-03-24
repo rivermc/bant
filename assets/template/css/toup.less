@@ -1,0 +1,36 @@
+//-------------------------------------------------------------------------//
+		// To Up //
+//-------------------------------------------------------------------------//
+
+.toUp {
+	position: fixed;
+	bottom: 0;
+    right: 10px;
+	cursor: pointer;
+	z-index: 999;
+
+	@media @m {
+		display: none;
+	}
+
+
+	&:hover {
+		& svg {
+
+			& path.toup-arrow {
+				transform: translateX(8px);
+
+			}
+		}
+	}
+
+	& svg {
+
+		& path.toup-arrow {
+			.animation();
+			transform: translateY(50px) translateX(8px);
+
+		}
+	}
+}
+

@@ -1,0 +1,142 @@
+//-------------------------------------------------------------------------//
+		// Footer //  
+//-------------------------------------------------------------------------//
+
+
+footer { 
+	background: @colorBlack;
+	padding: 20px 0 50px;
+
+	& .container { 
+
+		& .footer { 
+
+			& .footer__wrap {
+				.flex();
+				justify-content: space-between;
+
+				& .footer__logo {
+					.cols(3);
+
+					@media @t, @m {
+						display: none;
+					}
+
+					@media @d {
+						.cols(2);
+					}
+					@media @m {
+						.cols(16);
+						margin-bottom: 20px;
+					}
+
+					& a {
+						display: block;
+						margin: 10px 0 0;
+
+						& svg { 
+							width: 100%;
+						}
+					}
+				}
+
+				& .footer__menu {
+					.cols(10);
+					.colsOf(0.5);
+					.colsOfR(0.5);
+					.flex();
+					justify-content: space-between;
+
+
+					@media @d {
+						.cols(10);
+					}
+					@media @t {
+						.cols(12.5);
+						.colsOf(0);
+					}
+					@media @m {
+						.cols(16);
+						.colsOf(0);
+						.colsOfR(0);
+						margin-bottom: 20px;
+					}
+
+					& nav.footer__menu_col {
+						padding: 0 10px;
+
+						& ul { 
+
+							& li {
+								margin: 10px 0;
+
+								& a {
+									.animation();
+									color: @colorWhite;
+									font-size: 11pt;
+									text-transform: uppercase;
+
+									@media @t {
+										font-size: 10pt;
+									}
+
+									&:hover {
+										color: @colorBrown;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				& .footer__contact {
+					.cols(2);
+
+					@media @d {
+						.cols(3);
+					}
+					@media @t {
+						.cols(3);
+					}
+					@media @m {
+						.cols(16);
+					}
+
+					& .footer__contact_logo {
+						display: none;
+
+						@media @t, @m {
+							display: block;
+						}
+
+						& a {
+							display: block;
+							margin: 10px 0 0;
+
+							& svg {
+								width: 100%;
+							}
+						}
+					}
+
+					& > a {
+						color: @colorWhite;
+						font-size: 11pt;
+						margin: 10px 0;
+						display: block;
+						text-align: right;
+
+						@media @t {
+							font-size: 10pt;
+						}
+
+						@media @m {
+							text-align: center;
+							font-size: 14pt;
+						}
+					}
+				}
+			}
+		}
+	}
+}

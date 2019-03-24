@@ -1,0 +1,122 @@
+//-------------------------------------------------------------------------//
+    // Catalog //
+//-------------------------------------------------------------------------//
+
+& .catalog {
+
+  & .container { 
+
+    & .catalog__wrap {
+      .flex();
+
+      & .catalog__main {
+        .cols(12);
+        padding-left: 20px;
+
+        @media @t {
+          .cols(16);
+          padding-left: 0;
+        }
+        @media @m {
+          .cols(16);
+          padding-left: 0;
+        }
+
+        & .catalog__main_top {
+          .flex();
+          justify-content: space-between;
+          align-items: center;
+          margin: 0 0 20px 0;
+
+          @media @m {
+            margin: 0 0 20px 0;
+          }
+
+          & .catalog__main_title {
+
+            & h1 {
+              text-transform: uppercase;
+              font-size: 19pt;
+              letter-spacing: 1px;
+              font-weight: 100;
+
+              @media @m {
+                font-size: 12pt;
+              }
+            }
+          }
+          
+          & .catalog__main_filter {
+            
+            & .filter_toggle {
+              .flex();
+              align-items: center;
+              margin: 0 0 0 auto;
+              padding: 5px;
+              cursor: pointer;
+              
+              &.active {
+                
+                & svg {
+                  transform: rotate(90deg);
+                }
+              }
+              
+              & svg {
+                .animation();
+                margin-right: 10px;
+              }
+              
+              & p {
+                font-size: 12pt;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//-------------------------------------------------------------------------//
+// Left Menu //
+//-------------------------------------------------------------------------//
+
+& .catalog__left {
+  .cols(4);
+
+  @media @t {
+    display: none;
+  }
+  @media @m {
+    display: none;
+  }
+
+  & .catalog__menu_backlink {
+    margin: 0 0 50px 0;
+
+    & a {
+      .flex();
+      align-items: center;
+
+      &:hover {
+
+        & svg {
+          transform: rotate(180deg);
+        }
+      }
+
+      & svg {
+        .animation();
+        transform: rotate(180deg) translateX(-20px);
+        margin-right: 40px;
+      }
+
+      & span {
+        color: @colorBlackLight;
+        font-size: 12pt;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

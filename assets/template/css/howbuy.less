@@ -1,0 +1,138 @@
+//-------------------------------------------------------------------------//
+		// Advantages //
+//-------------------------------------------------------------------------//
+
+
+& .howbuy {
+	background: url('../images/howbuy/bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 60px 0;
+	margin: 20px 0;
+	
+	@media @t {
+		padding: 30px 0 0;
+	}
+	@media @m {
+		padding: 30px 0;
+	}
+
+	& .container { 
+
+		& h2 {
+			font-size: 32pt;
+			text-transform: uppercase;
+			margin-bottom: 40px;
+
+			@media @d {
+				font-size: 28pt;
+			}
+			@media @t {
+				font-size: 22pt;
+			}
+			@media @m {
+				font-size: 16pt;
+				text-align: center;
+				margin-bottom: 20px;
+			}
+		}
+
+		& .howbuy__wrap { 
+			.flex();
+			.cols(15);
+			justify-content: space-between;
+
+			@media @m {
+				.cols(16);
+			}
+
+			& .howbuy__item {
+				.cols(7);
+				.flex(nowrap);
+				justify-content: space-between;
+				margin-bottom: 60px;
+
+				@media @t {
+					.cols(16);
+					margin-bottom: 30px;
+				}
+				@media @m {
+					.cols(16);
+					margin-bottom: 20px;
+				}
+
+				& .howbuy__item_number {
+					.cols(5);
+
+					& p {
+						font-size: 150pt;
+						line-height: 1em;
+
+						@media @t {
+							text-align: center;
+							font-size: 80pt;
+						}
+						@media @m {
+							font-size: 80pt;
+						}
+					}					
+				}
+
+				& .howbuy__item_content {
+					.cols(11);
+
+					& .howbuy__item_title { 
+
+						& h3 {
+							color: @colorBrown;
+							font-family: @fontGeomBold;
+							font-size: 12pt;
+							text-transform: uppercase;
+							margin-bottom: 20px;
+
+							@media @t {
+								margin-bottom: 10px;
+								font-size: 11pt;
+							}
+							@media @m {
+								margin-bottom: 10px;
+								font-size: 10pt;
+							}
+
+						}
+					}	
+
+					& .howbuy__item_text { 
+
+						& div { 
+
+							& p {
+								font-size: 12pt;
+								
+								@media @t {
+									font-size: 10pt;
+								}
+
+								@media @m {
+									font-size: 9pt;
+								}
+							}
+
+							& ul {
+
+								& li {
+									font-size: 12pt;
+									list-style: none;
+
+									@media @m {
+										font-size: 10pt;
+									}
+								}
+							}
+						}
+					}				
+				}
+			}
+		}
+	}
+}

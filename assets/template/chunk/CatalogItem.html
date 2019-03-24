@@ -1,0 +1,28 @@
+<div class="catalog__main_item">
+    <div class="main__item_toplink">
+        <a href="[[+uri]]" title='[[+pagetitle]]'>[[IncSvg? &svg=`elements/arrow.svg`]]</a>
+    </div>
+    <div class="main__item_notification">
+        [[+old_price:gt=`[[+price]]`:then=`<p>Скидка</p>`]]
+        [[+popular:is=`1`:then=`<p>Популярный</p>`]]
+        [[+favorite:is=`1`:then=`<p>Хит</p>`]]
+        [[+new:is=`1`:then=`<p>Новинка</p>`]]
+    </div>
+    <div class="main__item_visible">
+        <div class="main__item_img">
+            <a href="[[+uri]]" title='[[+pagetitle]]'><img src="[[+image]]" alt="[[+pagetitle]]" title="[[+pagetitle]]"></a>
+        </div>
+        <div class="main__item_title">
+            <h2>[[+pagetitle]]</h2>
+        </div>
+    </div>
+    <div class="main__item_invisible">
+        <div class="main__item_price">
+            <p>цена</p>
+            <p class="price">[[+price]] <span>руб.</span></p>
+        </div>
+        <div class="main__item_link">
+            <a href="[[+uri]]" title='[[+pagetitle]]'>Подробнее</a>
+        </div>
+    </div>
+</div>

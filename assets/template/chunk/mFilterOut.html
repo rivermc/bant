@@ -1,0 +1,24 @@
+<div class="msearch2" id="mse2_mfilter">
+    <div class="catalog_filter">
+        <div class="filter">
+            <form action="[[~[[*id]]]]" method="post" id="mse2_filters">
+                [[+filters]]
+                <div id="mse2_sort" class="">
+                    <p class="total_result">[[%mse2_filter_total]] <span id="mse2_total">[[+total:default=`0`]]</span></p>
+                    <a href="#" data-sort="ms|price" data-dir="[[+mse2_sort:is=`ms|price:desc`:then=`desc`]]" data-default="desc" class="sort nopreload">Сортировать по цене <span></span></a>
+                    [[+filters:isnot=``:then=`
+                        <button type="reset" class="filter_reset btn btn-default hidden">Сбросить фильтр</button>
+                    `]]
+                </div>
+            </form>
+        </div>        
+    </div>
+
+    <div id="mse2_results">
+        [[+results]]
+    </div>
+
+    <div class="mse2_pagination">
+        [[!+page.nav]]
+    </div>
+</div>

@@ -1,0 +1,42 @@
+//-------------------------------------------------------------------------//
+// Article // template/article.html //
+//-------------------------------------------------------------------------//
+
+.article {
+  padding: 40px 0;
+  
+  & .container {
+    
+    & .article__wrap {
+      
+      & h1, h2 {
+        text-transform: uppercase;
+        font-size: 19pt;
+        letter-spacing: 1px;
+        font-weight: 100;
+        margin: 20px 0;
+
+        @media @m {
+          font-size: 12pt;
+        }
+      }
+      
+      & h2 {
+        font-size: 16pt;
+      }
+      
+      & p {
+        font-size: 12pt;
+        margin-bottom: 10px;
+        
+      }
+      
+      & a {
+        color: @colorBlack;
+        font-size: 12pt;
+        margin-bottom: 10px;
+        
+      }
+    }
+  }
+}

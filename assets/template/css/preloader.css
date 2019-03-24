@@ -1,0 +1,17 @@
+.preloader  {
+    transition: all 0.4s;
+    display: block;
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #333333 url(/assets/template/images/logo-w.svg) center center no-repeat;
+}
+.preloader-small {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 50px;
+}
