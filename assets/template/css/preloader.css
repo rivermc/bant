@@ -7,7 +7,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: #333333 url(/assets/template/images/logo-w.svg) center center no-repeat;
+    background: #8c003d url(/assets/template/images/preloader.svg) center center no-repeat;
 }
 .preloader-small {
     width: 30px;
