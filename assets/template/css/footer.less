@@ -7,132 +7,137 @@ footer {
 	background: @colorBlack;
 	padding: 20px 0 50px;
 
-	& .container { 
+	& .container {
 
-		& .footer { 
+		& .footer {
+			.flex();
+			justify-content: space-between;
 
-			& .footer__wrap {
-				.flex();
-				justify-content: space-between;
+			& .footer__left {
+				.cols(7);
+				
+				& .footer__left_address {
+					margin-bottom: 20px;
 
-				& .footer__logo {
-					.cols(3);
-
-					@media @t, @m {
-						display: none;
+					& p {
+						font-family: @fontGeomBold;
+						color: @colorWhite;
+						text-transform: uppercase;
+						font-size: 12pt;
+						margin-bottom: 10px;
 					}
 
-					@media @d {
-						.cols(2);
+					& ul {
+
+						& li {
+							color: @colorWhite;
+							font-size: 10pt;
+						}
+					}					
+				}
+				
+				& .footer__left_info {
+					
+					& p {
+						color: @colorWhite;
+						font-size: 7.6pt;
+						
+						& a {
+							color: @colorWhite;
+							text-decoration: underline;
+						}
 					}
-					@media @m {
-						.cols(16);
-						margin-bottom: 20px;
+				}
+			}
+
+			& .footer__center {
+				.colsOf(1);
+				.colsOfR(1);
+				.cols(4);
+
+				& ul {
+
+					& li {
+						margin-bottom: 10px;
+
+						& a {
+							.animation();
+							font-family: @fontGeomBold;
+							color: @colorWhite;
+							text-transform: uppercase;
+							font-size: 12pt;
+							
+							&:hover {
+								color: @colorRed;
+							}
+						}
 					}
+				}
+			}
+
+			& .footer__right {
+				.cols(3);
+
+				& .footer__right_contact {
+					margin-bottom: 40px;
 
 					& a {
+						color: @colorWhite;
+						font-family: @fontGeomBold;
+						font-size: 16pt;
+						text-align: center;
+						margin-bottom: 10px;
 						display: block;
-						margin: 10px 0 0;
+					}
 
-						& svg { 
-							width: 100%;
+					& p {
+						.animation();
+						background: @colorRed;
+						color: @colorWhite;
+						padding: 10px 25px;
+						font-size: 12pt;
+						text-align: center;
+						-webkit-border-radius: 5px;
+						-moz-border-radius: 5px;
+						border-radius: 5px;
+						cursor: pointer;
+
+						&:hover {
+							background: @colorBlack;
 						}
 					}
 				}
 
-				& .footer__menu {
-					.cols(10);
-					.colsOf(0.5);
-					.colsOfR(0.5);
+				& .footer__right_social {
 					.flex();
 					justify-content: space-between;
 
-
-					@media @d {
-						.cols(10);
-					}
-					@media @t {
-						.cols(12.5);
-						.colsOf(0);
-					}
-					@media @m {
+					& p {
 						.cols(16);
-						.colsOf(0);
-						.colsOfR(0);
-						margin-bottom: 20px;
+						color: @colorWhite;
+						font-size: 12pt;
+						text-align: center;
+						margin-bottom: 10px;
+
 					}
 
-					& nav.footer__menu_col {
-						padding: 0 10px;
+					& a {
 
-						& ul { 
+						&:hover {
 
-							& li {
-								margin: 10px 0;
-
-								& a {
-									.animation();
-									color: @colorWhite;
-									font-size: 11pt;
-									text-transform: uppercase;
-
-									@media @t {
-										font-size: 10pt;
-									}
-
-									&:hover {
-										color: @colorBrown;
-									}
+							& svg {
+								& path {
+									fill: @colorRed;
 								}
 							}
 						}
-					}
-				}
 
-				& .footer__contact {
-					.cols(2);
+						& svg {
 
-					@media @d {
-						.cols(3);
-					}
-					@media @t {
-						.cols(3);
-					}
-					@media @m {
-						.cols(16);
-					}
-
-					& .footer__contact_logo {
-						display: none;
-
-						@media @t, @m {
-							display: block;
-						}
-
-						& a {
-							display: block;
-							margin: 10px 0 0;
-
-							& svg {
-								width: 100%;
+							& path {
+								fill: @colorWhite;
+								.animation();
 							}
-						}
-					}
-
-					& > a {
-						color: @colorWhite;
-						font-size: 11pt;
-						margin: 10px 0;
-						display: block;
-						text-align: right;
-
-						@media @t {
-							font-size: 10pt;
-						}
-
-						@media @m {
-							text-align: center;
-							font-size: 14pt;
 						}
 					}
 				}
