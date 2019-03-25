@@ -1,5 +1,0 @@
-6.8.9-9 Q16
-Version: ImageMagick 6.8.9-9 Q16 x86_64 2018-09-28 http://www.imagemagick.org
-Copyright: Copyright (C) 1999-2014 ImageMagick Studio LLC
-Features: DPC Modules OpenMP
-Delegates: bzlib cairo djvu fftw fontconfig freetype jbig jng jpeg lcms lqr ltdl lzma openexr pangocairo png rsvg tiff wmf x xml zlib
