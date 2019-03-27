@@ -1,87 +1,103 @@
 $(document).ready(function(){
 
-/* ----------------------------------------------------------------------- */
-/* SendForm */
-/* ----------------------------------------------------------------------- */
+  /* ----------------------------------------------------------------------- */
+  /* SendForm */
+  /* ----------------------------------------------------------------------- */
 
-function sendForm(idForm) {
-  var msg=$('#' + idForm).serialize();
-  $.ajax({
-    type:'POST',
-    url:"/assets/template/php/sendForm.php",
-    data:msg+"&IDForm=" + idForm,
-    cache:false,
-    success:function(data){
-      callback(data);
-    }
-  });
-};
-
-
-
-
-function callback(check) {
-
-  if (check == 'true') {
-    $('.form__callback_error').html('<p>Спасибо! Ваша заявка отправлена!</p><p>Наш менеджер свяжется с Вами в ближайшее время</p>');
-    $('#callback__form').hide().delay(8000).queue(function(next) {
-      $('#callback__form').show(500);
-      $('.form__callback_error').empty();
-      next();
+  function sendForm(idForm) {
+    var msg=$('#' + idForm).serialize();
+    $.ajax({
+      type:'POST',
+      url:"/assets/template/php/sendForm.php",
+      data:msg,
+      cache:false,
+      beforeSend: function() {
+        $('#' + idForm + ' button').prop('disabled', true);
+        callback('true');
+      },
+      success:function(data) {
+        callback(data);
+        $('#' + idForm + ' button').prop('disabled', false);
+      }
     });
   }
 
-  else if (check == 'phone') {
-    $('#callback__form' + ' .callback__form_input_phone').addClass('shake').delay(800).queue(function(next){ $('#callback__form .callback__form_input_phone').removeClass('shake');  next(); });
+
+  function callback(check) {
+
+    if (check == 'true') {
+      $('#callback__form').fadeOut(500).delay(8000).queue(function(next) {
+        $('#callback__form').fadeIn(500);
+        $('.form__callback_error').empty();
+        next();
+      });
+      setTimeout(function(){
+        $('.form__callback_error').html('<p>Спасибо! Ваша заявка отправлена!</p><p>Наш менеджер свяжется с Вами в ближайшее время</p>');        
+      },500);
+    }
   }
 
-  else if (check == 'policy') {
-    $('#callback__form' + ' .policy__check').addClass('shake').delay(800).queue(function(next){ $('.policy__check').removeClass('shake');  next(); });
+
+  function isEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
   }
 
-
-}
-
-
-$('.callback button').click(function(){
-  var FormId = $(this).parent().attr('id');
-  sendForm(FormId);
-});
-
-
-/* ----------------------------------------------------------------------- */
-/* Input Label */
-/* ----------------------------------------------------------------------- */
-
-
-
-$('.callback__form_input').focus(function(){
-  $(this).parents('.form__callback_form-group').addClass('focused');
-});
-
-$('.form__group_label').click(function(){
-  $(this).parents('.form__callback_form-group').addClass('focused');
-});
-
-$('.callback__form_input').blur(function(){
-  var inputValue = $(this).val();
-  if ( (inputValue == "") || (inputValue == '+7 (___) ___-__-__') ) {
-    $(this).removeClass('filled');
-    $(this).parents('.form__callback_form-group').removeClass('focused');  
-  } else {
-    $(this).addClass('filled');
+  function isPhone(phone) {
+    var regex = /^\+?([\d]{1})\)?[- ]*[( ]*?([\d]{3})?[) ]*[- ]?([\d]{3})[- ]?([\d]{2})[- ]?([\d]{2})$/;
+    return regex.test(phone);
   }
-});
+  
+  /* ----------------------------------------------------------------------- */
+  /* Events */
+  /* ----------------------------------------------------------------------- */
 
+  $(document).on('click', '.callback button', function(e){
+    e.preventDefault();
+    var FormId = $(this).parent().attr('id');
+    var inputs = $(this).parent().find('input');
+    var test = true;
+    
+    $(inputs).each(function(index, item) {
+      if ($(item).attr('name') == 'email') {
+        var value = $(item).val();
+        test = isEmail(value);
+      }
+      else if ($(item).attr('name') == 'phone') {
+        var value = $(item).val();
+        test = isPhone(value);        
+      }
+      if (test == false) {
+        $('.callback__form' + ' .callback__form_input_' + $(item).attr('name')).addClass('shake').delay(800).queue(function(next){ $('.callback__form .callback__form_input_' + $(item).attr('name')).removeClass('shake');  next(); });
+      }
+    });
 
+    if (test == true) {
+      sendForm(FormId);
+    }
+  });
 
-/* ----------------------------------------------------------------------- */
-/* Input Phone Template */
-/* ----------------------------------------------------------------------- */
+  $(document).on('focus', '.callback__form_input', function(){
+    var callback_group = $(this).parents('.form__callback_form-group');
+    callback_group.addClass('focused');
+    callback_group.find('input').focus();
+  });
 
-$('.callback__form_input_phone').usPhoneFormat({format: 'x-xxx-xxx-xxxx',});
+  $(document).on('click', '.form__group_label', function(){
+    var callback_group = $(this).parents('.form__callback_form-group');
+    callback_group.addClass('focused');
+    callback_group.find('input').focus();
+  });
 
-
+  $(document).on('blur', '.callback__form_input', function(){
+    var inputValue = $(this).val();
+    if ( (inputValue == "")) {
+      $(this).removeClass('filled');
+      $(this).parents('.form__callback_form-group').removeClass('focused');
+    } else {
+      $(this).addClass('filled');
+    }
+  });
 
 
 });

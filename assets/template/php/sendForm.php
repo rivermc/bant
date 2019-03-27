@@ -1,21 +1,18 @@
 <?php
+<?php
 
-$phone=trim($_POST["phone"]);
-$phone=strip_tags($phone);
-$name=trim($_POST["name"]);
-$name=strip_tags($name);
-$check=trim($_POST["check"]);
-$check=strip_tags($check);
-$theme = 'Пришла заявка на обратный звонок с сайта Senator.ru';
-
-
-
-
-if ( ($_POST['check'] == 'on')  AND ($phone != '') ) {
+$email=trim($_POST["email"]);
+$email=strip_tags($email);
+$IDForm=trim($_POST["IDForm"]);
+$IDForm=strip_tags($IDForm);
+$thanks = "Спасибо! Ваша заявка отправлена!";
+$theme = 'Пришла заявка по дому';
 
 //-------------------------------------------------------------------------//
     // Send To Email //
 //-------------------------------------------------------------------------//
+
+if ( $email != '' ) {
           
   $emailTo = "web@2f-vsk.ru";
   $emailFrom ="web@2f-vsk.ru";
@@ -25,8 +22,7 @@ if ( ($_POST['check'] == 'on')  AND ($phone != '') ) {
   $emailTitle = convert_cyr_string($emailTitle, "w", "k");
 
   $emailText="<html><head></head><body>";
-  $emailText.="<b>Имя:</b> {$name}<br>";
-  $emailText.="<b>Телефон:</b> {$phone}"; 
+  $emailText.="<b>Почта:</b> {$email}"; 
   $emailText.="</body></html>";
   $emailText=iconv("utf-8","windows-1251",$emailText);
   $emailText=convert_cyr_string($emailText, "w", "k");
@@ -39,14 +35,8 @@ if ( ($_POST['check'] == 'on')  AND ($phone != '') ) {
   echo 'true';
 }
 
-else {
-   if ($_POST['check'] != "on") {
-       echo 'policy';
-   }
-   else {
-      echo 'phone';
-   }
-}
+?>
+
 
 
 
