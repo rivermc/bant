@@ -8,6 +8,9 @@
     width: 100%;
     height: 100%;
     background: #8c003d url(/assets/template/images/preloader.svg) center center no-repeat;
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
 }
 .preloader-small {
     width: 30px;
