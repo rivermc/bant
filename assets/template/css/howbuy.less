@@ -8,129 +8,46 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	padding: 60px 0;
-	margin: 20px 0;
-	
-	@media @t {
-		padding: 30px 0 0;
-	}
-	@media @m {
-		padding: 30px 0;
-	}
 
 	& .container { 
 
 		& h2 {
-			font-size: 32pt;
+			font-family: @fontGeomBold;
+			color: @colorRed;
+			font-size: 16pt;
 			text-transform: uppercase;
-			margin-bottom: 40px;
-
-			@media @d {
-				font-size: 28pt;
-			}
-			@media @t {
-				font-size: 22pt;
-			}
-			@media @m {
-				font-size: 16pt;
-				text-align: center;
-				margin-bottom: 20px;
-			}
+			margin-bottom: 60px;
+			text-align: center;
 		}
 
-		& .howbuy__wrap { 
+		& .howbuy__wrap {
 			.flex();
-			.cols(15);
-			justify-content: space-between;
 
-			@media @m {
-				.cols(16);
-			}
-
-			& .howbuy__item {
-				.cols(7);
-				.flex(nowrap);
+			& ol {
+				.flex();
+				.cols(8);
 				justify-content: space-between;
-				margin-bottom: 60px;
+				flex-direction: column;
+				list-style: none;
+				counter-reset: my-awesome-counter;
 
-				@media @t {
-					.cols(16);
-					margin-bottom: 30px;
-				}
-				@media @m {
-					.cols(16);
-					margin-bottom: 20px;
+				&:nth-child(2) {
+					counter-reset: my-awesome-counter +4;
 				}
 
-				& .howbuy__item_number {
-					.cols(5);
+				& li {
+					counter-increment: my-awesome-counter;
+					font-size: 12pt;
+					margin: 0 0 20px 50px;
+					position: relative;
 
-					& p {
-						font-size: 150pt;
-						line-height: 1em;
-
-						@media @t {
-							text-align: center;
-							font-size: 80pt;
-						}
-						@media @m {
-							font-size: 80pt;
-						}
-					}					
-				}
-
-				& .howbuy__item_content {
-					.cols(11);
-
-					& .howbuy__item_title { 
-
-						& h3 {
-							color: @colorBrown;
-							font-family: @fontGeomBold;
-							font-size: 12pt;
-							text-transform: uppercase;
-							margin-bottom: 20px;
-
-							@media @t {
-								margin-bottom: 10px;
-								font-size: 11pt;
-							}
-							@media @m {
-								margin-bottom: 10px;
-								font-size: 10pt;
-							}
-
-						}
-					}	
-
-					& .howbuy__item_text { 
-
-						& div { 
-
-							& p {
-								font-size: 12pt;
-								
-								@media @t {
-									font-size: 10pt;
-								}
-
-								@media @m {
-									font-size: 9pt;
-								}
-							}
-
-							& ul {
-
-								& li {
-									font-size: 12pt;
-									list-style: none;
-
-									@media @m {
-										font-size: 10pt;
-									}
-								}
-							}
-						}
-					}				
+					&::before {
+						color: @colorRed;
+						content: counter(my-awesome-counter);
+						font-size: 16pt;
+						position: absolute;
+						left: -30px;
+					}
 				}
 			}
 		}
