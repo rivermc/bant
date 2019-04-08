@@ -6,6 +6,7 @@
 & .callback {
 	padding: 155px 0 40px 0;
 	margin: 20px 0 0;
+	position: relative;
 
 	@media @d {
 		padding: 155px 0 32px 0;
@@ -13,6 +14,15 @@
 	@media @m {
 		padding: 0;
 		margin: 20px 0;
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 50%;
+		background: @colorRedLight;
+		bottom: 0;
 	}
 
 	& .container { 
@@ -23,7 +33,7 @@
 			align-items: center;
 			border: 2px solid @colorRed;
 			border-radius: 5px;
-			background: url('../images/callback/bg.jpg');
+			background: #fff url('../images/callback/bg.jpg');
 			background-repeat: no-repeat;
 			background-position: right bottom;
 			position: relative;

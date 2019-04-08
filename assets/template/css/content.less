@@ -1,0 +1,66 @@
+//-------------------------------------------------------------------------//
+// Content block
+//-------------------------------------------------------------------------//
+
+& .content__block {
+	padding: 70px 0;
+	margin: 20px 0;
+
+	& .container {
+
+		& .content__block_title {
+
+			& h2 {
+				font-family: @fontGeomBold;
+				font-size: 16pt;
+				text-transform: uppercase;
+				text-align: center;
+			}
+		}
+	}
+
+	& .content__block_img {
+		position: relative;
+		top: 100px;
+
+		& img {
+			width: 100%;
+
+		}
+	}
+
+	& .content__block_text {
+		background: url('../images/content/bg.jpg');
+		background-repeat: no-repeat;
+		background-position: bottom;
+		padding: 140px 0 100px;
+
+		& .container{
+
+			& .text_wrap {
+				.flex();
+				justify-content: space-between;
+				align-items: center;
+
+				& .wrap_left {
+					.cols(8);
+
+					& p {
+						color: @colorWhite;
+						font-size: 12pt;
+						margin-bottom: 10px;
+					}
+				}
+
+				& .wrap_right {
+					.cols(8);
+					text-align: center;
+
+					& img {
+
+					}
+				}
+			}
+		}
+	}
+}
