@@ -6,15 +6,43 @@
 	padding: 70px 0;
 	margin: 20px 0;
 
+	&.mini {
+		margin: 0;
+		padding: 0;
+
+		& .content__block_text {
+			padding: 30px 0;
+		}
+	}
+
 	& .container {
+
+		& ul.breadcrumb {
+			.flex();
+			margin-bottom: 30px;
+
+			& li {
+				color: @colorWhite;
+				font-size: 10.4pt;
+
+				& a {
+					color: @colorWhite;
+				}
+			}
+
+			& li.active {
+
+			}
+		}
+
 
 		& .content__block_title {
 
 			& h2 {
 				font-family: @fontGeomBold;
+				color: @colorWhite;
 				font-size: 16pt;
 				text-transform: uppercase;
-				text-align: center;
 			}
 		}
 	}
