@@ -50,7 +50,7 @@
 				align-items: center;
 
 				& .wrap_left {
-					.cols(10);
+					.cols(9);
 
 					& p {
 						color: @colorWhite;
@@ -60,7 +60,7 @@
 				}
 
 				& .wrap_right {
-					.cols(6);
+					.cols(7);
 					text-align: center;
 
 					& img {
@@ -81,7 +81,7 @@
 				align-items: center;
 
 				& .text_wrap_left {
-					.cols(10);
+					.cols(8);
 
 					& h2 {
 						font-family: @fontGeomBold;
@@ -117,15 +117,17 @@
 
 									& svg {
 										& path {
-											fill: @colorRed;
+											fill: @colorBlack;
 										}
 									}
 								}
 
 								& svg {
+									min-width: 35px;
 
 									& path {
 										.animation();
+										fill: @colorRed;
 									}
 								}
 							}
@@ -134,10 +136,10 @@
 				}
 
 				& .text_wrap_right {
-					.cols(6);
+					.cols(8);
 
 					& img {
-
+						margin-bottom: -4px;
 					}
 				}
 			}
