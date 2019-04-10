@@ -36,16 +36,18 @@
 
       & a {
         .animation();
-        background: @colorBrown;
+        background: @colorRed;
         color: @colorWhite;
-        padding: 7px 15px 5px;
-        display: table;
-        margin: 0 auto;
-        font-size: 10pt;
+        padding: 10px 25px;
+        font-size: 12pt;
+        text-align: center;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        cursor: pointer;
 
         &:hover {
           background: @colorBlack;
-          color: @colorBrown;
         }
 
         @media @d {

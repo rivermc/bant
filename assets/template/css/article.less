@@ -1,41 +1,93 @@
-//-------------------------------------------------------------------------//
-// Article // template/article.html //
-//-------------------------------------------------------------------------//
+& .article__block {
 
-.article {
-  padding: 40px 0;
-  
   & .container {
-    
-    & .article__wrap {
-      
-      & h1, h2 {
-        text-transform: uppercase;
-        font-size: 19pt;
-        letter-spacing: 1px;
-        font-weight: 100;
-        margin: 20px 0;
 
-        @media @m {
-          font-size: 12pt;
+    & ul.breadcrumb {
+
+      & li {
+        color: @colorGrayDark;
+
+        & a {
+          color: @colorGrayDark;
+
         }
       }
-      
-      & h2 {
+
+      & li.active {
+
+      }
+    }
+
+    & .article__block_title {
+
+      & h1 {
+        font-family: @fontGeomBold;
+        color: @colorRed;
         font-size: 16pt;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+
       }
-      
-      & p {
-        font-size: 12pt;
-        margin-bottom: 10px;
-        
+    }
+
+    & .article__block_items {
+
+      & .rows {
+        .flex();
+        justify-content: space-between;
+
+        & .article__teaser {
+          .cols(3.95);
+          border: 1px solid @colorGray;
+          margin-bottom: 20px;
+
+          & .article__teaser_img {
+            height: 290px;
+            overflow: hidden;
+
+            & a {
+
+              &:hover {
+
+                & img {
+                  transform: scale(1.5);
+                }
+              }
+
+              & img {
+                .animation(3s);
+                min-height: 290px;
+                width: 100%;
+
+              }
+            }
+          }
+
+          & .article__teaser_title {
+
+            & a {
+              .animation();
+              color: @colorBlack;
+
+              &:hover {
+                color: @colorRed;
+              }
+
+              & h2 {
+                font-family: @fontGeom;
+                font-size: 13.4pt;
+                padding: 20px;
+              }
+            }
+          }
+        }
       }
-      
-      & a {
-        color: @colorBlack;
-        font-size: 12pt;
-        margin-bottom: 10px;
-        
+
+      & .pagination {
+
+        & ul.pagination {
+
+        }
       }
     }
   }
