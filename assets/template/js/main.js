@@ -183,9 +183,6 @@ $("a.scrolling, .catalog-scroll-link a").click(function(e) {
 
 
 
- 
-
-
 
 });
 
