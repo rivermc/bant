@@ -2,6 +2,30 @@
 //-------------------------------------------------------------------------//
 // Pagination //
 //-------------------------------------------------------------------------//
+& .pagination_more {
+  margin: 20px 0;
+
+  .btn-more {
+    .animation();
+    background: @colorRed;
+    color: @colorWhite;
+    padding: 10px 25px;
+    font-size: 12pt;
+    text-align: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 0;
+    width: auto;
+    margin: 0 auto;
+    display: table;
+
+    &:hover {
+      background: @colorBlack;
+    }
+  }
+}
 
 & .pagination {
   .flex();

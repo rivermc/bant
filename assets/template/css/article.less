@@ -9,7 +9,6 @@
 
         & a {
           color: @colorGrayDark;
-
         }
       }
 
@@ -26,67 +25,61 @@
         font-size: 16pt;
         text-transform: uppercase;
         margin-bottom: 30px;
-
       }
     }
+  }
+}
 
-    & .article__block_items {
+& .article__block_items {
 
-      & .rows {
-        .flex();
-        justify-content: space-between;
+  & .rows {
+    .flex();
+    justify-content: space-between;
 
-        & .article__teaser {
-          .cols(3.95);
-          border: 1px solid @colorGray;
-          margin-bottom: 20px;
+    & .article__teaser {
+      .cols(3.95);
+      border: 1px solid @colorGray;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      overflow: hidden;
 
-          & .article__teaser_img {
-            height: 290px;
-            overflow: hidden;
+      & .article__teaser_img {
+        height: 290px;
+        overflow: hidden;
 
-            & a {
+        & a {
 
-              &:hover {
+          &:hover {
 
-                & img {
-                  transform: scale(1.5);
-                }
-              }
-
-              & img {
-                .animation(3s);
-                min-height: 290px;
-                width: 100%;
-
-              }
+            & img {
+              transform: scale(1.5);
             }
           }
 
-          & .article__teaser_title {
+          & img {
+            .animation(3s);
+            min-height: 290px;
+            width: 100%;
 
-            & a {
-              .animation();
-              color: @colorBlack;
-
-              &:hover {
-                color: @colorRed;
-              }
-
-              & h2 {
-                font-family: @fontGeom;
-                font-size: 13.4pt;
-                padding: 20px;
-              }
-            }
           }
         }
       }
 
-      & .pagination {
+      & .article__teaser_title {
 
-        & ul.pagination {
+        & a {
+          .animation();
+          color: @colorBlack;
 
+          &:hover {
+            color: @colorRed;
+          }
+
+          & h2 {
+            font-weight: 100;
+            font-size: 13.4pt;
+            padding: 20px;
+          }
         }
       }
     }

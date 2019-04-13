@@ -90,7 +90,7 @@ footer {
 						display: block;
 					}
 
-					& p {
+					& .popup_callback {
 						.animation();
 						background: @colorRed;
 						color: @colorWhite;
@@ -101,6 +101,8 @@ footer {
 						-moz-border-radius: 5px;
 						border-radius: 5px;
 						cursor: pointer;
+						border: 0;
+						width: 100%;
 
 						&:hover {
 							background: @colorBlack;
@@ -110,7 +112,7 @@ footer {
 
 				& .footer__right_social {
 					.flex();
-					justify-content: space-between;
+					justify-content: space-around;
 
 					& p {
 						.cols(16);

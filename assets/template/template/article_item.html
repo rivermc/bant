@@ -1,12 +1,22 @@
 [[$StartPage]]
 [[$Header]]
 <main>
-    <div class="article__block">
+    <div class="article__block_item">
         <div class="container">
             [[$Crumbs]]
-            <div class="article__block_title">
-                <h1>[[*pagetitle]]</h1>
+            <div class="article__block_item_title">
+                <h2>[[#[[*parent]].pagetitle]]</h2>
             </div>
+            <div class="article__block_item_img">
+                <img src="[[*Article_img_big]]" alt="">
+            </div>
+            <div class="article__block_item_text">
+                <h1>[[*pagetitle]]</h1>
+                [[*content]]
+            </div>
+        </div>
+        <div class="article__block_items">
+            [[$ArticleOther]]
         </div>
     </div>
 </main>

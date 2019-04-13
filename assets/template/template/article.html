@@ -8,26 +8,17 @@
                 <h1>[[*pagetitle]]</h1>
             </div>
             <div class="article__block_items" id="pdopage">
+                [[!+page.nav]]
                 <div class="rows">
                     [[!pdoPage?
-                        &parents=`166`
+                        &parents=`[[*id]]`
                         &limit=`12`
-                        &ajaxMode=`default`
+                        &ajaxMode=`button`
+                        &ajaxTplMore = `@INLINE <div class="pagination_more"><button class="btn btn-default btn-more">Показать еще</button></div>`
                         &tpl=`ArticleTeaser`
                         &includeTVs=`Article_img_small`
-                        &tplPageWrapper = `@INLINE <div class="pagination"><ul>[[+first]][[+prev]][[+pages]][[+next]][[+last]]</ul></div>`
-                        &tplPageFirst = `@INLINE <li class="control prev first"><a class="nopreload" href="[[+href]]">Первая</a></li>`
-                        &tplPageLast = `@INLINE <li class="control next last"><a  class="nopreload" href="[[+href]]">Последняя</a></li>`
-                        &tplPage = `@INLINE <li><a  class="nopreload" href="[[+href]]">[[+pageNo]]</a></li>`
-                        &tplPageActive = `@INLINE <li class="active"><a  class="nopreload" href="[[+href]]">[[+pageNo]]</a></li>`
-                        &tplPagePrev = `@INLINE <li class="control prev"><a class="nopreload" href="[[+href]]">Назад</a></li>`
-                        &tplPageNext = `@INLINE <li class="control next"><a  class="nopreload" href="[[+href]]">Вперед</a></li>`
-                        &tplPageNextEmpty = `@INLINE `
-                        &tplPagePrevEmpty = `@INLINE `
-                        &tplPageFirstEmpty = `@INLINE `
                     ]]
                 </div>
-                [[!+page.nav]]
             </div>
         </div>
     </div>
