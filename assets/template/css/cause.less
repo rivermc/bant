@@ -1,0 +1,53 @@
+
+
+& .cause {
+
+  & .container {
+
+    & .cause__title {
+
+      & h2 {
+        color: @colorRed;
+        text-align: center;
+      }
+    }
+
+    & .cause__subtitle {
+
+      & p {
+        text-align: center;
+
+        & br {
+
+        }
+      }
+    }
+
+    & .cause__block {
+      .flex();
+      justify-content: space-between;
+
+      & .cause__block_item {
+        .cols(8);
+        .flex();
+        justify-content: space-between;
+        padding: 20px;
+
+        & img {
+
+        }
+
+        & .cause__block_item_text {
+
+          & h3 {
+            color: @colorRed;
+          }
+
+          & p {
+
+          }
+        }
+      }
+    }
+  }
+}

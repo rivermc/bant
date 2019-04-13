@@ -52,26 +52,26 @@ $(document).ready(function(){
   /* Events */
   /* ----------------------------------------------------------------------- */
 
-  $(document).on('click', '.callback button', function(e){
+  $('.callback button, .callback_b2b button').click(function(e){
     e.preventDefault();
-    var FormId = $(this).parent().attr('id');
-    var inputs = $(this).parent().find('input');
+    var FormId = $(this).parents('form').attr('id');
+    var inputs = $(this).parents('form').find('input');
     var test = true;
     
     $(inputs).each(function(index, item) {
-      if ($(item).attr('name') == 'email') {
-        var value = $(item).val();
-        test = isEmail(value);
+      var inputName = $(item).attr('name');
+      if ( inputName == 'email') {
+        var valueInputEmail = $(item).val();
+        test = isEmail(valueInputEmail);
       }
-      else if ($(item).attr('name') == 'phone') {
-        var value = $(item).val();
-        test = isPhone(value);        
+      else if (inputName == 'phone') {
+        var valueInputPhone = $(item).val();
+        test = isPhone(valueInputPhone);
       }
       if (test == false) {
         $('.callback__form' + ' .callback__form_input_' + $(item).attr('name')).addClass('shake').delay(800).queue(function(next){ $('.callback__form .callback__form_input_' + $(item).attr('name')).removeClass('shake');  next(); });
       }
     });
-
     if (test == true) {
       sendForm(FormId);
     }

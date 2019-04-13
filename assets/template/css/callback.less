@@ -1,7 +1,21 @@
-//-------------------------------------------------------------------------//
-		// Advantages //
-//-------------------------------------------------------------------------//
+& .form__callback_form-group {
+	position: relative;
 
+	& label.form__group_label {
+		.animation(0.1s);
+		position: absolute;
+		left: 10px;
+		top: 10px;
+		z-index: 10;
+	}
+
+	&.focused {
+
+		& .form__group_label {
+			transform: translateY(-2em);
+		}
+	}
+}
 
 & .callback {
 	padding: 155px 0 40px 0;
@@ -101,30 +115,11 @@
 
 					& .form__callback_form-group {
 						.cols(8);
-			  			position:relative;
-			  			margin: 10px 0;
-
-			  			@media @t, @m {
-			  				margin: 0;
-			  			}
+						margin: 10px 0;
 
 						& label.form__group_label {
-							.animation(0.1s);
 							color: @colorBlack;
-							position: absolute;
-							left: 10px;
-							top: 10px;
-							z-index: 10;
 							font-size: 12pt;
-
-							@media @t {
-								font-size: 12pt;
-							}
-							@media @m {
-								top: 25px;
-    							font-size: 10pt;
-							}
-
 						}
 
 						&.focused {
@@ -132,11 +127,6 @@
 							& .form__group_label {
 								color: @colorRed;
 								font-size: 11pt;
-								transform: translateY(-200%);
-
-								@media @t {
-									font-size: 11pt;
-								}
 							}
 						}
 
@@ -148,7 +138,7 @@
 							margin: 10px 0;
 							padding: 0 10px;
 							font-size: 12pt;
-							
+
 							&:-internal-autofill-selected {
 								background: @colorWhite;
 							}

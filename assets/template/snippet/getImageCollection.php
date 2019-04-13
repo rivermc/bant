@@ -1,17 +1,13 @@
 <?php
-$inputVal=trim($_POST["inputVal"]);
-$inputVal=strip_tags($inputVal);
-$inputName=trim($_POST["inputName"]);
-$inputName=strip_tags($inputName);
-
-if ($inputName != '') {
-    $dir    = './assets/template/images/properties/upholdery/'. $inputVal;
+$dir = './assets/template/images/clients/';
     $imagesCollection = scandir($dir);
     $removeDotter = array_shift($imagesCollection);
     $removeDoubleDotter = array_shift($imagesCollection);
     $imagesCollection = json_encode($imagesCollection);
-    return $imagesCollection;
-}
-else {
-    return 0;
-}
+    $imagesCollection = str_replace('[', '', $imagesCollection);
+    $imagesCollection = str_replace('"', '', $imagesCollection);
+    $imagesCollection = str_replace(']', '', $imagesCollection);
+    $imagesCollection = explode(',',$imagesCollection);
+    foreach ($imagesCollection as $value) {
+      echo '<img src="' . $dir . $value . '">';
+    }

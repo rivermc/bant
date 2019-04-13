@@ -1,0 +1,55 @@
+& .callback_b2b {
+  background: @colorRedLight;
+  padding: 40px 0;
+
+  & .container {
+
+    & .callback__wrap {
+
+      & .callback__form_b2b_block {
+
+        & h2 {
+          margin-bottom: 25px;
+          text-align: center;
+
+        }
+
+        & .form__callback_error {
+
+        }
+
+        & .callback__form_b2b {
+          .flex();
+          justify-content: space-between;
+
+          & .form__callback_form-group {
+            .cols(5);
+
+            & label.form__group_label {
+              color: @colorGrayDark;
+              font-size: 10pt;
+              top: 13px;
+            }
+
+            & input.callback__form_input {
+              background: @colorWhite;
+              border: 1px solid @colorGrayDark;
+              border-radius: 5px;
+              min-height: 34px;
+              width: 100%;
+            }
+
+            & button {
+              min-height: 34px;
+            }
+
+            & p {
+              margin-top: 30px;
+
+            }
+          }
+        }
+      }
+    }
+  }
+}

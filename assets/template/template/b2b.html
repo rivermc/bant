@@ -1,0 +1,32 @@
+[[$StartPage]]
+[[$Header]]
+<main>
+    <div class="b2b">
+        <div class="container">
+            <div class="b2b_title">
+                <h1>[[*longtitle]]</h1>
+            </div>
+        </div>
+        [[$Callback_b2b?
+            &title = `Получить индивидуальное предложение, учитывая бюджет и Ваши пожелания`
+            &count = `0`
+        ]]
+        [[$Cause]]
+        <div class="clients">
+            <div class="container">
+                <div class="b2b__clients_title">
+                    <h2 class="h1">Наши клиенты</h2>
+                </div>
+                <div class="b2b__clients_block">
+                    [[!GetImageCollection]]
+                </div>
+            </div>
+        </div>
+        [[$Callback_b2b?
+            &title = `Уникальные корпоративные букеты <br> с быстрой доставкой по СПб от 950 руб/шт`
+            &count = `1`
+        ]]
+    </div>
+</main>
+[[$Footer]]
+[[$StopPage]]
