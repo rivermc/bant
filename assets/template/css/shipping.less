@@ -1,0 +1,152 @@
+& .shipping__block {
+  .flex();
+  justify-content: space-between;
+  align-items: center;
+
+  & .container {
+
+    & ul.breadcrumb {
+
+      & li {
+        color: @colorGrayDark;
+
+        & a {
+          color: @colorGrayDark;
+        }
+      }
+
+      & li.active {
+
+      }
+    }
+
+    & .shipping__block_title {
+
+      & h1 {
+        font-family: @fontGeomBold;
+        color: @colorRed;
+        font-size: 16pt;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+    }
+
+    & .shipping__block_content, .shipping__block_content_plus {
+      margin-bottom: 30px;
+
+      & .h1 {
+        font-family: @fontGeomBold;
+        color: @colorRed;
+        font-size: 16pt;
+        text-transform: uppercase;
+        margin-top: 30px;
+      }
+
+
+      & h2, h3 {
+        font-family: @fontGeomBold;
+        font-size: 13.4pt;
+        margin: 20px 0;
+
+      }
+
+      & a {
+        color: @colorRed;
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      & p {
+        font-size: 12pt;
+        margin-bottom: 10px;
+
+      }
+
+      & ol, ul {
+        margin-left: 20px;
+
+        & li {
+          font-size: 12pt;
+          margin-bottom: 20px;
+        }
+      }
+
+      & ul {
+        & li {
+          color: @colorRed;
+          list-style-type: disc;
+        }
+      }
+
+      & ol {
+        & li {
+          list-style-type: decimal;
+        }
+      }
+    }
+
+    & .shipping__block_content_plus {
+      .cols(11);
+      margin: 60px 0;
+
+      & p {
+        margin: 0;
+      }
+    }
+  }
+
+  & .zone__block {
+    .flex();
+    background: @colorRedLight;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    min-height: 520px;
+    width: 100%;
+
+    & .container {
+
+      & .zone__block_text {
+        .cols(8);
+        padding: 20px 20px 20px 0;
+
+        & h2 {
+          font-family: @fontGeomBold;
+          font-size: 13.4pt;
+          margin-bottom: 20px;
+        }
+
+        & p {
+          font-size: 12pt;
+          margin-bottom: 10px;
+        }
+
+        & ol, ul {
+          margin-left: 20px;
+
+          & li {
+            font-size: 12pt;
+            margin-bottom: 20px;
+            list-style-type: disc;
+          }
+        }
+      }
+    }
+
+    & .zone__block_map {
+      .cols(8);
+      position: absolute;
+      right: 0;
+      height: 100%;
+
+      & img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
