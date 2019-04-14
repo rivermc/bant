@@ -78,3 +78,19 @@ ul, ol {
 		margin-bottom: 10px;
 	}
 }
+
+button, .button {
+	.animation();
+	background: @colorRed;
+	color: @colorWhite;
+	padding: 6px 25px;
+	font-size: 12pt;
+	text-align: center;
+	border-radius: 5px;
+	cursor: pointer;
+	border: 0;
+
+	&:hover {
+		background: @colorBlack;
+	}
+}
