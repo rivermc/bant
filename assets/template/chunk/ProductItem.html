@@ -54,30 +54,48 @@
                     <input type="hidden" name="id" value="[[*id]]">
                     <div class="price_block">
                         <div class="product__item_price">
-                            <p class="product_price_wrap">Цена: <span id="price">[[+price]]</span> руб.</p>
+                            <p class="product_price_wrap"><span id="price">[[+price]]</span> руб.</p>
                         </div>
                         <div class="product__item_button">
                             <button type="submit" class="btn btn-default" name="ms2_action" value="cart/add">Купить</button>
                         </div>
                     </div>
-                    <div class="shipping_block">
-                        <p>Доставка</p>
-                        <label class="button" for="shipping_radio_sam">Самовывоз</label>
-                        <input type="radio" id="shipping_radio_sam" value="Самовывоз" name="shipping">
-                        <label class="button" for="shipping_radio_courier">Курьером</label>
-                        <input type="radio" id="shipping_radio_courier" value="Курьером" name="shipping">
-                    </div>
                     <div class="pay_block">
                         <label for="pay_radio_visa">Visa</label>
-                        <input type="radio" id="pay_radio_visa" value="Visa" name="pay">
+                        <input type="radio" id="pay_radio_visa" value="Visa" name="options[pay]">
                         <label for="pay_radio_mastercard">MasterCard</label>
-                        <input type="radio" id="pay_radio_mastercard" value="MasterCard" name="pay">
+                        <input type="radio" id="pay_radio_mastercard" value="MasterCard" name="options[pay]">
                         <label for="pay_radio_paypal">PayPal</label>
-                        <input type="radio" id="pay_radio_paypal" value="PayPal" name="pay">
+                        <input type="radio" id="pay_radio_paypal" value="PayPal" name="options[pay]">
                         <label for="pay_radio_yamoney">YaMoney</label>
-                        <input type="radio" id="pay_radio_yamoney" value="YaMoney" name="pay">
+                        <input type="radio" id="pay_radio_yamoney" value="YaMoney" name="options[pay]">
                     </div>
                 </form>
+                <div class="shipping_block">
+                    <p>Доставка</p>
+                    <button class="shipping_btn">Самовывоз</button>
+                    <button class="shipping_btn">Курьером</button>
+                    <div class="shipping_item_text">
+                        <div class="shipping_text_1 shipping_text">
+                            <p>Наши магазины в Санкт-Петербурге:</p>
+                            <p>улица Благодатная, 30 (м. Электросила)</p>
+                            <p>улица Фурштатская, 46Б (м. Чернышевская)</p>
+                        </div>
+                        <div class="shipping_text_2 shipping_text">
+                            <h2>Зона 1</h2>
+                            <ul>
+                                <li>Доставка по Санкт-Петербургу (с 10:00 до 23:00) - 400 рублей (на период 7-8 марта: 500 рублей);</li>
+                                <li>При заказе букета от 6000 рублей - доставка Бесплатно;</li>
+                                <li>Ночная доставка (с 23:00 до 10:00) - 700 рублей.</li>
+                            </ul>
+                            <h2>Зона 2</h2>
+                            <ul>
+                                <li>Дальние расстояния/пригород- 400р (на период 7-8 марта: 500 рублей) + 30 руб/км (мин. 100руб) от "Зоны 1", точную сумму уточняйте у наших менеджеров +7 (812) 967-27-62;</li>
+                                <li>Ночная доставка (с 23:00 до 10:00) - 700 рублей + 30 руб/км (мин. 150руб) от "Зоны 1", точную сумму уточняйте у наших менеджеров +7 (812) 967-27-62;</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 <div class="product__item_content">
                     [[*content]]
                 </div>

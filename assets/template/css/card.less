@@ -74,7 +74,6 @@
 
                     .product__item_instruction_popup {
 
-
                       & .instruction_popup {
                         .animation();
                         background: @colorWhite;
@@ -146,14 +145,65 @@
                       }
                     }
                   }
-                  
-                  & .shipping_block, .pay_block {
-                    
-                    & label {
-                      padding: 10px 25px;
+                }
+
+                & .shipping_block, .pay_block {
+                  .flex();
+                  align-items: center;
+
+                  & > p {
+                    .cols(16);
+                  }
+
+                  & .shipping_btn {
+                    background: @colorWhite;
+                    border: 1px solid @colorRed;
+                    color: @colorBlack;
+                    margin-right: 10px;
+
+                    &.active {
+                      background: @colorRed;
+                      color: @colorWhite;
+                      border: 1px solid transparent;
                     }
-                    & input {
+
+                    &:hover {
+                      background: @colorRed;
+                      color: @colorWhite;
+                      border: 1px solid transparent;
+                    }
+                  }
+
+                  & .shipping_item_text {
+                    .cols(16);
+
+                    & .shipping_text {
+                      background: @colorWhite;
+                      box-shadow: 5px 5px 20px -10px @colorBlack;
+                      width: 100%;
+                      text-align: left;
+                      padding: 20px;
+                      margin: 20px 0;
                       display: none;
+                      position: relative;
+
+                      &:nth-child(2) {
+                        &:before {
+                          left: 205px;
+                        }
+                      }
+
+                      &:before {
+                        background: @colorWhite;
+                        box-shadow: -6px -6px 20px -8px @colorBlack;
+                        content: '';
+                        position: absolute;
+                        top: -10px;
+                        left: 65px;
+                        width: 20px;
+                        height: 20px;
+                        transform: rotate(45deg);
+                      }
                     }
                   }
                 }

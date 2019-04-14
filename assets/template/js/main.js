@@ -181,8 +181,16 @@ $("a.scrolling, .catalog-scroll-link a").click(function(e) {
     }, 1000);
 });
 
+/* ----------------------------------------------------------------------- */
+/* Card */
+/* ----------------------------------------------------------------------- */
 
-
+$('.shipping_btn').click(function(){
+    var index = $(this).index();
+    $('.shipping_btn').removeClass('active');
+    $(this).addClass('active');
+    $('.shipping_text').slideUp(400).removeClass('active').eq(index - 1).slideDown(400).addClass('active');
+});
 
 });
 
