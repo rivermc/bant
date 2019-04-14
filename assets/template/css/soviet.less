@@ -1,0 +1,53 @@
+& .soviet {
+  padding: 155px 0 40px 0;
+  margin: 20px 0 0;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: @colorRedLight;
+    bottom: 0;
+  }
+
+  & .container {
+
+    & .soviet__wrap {
+      .flex();
+      .cols(13.6);
+      align-items: center;
+      border: 2px solid @colorRed;
+      border-radius: 5px;
+      background: #fff url('../images/callback/bg.jpg');
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      position: relative;
+      margin: 0 auto;
+      padding: 20px;
+
+      & .soviet__img {
+        .cols(6);
+        .colsOfR(0.5);
+        text-align: center;
+
+        & img {
+
+        }
+      }
+
+      & .soviet__text {
+        .cols(8);
+
+        & p.h1 {
+          color: @colorRed;
+        }
+
+        & p {
+
+        }
+      }
+    }
+  }
+}
