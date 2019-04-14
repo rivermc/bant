@@ -3,6 +3,7 @@
 //-------------------------------------------------------------------------//
 
 & .about__block {
+	.flex();
 
 	& .container {
 
@@ -35,10 +36,11 @@
 	}
 
 	& .about__content_block_text {
+		.cols(16);
 		background: url('../images/content/bg.jpg');
 		background-repeat: no-repeat;
 		background-position: bottom;
-		padding: 30px 0;
+		padding: 0 0 20px 0;
 
 		& .container{
 
@@ -62,7 +64,7 @@
 					text-align: center;
 
 					& img {
-
+						max-height: 330px;
 					}
 				}
 			}
@@ -70,6 +72,7 @@
 	}
 
 	& .about__block_text {
+		.cols(16);
 
 		& .container {
 
@@ -145,6 +148,7 @@
 	}
 
 	& .about__block_author {
+		.cols(16);
 		background: url('../images/about/bg.jpg');
 		background-repeat: no-repeat;
 		background-position: bottom;
