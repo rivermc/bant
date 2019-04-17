@@ -8,21 +8,21 @@ function initShip(coords, address, address2) {
         controls: ['typeSelector', 'fullscreenControl'],
         zoom: 10
     });
-    cityGeocode(address);
-    cityGeocode(address2);
+    cityGeocode(address, 0);
+    cityGeocode(address2, 1);
     
 }
 
-function addPlacemark(coords) {
+function addPlacemark(coords, count, address) {
     myPlacemark = new ymaps.Placemark(coords, {
-        hintContent: 'Собственный значок метки',
-        balloonContent: 'Это красивая метка'
+        hintContent: address,
+        balloonContent: address
     }, {
         // Опции.
         // Необходимо указать данный тип макета.
         iconLayout: 'default#image',
         // Своё изображение иконки метки.
-        iconImageHref: '/assets/template/images/elements/map-icon.png',
+        iconImageHref: '/assets/template/images/elements/map-icon-' + count + '.svg',
         // Размеры метки.
         iconImageSize: [25, 33],
         // Смещение левого верхнего угла иконки относительно
@@ -34,16 +34,16 @@ function addPlacemark(coords) {
     
 }
 
-function cityGeocode(address) {
+function cityGeocode(address, count) {
     ymaps.geocode(address, { //геокодирование адреса
         results: 1
     }).then(function (res) {
         // Выбираем первый результат геокодирования.
         var firstGeoObject = res.geoObjects.get(0);
         // Координаты геообъекта.
-        coords = firstGeoObject.geometry.getCoordinates();
+        var coords = firstGeoObject.geometry.getCoordinates();
         //routeCreate(coords); // вызов функции построения маршрута
-        addPlacemark(coords);
+        addPlacemark(coords, count, address);
     });    
 }
 console.log(typeof ymaps != 'undefined');

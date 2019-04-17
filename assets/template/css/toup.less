@@ -3,9 +3,10 @@
 //-------------------------------------------------------------------------//
 
 .toUp {
+	.animation();
 	position: fixed;
-	bottom: 0;
-    right: 10px;
+	bottom: 20px;
+	right: 20px;
 	cursor: pointer;
 	z-index: 999;
 
@@ -15,22 +16,7 @@
 
 
 	&:hover {
-		& svg {
-
-			& path.toup-arrow {
-				transform: translateX(8px);
-
-			}
-		}
-	}
-
-	& svg {
-
-		& path.toup-arrow {
-			.animation();
-			transform: translateY(50px) translateX(8px);
-
-		}
+		transform: translateY(-10px);
 	}
 }
 
