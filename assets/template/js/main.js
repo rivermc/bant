@@ -153,13 +153,13 @@ $(document).ready(function() {
       callbacks: {
         beforeOpen: function() {
           $('.mfp-bg.mfp-ready').addClass('closed');
-  
+
         },
         open: function() {
           $('html').css('overflow', 'auto');
         },
         close: function() {
-          
+
         }
       }
   });
@@ -192,6 +192,19 @@ $('.shipping_btn').click(function(){
     $('.shipping_text').slideUp(400).removeClass('active').eq(index - 1).slideDown(400).addClass('active');
 });
 
+
+    $('.fotorama').on('fotorama:load fotorama:ready fotorama:showend', function () {
+        $('.fotorama__stage__shaft img').unbind('mouseover');
+        $('.fotorama__stage__shaft .fotorama__active img').okzoom({
+            width: 300,
+            height: 300,
+            scaleWidth: 1000,
+            round: true,
+            background: "#fff",
+            shadow: "0 0 5px #8c003d",
+            border: "1px solid #8c003d"
+        });
+    });
 });
 
 

@@ -57,18 +57,12 @@
                             <p class="product_price_wrap"><span id="price">[[+price]]</span> руб.</p>
                         </div>
                         <div class="product__item_button">
-                            <button type="submit" class="btn btn-default" name="ms2_action" value="cart/add">Купить</button>
+                            <button type="submit" class="buy" name="ms2_action" value="cart/add">Купить</button>
+                            <button type="button" class="fast_buy">Быстрый заказ</button>
                         </div>
-                    </div>
-                    <div class="pay_block">
-                        <label for="pay_radio_visa">Visa</label>
-                        <input type="radio" id="pay_radio_visa" value="Visa" name="options[pay]">
-                        <label for="pay_radio_mastercard">MasterCard</label>
-                        <input type="radio" id="pay_radio_mastercard" value="MasterCard" name="options[pay]">
-                        <label for="pay_radio_paypal">PayPal</label>
-                        <input type="radio" id="pay_radio_paypal" value="PayPal" name="options[pay]">
-                        <label for="pay_radio_yamoney">YaMoney</label>
-                        <input type="radio" id="pay_radio_yamoney" value="YaMoney" name="options[pay]">
+                        <div class="share">
+                            <p>Подписаться</p>
+                        </div>
                     </div>
                 </form>
                 <div class="shipping_block">
@@ -95,6 +89,12 @@
                             </ul>
                         </div>
                     </div>
+                </div>
+                <div class="pay_block">
+                    <img src="/assets/template/images/card/pay/visa.png" alt="">
+                    <img src="/assets/template/images/card/pay/mastercard.png" alt="">
+                    <img src="/assets/template/images/card/pay/paypal.png" alt="">
+                    <img src="/assets/template/images/card/pay/yamoney.png" alt="">
                 </div>
                 <div class="product__item_content">
                     [[*content]]

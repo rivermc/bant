@@ -126,10 +126,14 @@
 
                   & .price_block {
                     .flex();
+                    align-items: center;
+                    justify-content: space-between;
 
                     & .product__item_price {
 
-                      & p.product_price_wrap {
+                      & .product_price_wrap {
+                        font-family: @fontGeomBold;
+                        font-size: 16pt;
 
                         & #price {
 
@@ -139,16 +143,44 @@
 
                     & .product__item_button {
 
-                      & button.btn {
+                      & button {
 
+                        &.fast_buy {
+                          .animation();
+                          border: 1px solid @colorRed;
+                          color: @colorBlack;
+                          background: transparent;
+
+                          &:hover {
+                            background-color: @colorBlack;
+                            color: @colorWhite;
+                          }
+                        }
                       }
                     }
                   }
                 }
 
-                & .shipping_block, .pay_block {
+                & .pay_block {
                   .flex();
                   align-items: center;
+                  margin: 20px 0;
+
+                  & img {
+                    .animation();
+                    filter: grayscale(100%);
+                    margin-right: 10px;
+
+                    &:hover {
+                      filter: none;
+                    }
+                  }
+                }
+
+                & .shipping_block {
+                  .flex();
+                  align-items: center;
+                  margin: 20px 0;
 
                   & > p {
                     .cols(16);
