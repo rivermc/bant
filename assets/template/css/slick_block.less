@@ -1,0 +1,52 @@
+//-------------------------------------------------------------------------//
+		// Slick Catalog
+//-------------------------------------------------------------------------//
+
+.slick__block {
+
+	&.slick__card {
+		background-color: @colorRedLight;
+		margin: 40px 0;
+		padding: 40px 0 0;
+	}
+
+	&.slick__surprise {
+		background: url('../images/bg/1.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		margin: 40px 0;
+		padding: 40px 0 0;
+	}
+
+	&.slick__main {
+		padding: 20px 0 0;
+
+		&:nth-child(even) {
+			background: url('../images/bg/1.jpg');
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+	}
+
+	& .slick-arrow {
+		background: url('../images/elements/arrow.svg');
+		background-repeat: no-repeat;
+		background-size: contain;
+		padding: 0;
+		height: 36px;
+		position: absolute;
+		top: ~'calc(50% - 80px)';
+		transform: translateY(-50%);
+		z-index: 200;
+		width: 20px;
+		cursor: pointer;
+
+		&.slick-prev {
+			left: -30px;
+			transform: translateY(-50%) rotate(180deg);
+		}
+		&.slick-next {
+			right: -30px;
+		}
+	}
+}

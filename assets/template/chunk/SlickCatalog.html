@@ -1,6 +1,9 @@
-<div class="slick__catalog">
+<div class="slick__block [[+class]]">
     <div class="container">
-        <h2 class="h1">[[+title]]</h2>
+        <div class="slick__catalog_title">
+            [[+class:is=`slick__main`:then=`<h2 class="h1">[[#[[+idParent]].pagetitle]]</h2>`:else=`<h2 class="h1">[[+title]]</h2>`]]
+            [[+class:is=`slick__main`:then=`<a href="[[#[[+idParent]].uri]]" class="button">Смотреть все</a>`]]
+        </div>
         <div class="slick__catalog_wrap">
             [[msProducts?
                 &parents=`[[+idParent]]`

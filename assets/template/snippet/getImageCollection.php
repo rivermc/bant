@@ -1,5 +1,5 @@
 <?php
-$dir = './assets/template/images/clients/';
+$dir = './assets/template/images/' . $url_img;
     $imagesCollection = scandir($dir);
     $removeDotter = array_shift($imagesCollection);
     $removeDoubleDotter = array_shift($imagesCollection);

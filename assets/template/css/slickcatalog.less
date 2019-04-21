@@ -2,36 +2,26 @@
 		// Slick Catalog
 //-------------------------------------------------------------------------//
 
-.slick__catalog {
+.slick__block{
 
 	& .container {
 
-		& h2 {
+		& .slick__catalog_title {
+			.flex();
+			justify-content: space-between;
+			align-items: center;
 
+			& h2 {
+				color: @colorRed;
+			}
+
+			& button {
+
+			}
 		}
 
+
 		& .slick__catalog_wrap {
-
-			& .slick-arrow {
-				background: url('../images/elements/arrow.svg');
-				background-repeat: no-repeat;
-				background-size: contain;
-				padding: 0;
-				height: 36px;
-				position: absolute;
-				top: ~'calc(50% - 80px)';
-				transform: translateY(-50%);
-				z-index: 200;
-				width: 20px;
-
-				&.slick-prev {
-					left: -30px;
-					transform: translateY(-50%) rotate(180deg);
-				}
-				&.slick-next {
-					right: -30px;
-				}
-			}
 
 			& .slick-track {
 				padding-bottom: 80px;
