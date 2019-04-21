@@ -1,0 +1,13 @@
+<div class="slick__catalog">
+    <div class="container">
+        <h2 class="h1">[[+title]]</h2>
+        <div class="slick__catalog_wrap">
+            [[msProducts?
+                &parents=`[[+idParent]]`
+                &tpl=`CatalogItem`
+                &limit=`12`
+                &where=`{"template": "8"}`
+            ]]
+        </div>
+    </div>
+</div>
