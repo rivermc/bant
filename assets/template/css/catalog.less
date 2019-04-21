@@ -75,12 +75,36 @@
       & .msearch2 {
 
         & .catalog_filter {
+          background: @colorRedLight;
+          padding: 20px 0;
 
           & .container {
 
             & .filter {
 
               & #mse2_filters {
+                .flex();
+
+                & .filter_price {
+                  .flex();
+
+                  & .filter_price_top {
+                    .flex();
+
+                    & .prop_title {
+                      .cols(5);
+                    }
+
+                    & .mse2_number_inputs {
+                      .cols(6);
+                    }
+
+                    & .mse2_number_slider {
+                      .cols(5);
+                    }
+                  }
+
+                }
 
                 & #mse2_sort {
 
