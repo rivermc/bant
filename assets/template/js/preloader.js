@@ -23,7 +23,7 @@ $(document).ready(function() {
             next();
         });
 
-    }, 200);
+    }, 400);
 
 
     $('.preloader').click(function () {

@@ -183,18 +183,19 @@
 				justify-content: space-between;
 				align-items: center;
 				margin: 20px 0;
+				position: relative;
 
 				& .header__bottom_menu {
 					.cols(12);
 
-					& ul {
+					& > ul {
 						.flex();
 						justify-content: space-between;
 						align-items: center;
 						
-						& li {
+						& > li {
 							
-							& a {
+							& > a {
 								.animation();
 								color: @colorBlack;
 								font-family: @fontGeomBold;
@@ -213,12 +214,123 @@
 							
 							&.active {
 								
-								& a {
+								& > a {
 									color: @colorRed;
 									border: 1px solid @colorRed;									
 								}
 							}
-						}						
+
+							&:hover {
+
+								& .submenu_wrap {
+									opacity: 1;
+									visibility: visible;
+
+									& ul {
+									}
+								}
+							}
+
+							& .submenu_wrap {
+								.flex();
+								.animation(0.2s);
+								background: @colorWhite;
+								box-shadow: 10px 10px 30px -10px @colorBlack;
+								justify-content: space-between;
+								opacity: 0;
+								visibility: hidden;
+								position: absolute;
+								width: 60%;
+								left: 50%;
+								transform: translateX(-50%);
+								top: 40px;
+								overflow: hidden;
+								transition-delay: 0.3s;
+								z-index: 100;
+
+								& ul {
+									.cols(11);
+									padding: 20px 0 20px 30px;
+
+									& li {
+										.cols(8);
+										display: inline-block;
+										margin-bottom: 15px;
+
+										& a {
+											.animation();
+											color: @colorBlack;
+											font-size: 10pt;
+											border: 0;
+
+											&:hover {
+												color: @colorRed;
+											}
+										}
+									}
+								}
+
+								& .submenu_item {
+									.cols(5);
+									box-shadow: 0 0 30px -10px @colorBlack;
+									padding: 0 20px 30px;
+									text-align: center;
+
+									&:hover {
+
+										& .submenu__item_img {
+
+											& img {
+												transform: scale(1.4, 1.4);
+											}
+										}
+
+									}
+
+									& .submenu__item_img {
+										overflow: hidden;
+										cursor: pointer;
+										margin: 20px 0;
+
+										& img {
+											.animation(3s, transform);
+										}
+									}
+
+									& .submenu__item_title {
+
+										& a {
+											color: @colorBlack;
+											font-size: 9pt;
+											border: 0;
+										}
+									}
+
+									& .submenu__item_article {
+
+										& p {
+											color: @colorGrayDark;
+											font-size: 9pt;
+										}
+									}
+
+									& .submenu__item_link {
+
+										& a {
+											border: 1px solid @colorRed;
+											color: @colorRed;
+											font-size: 11pt;
+											background: transparent;
+
+											&:hover {
+												background: @colorBlack;
+												color: @colorWhite;
+											}
+										}
+									}
+								}
+							}
+						}
 					}
 				}
 
