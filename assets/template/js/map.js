@@ -46,8 +46,9 @@ function cityGeocode(address, count) {
         addPlacemark(coords, count, address);
     });    
 }
-console.log(typeof ymaps != 'undefined');
+
 if (typeof ymaps != 'undefined') {
-    ymaps.ready(function(){initShip([59.91502533444242,30.29787776978886], $('.contacs_address').first().data('address'), $('.contacs_address').last().data('address'))});
+    var adrs =  $('.contacs_address');
+    ymaps.ready(function(){initShip([59.91502533444242,30.29787776978886], adrs.first().data('address'), adrs.last().data('address'))});
 }
 

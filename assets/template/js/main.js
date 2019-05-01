@@ -110,14 +110,14 @@ function preventDefault(e) {
   if (e.preventDefault)
       e.preventDefault();
   e.returnValue = false;  
-};
+}
 
 function preventDefaultForScrollKeys(e) {
     if (keys[e.keyCode]) {
         preventDefault(e);
         return false;
-    };
-};
+    }
+}
 
 function disableScroll() {
   if (window.addEventListener) // older FF
@@ -126,7 +126,7 @@ function disableScroll() {
   window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
   window.ontouchmove  = preventDefault; // mobile
   document.onkeydown  = preventDefaultForScrollKeys;
-};
+}
 
 function enableScroll() {
     if (window.removeEventListener)
@@ -135,7 +135,7 @@ function enableScroll() {
     window.onwheel = null; 
     window.ontouchmove = null;  
     document.onkeydown = null;  
-};
+}
 
 
 
@@ -203,6 +203,35 @@ $('.zoom').click(function(){
         border: "1px solid #333333"
     });
 });
+
+
+    /* ----------------------------------------------------------------------- */
+    /* Catalog insert Callback */
+    /* ----------------------------------------------------------------------- */
+
+
+    function getCallback() {
+        $.ajax({
+            type:'POST',
+            url:"/assets/template/php/getChunk.php",
+            data:'action=getChunk&chunk=Callback',
+            cache:false,
+            success:function(data) {
+                $('#mse2_results .item_slick_wrap').eq(8).before(data);
+                new Callback();
+            },
+            error: function() {
+                new Callback();
+            }
+        });
+
+    }
+    getCallback();
+
+    $(document).on('mse2_load', function() {
+        getCallback();
+    });
+
 
 });
 

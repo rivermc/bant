@@ -1,4 +1,4 @@
-
+$(document).ready(function() {
 /* ----------------------------------------------------------------------- */
 /* Slick Catalog*/
 /* ----------------------------------------------------------------------- */
@@ -39,7 +39,7 @@ $('.slick__catalog_wrap').slick({
     ]
 });
 */
-
+$('.slick__catalog_wrap .callback').remove();
 $('.slick__catalog_wrap, .review_wrap').slick({
     infinite: true,
     slidesToShow: 4,
@@ -74,4 +74,5 @@ $('.slick__catalog_wrap, .review_wrap').slick({
         // settings: "unslick"
         // instead of a settings object
     ]
+});
 });
