@@ -1,0 +1,84 @@
+
+<form action="[[~[[+id]]]]" method="POST" class="ajax_form_offer">
+    <input type="hidden" name="pagetitle" value="[[+pagetitle:htmlent]]">
+    <input type="hidden" name="id" value="[[+id]]">
+    <input type="hidden" name="href" value="[[~[[+id]]? &scheme=`full`]]">
+    <input type="hidden" name="user" placeholder="">
+    <input type="hidden" name="username" placeholder="">
+
+    <div class="form__callback_form-group">
+        <label class="form__group_label">Ваше имя</label>
+        <input type="text" name="name" class="form_input">
+    </div>
+    <div class="form__callback_form-group">
+        <label class="form__group_label">Email</label>
+        <input type="email" name="email" class="form_input">
+    </div>
+    <div class="form__callback_form-group">
+        <label class="form__group_label">Ваше телефон</label>
+        <input type="text" name="phone" class="form_input">
+    </div>
+    <div class="form__callback_form-group">
+        <label class="form__group_label">Почтовый индекс</label>
+        <input type="text" name="index" class="form_input">
+    </div>
+    <div class="form__callback_form-group">
+        <label class="form__group_label">Область</label>
+        <input type="text" name="region" class="form_input">
+    </div>
+    <div class="form__callback_form-group">
+        <label class="form__group_label">Город</label>
+        <input type="text" name="city" class="form_input">
+    </div>
+    <div class="form__callback_form-group">
+        <label class="form__group_label">Улица</label>
+        <input type="text" name="street" class="form_input">
+    </div>
+    <div class="form__callback_form-group">
+        <label class="form__group_label">Дом</label>
+        <input type="text" name="building" class="form_input">
+    </div>
+    <div class="form__callback_form-group">
+        <label class="form__group_label">Комната</label>
+        <input type="text" name="room" class="form_input">
+    </div>
+    <div class="form__callback_form-group">
+        <label class="form__group_label">Комментарий</label>
+        <input type="text" name="text" class="form_input">
+    </div>
+    <div class="delivery_block">
+        <div class="checkbox">
+            <label class="delivery input_parent">
+                <input type="radio" name="delivery" value="1" id="delivery_1"  class="" checked="checked">
+                <p class="delivery_title">Самовывоз</p>
+            </label>
+        </div>
+        <div class="checkbox">
+            <label class="delivery input_parent">
+                <input type="radio" name="delivery" value="2" id="delivery_2"  class="">
+                <p class="delivery_title">Доставка автотранспортом</p>
+            </label>
+        </div>
+    </div>
+    <div class="payment_block">
+        <div class="checkbox">
+            <label class="payment input_parent">
+                <input type="radio" name="payment" value="1" id="payment_1" checked="">
+                <p class="payment_title">Наличными</p>
+            </label>
+        </div>
+        <div class="checkbox">
+            <label class="payment input_parent">
+                <input type="radio" name="payment" value="3" id="payment_3">
+                <p class="payment_title"> По выставлению счета</p>
+            </label>
+        </div>
+        <div class="checkbox">
+            <label class="payment input_parent">
+                <input type="radio" name="payment" value="4" id="payment_4">
+                <p class="payment_title">Перевод на карту</p>
+            </label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Заказать</button>
+</form>

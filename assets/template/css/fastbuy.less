@@ -1,0 +1,101 @@
+.fast_buy_modal {
+  .animationKey(modalComeIn, 0.4s, ease, 1);
+  background: @colorWhite;
+  box-shadow: 5px 5px 20px -10px @colorBlack;
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+
+  & .ajax_form_offer {
+    .animationKey(modalComeIn, 0.4s, ease, 1);
+    .flex();
+    justify-content: space-around;
+
+    & .form__callback_form-group {
+      .cols(7.5);
+
+      & label.form__group_label {
+        color: @colorBlack;
+        transition: all 0.1s linear;
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        z-index: 10;
+        font-size: 10pt;
+      }
+
+      &.focused {
+
+        & .form__group_label {
+          color: @colorRed;
+          font-size: 11pt;
+          transform: translateY(-1.2em);
+        }
+      }
+
+      & input.form_input {
+        font-family: @fontGeom;
+        border: 0;
+        border-bottom: 2px solid @colorRed;
+        margin: 10px 0;
+        padding: 0 10px;
+        font-size: 12pt;
+
+        &:-internal-autofill-selected {
+          background: @colorWhite;
+        }
+      }
+    }
+
+    & .delivery_block, .payment_block {
+      .cols(16);
+      .flex();
+      justify-content: space-around;
+      margin: 10px 0;
+
+      & input {
+        &[type = radio] {
+          display: none;
+
+          &:checked + p {
+            border-bottom: 2px solid @colorRed;
+          }
+        }
+      }
+      & p {
+        .animation();
+        border-bottom: 2px solid transparent;
+        cursor: pointer;
+        margin: 0;
+      }
+    }
+  }
+}
+
+&.mfp-removing {
+
+  & .fast_buy_modal {
+    .animationKey(modalComeInClose, 0.35s, ease, 1);
+    animation-delay: 0.1s;
+    animation-fill-mode: forwards;
+
+    & .ajax_form_offer {
+      .animationKey(modalComeInClose, 0.4s, ease, 1);
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.mfp-bg {
+
+  &.mfp-ready {
+    .animation();
+  }
+
+  &.closed {
+    opacity: 0;
+  }
+}

@@ -1,4 +1,4 @@
-<div id="msProduct" class="product">
+<div id="msProduct" class="product" data-id="[[*id]]">
     <div class="product__item">
         <div class="product__item_wrap">
             <div class="product__item_left">
@@ -61,13 +61,16 @@
                         </div>
                         <div class="product__item_button">
                             <button type="submit" class="buy" name="ms2_action" value="cart/add">Купить</button>
-                            <button type="button" class="fast_buy">Быстрый заказ</button>
+                            <a href="#fast_buy_modal" class="button nopreload fast_buy_button" data-id="[[*id]]" data-title="[[*pagetitle]]">Быстрый заказ</a>
                         </div>
                         <div class="share">
                             <p>Подписаться</p>
                         </div>
                     </div>
                 </form>
+
+                <div class="fast_buy_callback">
+                </div>
                 <div class="shipping_block">
                     <p>Доставка</p>
                     <button class="shipping_btn">Самовывоз</button>

@@ -139,6 +139,24 @@ function enableScroll() {
 
 
 
+
+
+
+
+
+function getChunk(action, chunk, params, cb) {
+    $.ajax({
+        type:'POST',
+        url:"/assets/template/php/getChunk.php",
+        data:'action=' + action + '&chunk=' + chunk + '&params=' + params,
+        cache:false,
+        success:function(data) {
+            cb(data);
+        }
+    });
+}
+
+
 $(document).ready(function() {
 
   /* ----------------------------------------------------------------------- */
@@ -204,34 +222,24 @@ $('.zoom').click(function(){
     });
 });
 
+/* ----------------------------------------------------------------------- */
+/* Catalog insert Callback */
+/* ----------------------------------------------------------------------- */
 
-    /* ----------------------------------------------------------------------- */
-    /* Catalog insert Callback */
-    /* ----------------------------------------------------------------------- */
+    fast_buy('.fast_buy_button');
 
-
-    function getCallback() {
-        $.ajax({
-            type:'POST',
-            url:"/assets/template/php/getChunk.php",
-            data:'action=getChunk&chunk=Callback',
-            cache:false,
-            success:function(data) {
-                $('#mse2_results .item_slick_wrap').eq(8).before(data);
-                new Callback();
-            },
-            error: function() {
-                new Callback();
-            }
-        });
-
-    }
-    getCallback();
-
-    $(document).on('mse2_load', function() {
-        getCallback();
+    getChunk('getChunk', 'Callback', '',function (data) {
+        $('#mse2_results .item_slick_wrap').eq(8).before(data);
+        new Callback();
     });
 
+    $(document).on('mse2_load', function() {
+        getChunk('getChunk', 'Callback', '',function (data) {
+            $('#mse2_results .item_slick_wrap').eq(8).before(data);
+            new Callback();
+            fast_buy('.fast_buy_button');
+        });
+    });
 
 });
 
