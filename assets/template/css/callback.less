@@ -39,6 +39,14 @@
 		}
 	}
 
+	&.callback_pop {
+		padding: 0;
+
+		&:before {
+			display: none;
+		}
+	}
+
 	&:before {
 		content: '';
 		position: absolute;
@@ -74,6 +82,17 @@
 
 		}
 
+		&.callback_pop__wrap {
+
+			&:before {
+				display: none;
+			}
+
+			& .callback__form_block {
+				.cols(16);
+			}
+		}
+
 		&:before {
 			content: '';
 			width: 390px;
@@ -94,7 +113,7 @@
 			margin-bottom: 60px;
 		}
 
-		& .callback__form {
+		& .callback__form_block {
 			.cols(10);
 			.flex();
 			align-items: center;
@@ -115,7 +134,7 @@
 
 			}
 
-			& #callback__form {
+			& .callback__form {
 				.cols(10);
 				.flex();
 				justify-content: space-between;

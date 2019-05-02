@@ -222,11 +222,39 @@ $('.zoom').click(function(){
     });
 });
 
+
+    /* ----------------------------------------------------------------------- */
+    /* FastBuy init */
+    /* ----------------------------------------------------------------------- */
+
+    fast_buy('.fast_buy_button');
+
+    /* ----------------------------------------------------------------------- */
+    /* Catalog insert Callback */
+    /* ----------------------------------------------------------------------- */
+
+    $('.popup_callback_button').magnificPopup({
+        type: 'inline',
+        preloader: false,
+        removalDelay: 400,
+
+        callbacks:  {
+            beforeOpen: function() {
+            },
+            open: function() {
+                $('body').css({'margin-right': '15px'});
+            },
+            close: function() {
+                $('body').css({'margin-right': '0'});
+            }
+        }
+    });
+
+
 /* ----------------------------------------------------------------------- */
 /* Catalog insert Callback */
 /* ----------------------------------------------------------------------- */
 
-    fast_buy('.fast_buy_button');
 
     getChunk('getChunk', 'Callback', '',function (data) {
         $('#mse2_results .item_slick_wrap').eq(8).before(data);

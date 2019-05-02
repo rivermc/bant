@@ -29,11 +29,11 @@ class Callback {
     if (check == 'true') {
       $('#' + idForm).fadeOut(500).delay(8000).queue(function(next) {
         $('#' + idForm).fadeIn(500);
-        $('.form__callback_error').empty();
+        ('#' + idForm).prev().empty();
         next();
       });
-      setTimeout(function(){
-        $('.form__callback_error').html('<p>Спасибо! Ваша заявка отправлена!</p><p>Наш менеджер свяжется с Вами в ближайшее время</p>');
+      setTimeout(function() {
+        $('#' + idForm).prev().html('<p>Спасибо! Ваша заявка отправлена!</p><p>Наш менеджер свяжется с Вами в ближайшее время</p>');
       },500);
     }
   }
@@ -50,7 +50,7 @@ class Callback {
 
   startSend(e){
     e.preventDefault();
-    var FormId = $(e.currentTarget).parents('form').attr('id');
+    var idForm = $(e.currentTarget).parents('form').attr('id');
     var inputs = $(e.currentTarget).parents('form').find('input');
     var send_check = [];
     var self_this = this;
@@ -68,7 +68,7 @@ class Callback {
         send_check.push(self_this.regex);
       }
       if (self_this.regex === false) {
-        $('.callback__form' + ' .callback__form_input_' + $(item).attr('name')).addClass('shake').delay(800).queue(function(next){ $('.callback__form .callback__form_input_' + $(item).attr('name')).removeClass('shake');  next(); });
+        $('#' + idForm + ' .callback__form_input_' + $(item).attr('name')).addClass('shake').delay(800).queue(function(next){ $('#' + idForm + ' .callback__form_input_' + $(item).attr('name')).removeClass('shake');  next(); });
       }
     });
     send_check.forEach(function(check){
@@ -77,7 +77,7 @@ class Callback {
       }
     });
     if (self_this.regex === true) {
-      this.sendForm(FormId);
+      this.sendForm(idForm);
     }
   }
 

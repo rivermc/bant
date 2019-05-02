@@ -1,5 +1,4 @@
 .fast_buy_modal {
-  .animationKey(modalComeIn, 0.4s, ease, 1);
   background: @colorWhite;
   box-shadow: 5px 5px 20px -10px @colorBlack;
   width: 100%;
@@ -10,7 +9,6 @@
   position: relative;
 
   & .ajax_form_offer {
-    .animationKey(modalComeIn, 0.4s, ease, 1);
     .flex();
     justify-content: space-around;
 
@@ -72,30 +70,5 @@
         margin: 0;
       }
     }
-  }
-}
-
-&.mfp-removing {
-
-  & .fast_buy_modal {
-    .animationKey(modalComeInClose, 0.35s, ease, 1);
-    animation-delay: 0.1s;
-    animation-fill-mode: forwards;
-
-    & .ajax_form_offer {
-      .animationKey(modalComeInClose, 0.4s, ease, 1);
-      animation-fill-mode: forwards;
-    }
-  }
-}
-
-.mfp-bg {
-
-  &.mfp-ready {
-    .animation();
-  }
-
-  &.closed {
-    opacity: 0;
   }
 }

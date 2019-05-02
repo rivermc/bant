@@ -1,0 +1,40 @@
+.popoup_modal {
+  .animationKey(modalComeIn, 0.4s, ease, 1);
+  background: @colorWhite;
+  box-shadow: 5px 5px 20px -10px @colorBlack;
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  & > div {
+    .animationKey(modalComeIn, 0.4s, ease, 1);
+  }
+}
+
+
+&.mfp-removing {
+
+  & .fast_buy_modal {
+    .animationKey(modalComeInClose, 0.35s, ease, 1);
+    animation-delay: 0.1s;
+    animation-fill-mode: forwards;
+
+    & .ajax_form_offer {
+      .animationKey(modalComeInClose, 0.4s, ease, 1);
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.mfp-bg {
+
+  &.mfp-ready {
+    .animation();
+  }
+
+  &.closed {
+    opacity: 0;
+  }
+}
