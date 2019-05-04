@@ -2,11 +2,11 @@
     <div class="fastbuy_form">
         <form action="[[~[[+id]]]]" method="POST" class="ajax_form_offer">
             <p class="h3">Данные заказа</p>
-            <input type="hidden" name="pagetitle" value="[[+pagetitle:htmlent]]">
-            <input type="hidden" name="id" value="[[+id]]">
-            <input type="hidden" name="href" value="[[~[[+id]]? &scheme=`full`]]">
-            <input type="hidden" name="user" placeholder="">
-            <input type="hidden" name="username" placeholder="">
+            <input type="text" hidden  name="pagetitle" value="[[+pagetitle:htmlent]]">
+            <input type="text" hidden  name="id" value="[[+id]]">
+            <input type="text" hidden  name="href" value="[[~[[+id]]? &scheme=`full`]]">
+            <input type="text" hidden  name="user" placeholder="">
+            <input type="text" hidden  name="username" placeholder="">
 
             <div class="form__callback_form-group">
                 <label class="form__group_label">Ваше имя</label>
@@ -94,7 +94,7 @@
             </a>
         </div>
         <div class="fastbuy_product_title">
-            <h2 class="h1">[[+pagetitle]]</h2>
+            <h2>[[+pagetitle]]</h2>
             <p>Артикул: [[#[[+id]].article]]</p>
         </div>
     </div>
