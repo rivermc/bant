@@ -1,73 +1,137 @@
 .fast_buy_modal {
-  background: @colorWhite;
-  box-shadow: 5px 5px 20px -10px @colorBlack;
-  width: 100%;
-  text-align: left;
-  padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
+  padding: 0 !important;
 
-  & .ajax_form_offer {
+  & .fastbuy {
     .flex();
-    justify-content: space-around;
+    justify-content: space-between;
 
-    & .form__callback_form-group {
-      .cols(7.5);
+    & .fastbuy_product {
+      .cols(5);
+      box-shadow: 0 0 30px -10px @colorBlack;
+      padding: 20px 20px 60px;
 
-      & label.form__group_label {
-        color: @colorBlack;
-        transition: all 0.1s linear;
-        position: absolute;
-        left: 10px;
-        top: 15px;
-        z-index: 10;
-        font-size: 10pt;
-      }
+      & .fastbuy_product_image {
+        & img {
 
-      &.focused {
-
-        & .form__group_label {
-          color: @colorRed;
-          font-size: 11pt;
-          transform: translateY(-1.2em);
         }
       }
+      & .fastbuy_product_title {
+        & h2 {
+          margin: 10px 0 0;
 
-      & input.form_input {
-        font-family: @fontGeom;
-        border: 0;
-        border-bottom: 2px solid @colorRed;
-        margin: 10px 0;
-        padding: 0 10px;
-        font-size: 12pt;
-
-        &:-internal-autofill-selected {
-          background: @colorWhite;
+        }
+        & p {
+          color: @colorGrayDark;
+          font-size: 10pt;
         }
       }
     }
 
-    & .delivery_block, .payment_block {
-      .cols(16);
-      .flex();
-      justify-content: space-around;
-      margin: 10px 0;
+    & .fastbuy_form {
+      .cols(10);
+      padding: 20px 0 0 20px;
 
-      & input {
-        &[type = radio] {
-          display: none;
+      & .h3 {
+        width: 100%;
+        margin: 0 0 10px;
+      }
 
-          &:checked + p {
+      & .ajax_form_offer {
+        .flex();
+        justify-content: space-between;
+
+        & .form__callback_form-group {
+          .cols(7);
+
+          & label.form__group_label {
+            color: @colorBlack;
+            transition: all 0.1s linear;
+            position: absolute;
+            left: 10px;
+            top: 15px;
+            z-index: 10;
+            font-size: 10pt;
+          }
+
+          &.focused {
+
+            & .form__group_label {
+              color: @colorRed;
+              font-size: 11pt;
+              transform: translateY(-1.2em);
+            }
+          }
+
+          & input.form_input {
+            font-family: @fontGeom;
+            border: 0;
             border-bottom: 2px solid @colorRed;
+            margin: 10px 0;
+            padding: 0 10px;
+            font-size: 12pt;
+            width: 100%;
+            background: transparent;
+
+            &:-internal-autofill-selected {
+              background: @colorWhite;
+            }
           }
         }
-      }
-      & p {
-        .animation();
-        border-bottom: 2px solid transparent;
-        cursor: pointer;
-        margin: 0;
+
+        & button {
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+        }
+
+        & .delivery_block, .payment_block {
+          .cols(7);
+          .flex();
+          margin: 10px 0;
+
+          & input {
+            &[type = radio] {
+              display: none;
+
+              &:checked + p {
+
+                &:before {
+                  background: url(../images/elements/arrow.svg);
+                  background-repeat: no-repeat;
+                  background-size: 100% 100%;
+                }
+              }
+            }
+          }
+          & label {
+            & p {
+              .animation();
+              cursor: pointer;
+              margin: 0;
+              font-size: 10pt;
+              margin-bottom: 4px;
+              position: relative;
+              padding-left: 20px;
+
+              &:before {
+                .animation();
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 20px;
+                height: 10px;
+                transform: rotate(90deg);
+                top: 3px;
+              }
+
+              &.h3 {
+                font-size: 11pt;
+                margin: 0 0 10px;
+                padding: 0;
+              }
+            }
+          }
+        }
       }
     }
   }
