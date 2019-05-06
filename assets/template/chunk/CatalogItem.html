@@ -21,7 +21,11 @@
                     <p class="price">[[+price]] <span>руб.</span></p>
                 </div>
                 <div class="main__item_link">
-                    <a class="button" href="[[+uri]]" title='[[+pagetitle]]'>Купить</a>
+                    <form class="ms2_form product__item_form" method="post">
+                        <input type="number" name="count" id="product_price" hidden="hidden" value="1">
+                        <input type="hidden" name="id" value="[[+id]]">
+                        <button type="submit" class="buy" name="ms2_action" value="cart/add">Купить</button>
+                    </form>
                 </div>
                 <div class="main__item_fast_buy">
                     <a class="button nopreload fast_buy_button" href="#fast_buy_modal" title='[[+pagetitle]]' data-id="[[+id]]" data-title="[[+pagetitle]]">Быстрый заказ</a>

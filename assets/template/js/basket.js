@@ -2,22 +2,32 @@
 // basket // chunk/basket.html */
 /* ----------------------------------------------------------------------- */
 
-$(document).ready(function(){
 
-    $('button .count_product').click(function(){
-        var input = $(this).parent().siblings('input');
+function basket_init() {
+    $('button.count_product').unbind('click');
+    $('button.count_product').on('click', function() {
+        var key = $(this).data('id');
+        var input = $('input[data-id=' + key + ']');
         var inputVal = parseInt(input.val());
-        var key = input.data('id');
         var allPrice = $('.product_price[data-id=' + key + ']');
         var productPrice = allPrice.data('price');
         if ($(this).hasClass('plus')) {
-            input.val(inputVal + 1)
+            input.val(inputVal + 1);
+            input.parent().find('p').html(inputVal + 1);
         }
         else {
-            input.val(inputVal - 1)
+            input.val(inputVal - 1);
+            input.parent().find('p').html(inputVal - 1);
         }
-        //input.trigger('change');
         inputVal = parseInt(input.val());
-        allPrice.text(productPrice * inputVal);
+        allPrice.html(productPrice * inputVal);
     });
-});
+
+
+    $('.msCardMini .minicart_button.open').click(function(){
+        $(this).parents('.msCardMini').addClass('active').css('right', '0');
+    });
+    $('.msCardMini .minicart_button.close').click(function(){
+        $(this).parents('.msCardMini').removeClass('active').css('right', '-100%');
+    });
+}

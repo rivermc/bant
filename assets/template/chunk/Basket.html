@@ -55,12 +55,13 @@
                              <form method="post" class="ms2_form form-inline" role="form">
                                     <input type="hidden" name="key" value="{$product.key}"/>
                                     <div class="form-group">
-                                        <input type="number" name="count" value="{$product.count}"
-                                               class="input-sm form-control" data-id="{$product.key}"/>
-                                        <button class="btn btn-default" type="submit" name="ms2_action" value="cart/change">
-                                            <span class="count_product plus">+</span>
-                                            <span class="count_product minus">-</span>
-                                        </button>
+                                        <button class="btn btn-default count_product plus" data-id="{$product.key}" type="submit" name="ms2_action" value="cart/change">+</button>
+                                        <div class="count">
+                                            <input type="number" name="count" value="{$product.count}"
+                                                   class="form-control" data-id="{$product.key}" hidden />
+                                            <p>{$product.count}</p>
+                                        </div>
+                                        <button class="btn btn-default count_product minus" data-id="{$product.key}" type="submit" name="ms2_action" value="cart/change">-</button>
                                     </div>
                                 </form>
                         </div>

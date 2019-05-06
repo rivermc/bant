@@ -142,13 +142,17 @@ function enableScroll() {
 
 
 
+/* ----------------------------------------------------------------------- */
+/* Get Module Function */
+/* ----------------------------------------------------------------------- */
 
 
-function getChunk(action, chunk, params, cb) {
+
+function getModule(action, module, params, cb) {
     $.ajax({
         type:'POST',
-        url:"/assets/template/php/getChunk.php",
-        data:'action=' + action + '&chunk=' + chunk + '&params=' + params,
+        url:"/assets/template/php/getModule.php",
+        data:'action=' + action + '&chunk=' + module + '&params=' + params,
         cache:false,
         success:function(data) {
             cb(data);
@@ -159,7 +163,8 @@ function getChunk(action, chunk, params, cb) {
 
 $(document).ready(function() {
 
-  /* ----------------------------------------------------------------------- */
+
+    /* ----------------------------------------------------------------------- */
   /* Send Form */
   /* ----------------------------------------------------------------------- */
 
@@ -191,36 +196,36 @@ $(document).ready(function() {
 /* ----------------------------------------------------------------------- */
 
 
-$("a.scrolling, .catalog-scroll-link a").click(function(e) {
-  e.preventDefault();
-  var scroll = $(this).attr('href');
-  $('body, html').animate({
-        scrollTop: $(scroll).offset().top
-    }, 1000);
-});
+    $("a.scrolling, .catalog-scroll-link a").click(function(e) {
+      e.preventDefault();
+      var scroll = $(this).attr('href');
+      $('body, html').animate({
+            scrollTop: $(scroll).offset().top
+        }, 1000);
+    });
 
 /* ----------------------------------------------------------------------- */
 /* Card */
 /* ----------------------------------------------------------------------- */
 
-$('.shipping_btn').click(function(){
-    var index = $(this).index();
-    $('.shipping_btn').removeClass('active');
-    $(this).addClass('active');
-    $('.shipping_text').slideUp(400).removeClass('active').eq(index - 1).slideDown(400).addClass('active');
-});
-
-$('.zoom').click(function(){
-    $('.fotorama__stage__shaft img').unbind('mouseover');
-    $('.fotorama__stage__shaft .fotorama__active img').okzoom({
-        width: 300,
-        height: 300,
-        scaleWidth: 1000,
-        round: true,
-        shadow: "0 0 5px #333333",
-        border: "1px solid #333333"
+    $('.shipping_btn').click(function(){
+        var index = $(this).index();
+        $('.shipping_btn').removeClass('active');
+        $(this).addClass('active');
+        $('.shipping_text').slideUp(400).removeClass('active').eq(index - 1).slideDown(400).addClass('active');
     });
-});
+
+    $('.zoom').click(function(){
+        $('.fotorama__stage__shaft img').unbind('mouseover');
+        $('.fotorama__stage__shaft .fotorama__active img').okzoom({
+            width: 300,
+            height: 300,
+            scaleWidth: 1000,
+            round: true,
+            shadow: "0 0 5px #333333",
+            border: "1px solid #333333"
+        });
+    });
 
 
     /* ----------------------------------------------------------------------- */
@@ -256,18 +261,46 @@ $('.zoom').click(function(){
 /* ----------------------------------------------------------------------- */
 
 
-    getChunk('getChunk', 'Callback', '',function (data) {
+    getModule('Chunk', 'Callback', 'class => catalog_cards',function (data) {
         $('#mse2_results .item_slick_wrap').eq(8).before(data);
         new Callback();
     });
 
     $(document).on('mse2_load', function() {
-        getChunk('getChunk', 'Callback', '',function (data) {
+        getModule('Chunk', 'Callback', 'class => catalog_cards',function (data) {
             $('#mse2_results .item_slick_wrap').eq(8).before(data);
             new Callback();
             fast_buy('.fast_buy_button');
         });
     });
+
+
+
+    /* ----------------------------------------------------------------------- */
+    /* MiniCart Full  */
+    /* ----------------------------------------------------------------------- */
+
+
+
+    miniShop2.Callbacks.Cart.change.response.success = function(response) {
+        getModule('Snippet', 'msCart', 'tpl => MiniCardFull',function (data) {
+            $('.msCardMini').html(data);
+            basket_init();
+        });
+    };
+    miniShop2.Callbacks.Cart.add.response.success = function(response) {
+        getModule('Snippet', 'msCart', 'tpl => MiniCardFull',function (data) {
+            $('.msCardMini').html(data);
+            basket_init();
+        });
+    };
+    miniShop2.Callbacks.Cart.remove.response.success = function(response) {
+        getModule('Snippet', 'msCart', 'tpl => MiniCardFull',function (data) {
+            $('.msCardMini').html(data);
+            basket_init();
+        });
+    };
+    basket_init();
 
 });
 

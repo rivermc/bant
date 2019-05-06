@@ -45,12 +45,20 @@ $modx->log(1, print_r($params, 1));
 $params = string2KeyedArray($params);
 
 switch ($action) {
-    case 'getChunk':
+    case 'Chunk':
         if ($params != '') {
            $output = $modx->getChunk($chunk, $params);
         }
         else {
             $output = $modx->getChunk($chunk);
+        }
+        break;
+    case 'Snippet':
+        if ($params != '') {
+           $output = $modx->runSnippet($chunk, $params);
+        }
+        else {
+            $output = $modx->runSnippet($chunk);
         }
         break;
 }

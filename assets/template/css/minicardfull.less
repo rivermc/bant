@@ -1,0 +1,145 @@
+.msCardMini {
+  .animation();
+  top: 20%;
+  right: ~'-100%';
+  position: fixed;
+  z-index: 999;
+
+  &.active {
+
+    & .minicart_button.open {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  & .minicart_button.open {
+    .animation();
+    transform: rotate(270deg);
+    width: 0;
+    position: fixed;
+    right: 0;
+
+    & p {
+      background: @colorRed;
+      color: @colorWhite;
+      padding: 10px 35px;
+      position: absolute;
+      top: -45px;
+      right: 0;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+  }
+
+  & .msCart {
+    background: @colorWhite;
+    box-shadow: 5px 5px 20px -10px @colorBlack;
+    padding: 20px;
+    width: 350px;
+  }
+
+  & .mini_basket__cont {
+
+    & .mini_basket__title {
+      .flex();
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      & h2 {
+        color: @colorRed;
+        margin: 0;
+      }
+
+      & .minicart_button.close {
+        cursor: pointer;
+
+        & svg {
+
+        }
+      }
+
+      & .empty_text {
+        .cols(16);
+      }
+    }
+
+    & .mini_basket__product {
+
+      & .mini_basket__product_item {
+        .flex();
+        border-bottom: 1px solid @colorGray;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+
+        & .mini_basket__product_image {
+          .cols(4);
+        }
+        & .mini_basket__product_content {
+          .cols(10);
+          .flex();
+          justify-content: space-between;
+
+          & .mini_basket__product_title {
+            .cols(16);
+
+            & a {
+
+              & h3 {
+                color: @colorRed;
+                margin: 0;
+              }
+            }
+
+            & p {
+              color: @colorGrayDark;
+              font-size: 10pt;
+            }
+          }
+
+          & .mini_basket__product_count {
+            .cols(6);
+
+            & .form-group {
+              .flex();
+              align-items: center;
+
+              & .count {
+                margin: 0 10px;
+
+                & p {
+                  margin: 0;
+                }
+              }
+
+              & button {
+                background: transparent;
+                padding: 0;
+
+                &.count_product {
+                  color: @colorBlack;
+                }
+              }
+            }
+          }
+
+          & .mini_basket__product_price {
+            .cols(8);
+          }
+        }
+
+        & .mini_basket__product_remove {
+          .cols(1);
+          text-align: right;
+
+          & button {
+            background: url('../images/elements/close.svg');
+            background-repeat: no-repeat;
+            padding: 6px;
+          }
+        }
+      }
+    }
+  }
+}
