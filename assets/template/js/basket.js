@@ -28,6 +28,6 @@ function basket_init() {
         $(this).parents('.msCardMini').addClass('active').css('right', '0');
     });
     $('.msCardMini .minicart_button.close').click(function(){
-        $(this).parents('.msCardMini').removeClass('active').css('right', '-100%');
+        $(this).parents('.msCardMini').removeClass('active').css('right', '-350px');
     });
 }
