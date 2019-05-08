@@ -63,7 +63,7 @@
                                                 {$delivery.name}
                                                 <img src="{$delivery.logo}" alt="{$delivery.name}" title="{$delivery.name}"/>
                                             {else}
-                                                <p class="delivery_title">{$delivery.name}</p>
+                                                <p class="delivery_title h2">{$delivery.name}</p>
                                             {/if}
                                             {if $delivery.description?}
                                                 <p class="small">
@@ -89,7 +89,7 @@
                                 {if $payment.logo?}
                                 <img src="{$payment.logo}" alt="{$payment.name}" title="{$payment.name}"/>
                                 {else}
-                                <p class="payment_title">
+                                <p class="payment_title h2">
                                     {$payment.name}
                                 </p>
                                 {/if}

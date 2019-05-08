@@ -46,12 +46,6 @@
               position: relative;
 
               & label.form__group_label {
-                color: @colorBlack;
-                transition: all 0.1s linear;
-                position: absolute;
-                left: 10px;
-                top: 15px;
-                z-index: 10;
                 font-size: 10pt;
               }
 
@@ -60,153 +54,23 @@
                 & .form__group_label {
                   color: @colorRed;
                   font-size: 11pt;
-                  transform: translateY(-1.2em);
                 }
               }
 
               & input.form_input {
-                font-family: @fontGeom;
-                border: 0;
-                border-bottom: 2px solid @colorRed;
                 margin: 10px 0;
                 padding: 0 10px;
                 font-size: 12pt;
                 width: 100%;
-                background: transparent;
 
                 &:-internal-autofill-selected {
                   background: @colorWhite;
                 }
               }
             }
-
-
-
-            /*
-          & input, & textarea {
-            font-family: 'Geom', sans-serif;
-            border: 0;
-            border-bottom: 2px solid #8c003d;
-            margin: 10px 0;
-            padding: 0 10px;
-            font-size: 12pt;
-            width: 100%;
-            background: transparent;
-            width: 100%;
-            text-align: left;
-            font-size: 11pt;
-            padding: 0 0 0 65px;
-            font-weight: 100;
-            min-height: 50px;
-            margin: 5px 0;
-            color: #B9ABAE;
-            border: 0 solid #B9ABAE;
-            box-shadow: 0 0 2px 1px #B9ABAE;
-            border-radius: 3px;
-            background-repeat: no-repeat;
-
-            @media @t, @m {
-              font-size: 10pt;
-              min-height: 40px;
-            }
-
-            &[name="receiver"] {
-              background: @colorWhite url('../images/cart/inputname.png');
-              background-repeat: no-repeat;
-              background-position: 2%;
-            }
-            &[name="phone"] {
-              background: @colorWhite url('../images/cart/inputphone.png');
-              background-repeat: no-repeat;
-              background-position: 2%;
-            }
-            &[name="email"] {
-              background: @colorWhite url('../images/cart/inputemail.png');
-              background-repeat: no-repeat;
-              background-position: 2%;
-            }
-            &[name="index"] {
-              background: @colorWhite url('../images/cart/inputzip.png');
-              background-repeat: no-repeat;
-              background-position: 2%;
-            }
-            &[name="comment"] {
-              background: @colorWhite url('../images/cart/inputcomment.png');
-              background-repeat: no-repeat;
-              background-position: 2% top;
-            }
-            &[name="region"] {
-              background: @colorWhite url('../images/cart/inputregion.png');
-              background-repeat: no-repeat;
-              background-position: 2%;
-            }
-            &[name="city"] {
-              background: @colorWhite url('../images/cart/inputcity.png');
-              background-repeat: no-repeat;
-              background-position: 2%;
-            }
-            &[name="street"] {
-              background: @colorWhite url('../images/cart/inputstreet.png');
-              background-repeat: no-repeat;
-              background-position: 2%;
-            }
-            &[name="building"] {
-              background: @colorWhite url('../images/cart/inputhouse.png');
-              background-repeat: no-repeat;
-              background-position: 2%;
-            }
-            &[name="room"] {
-              background: @colorWhite url('../images/cart/inputroom.png');
-              background-repeat: no-repeat;
-              background-position: 2%;
-            }
-              &:focus::-webkit-input-placeholder {
-                text-indent: -100%;
-
-                @media @m {
-                  text-indent: 0;
-
-                }
-              }
-
-              &::-webkit-input-placeholder {
-                .animation();
-                color: #B9ABAE;
-
-                @media @dMid {
-                  text-indent: 0;
-                }
-                @media @d {
-                  text-indent: 0;
-                }
-              }
-            }
-
-            & textarea {
-              min-height: 150px;
-              padding-top: 1em;
-              
-              @media @t, @m {
-                font-size: 10pt;
-                min-height: 100px;
-              }
-
-              &::-webkit-input-placeholder {
-                .animation();
-                color: #B9ABAE;
-
-                @media @dMid {
-                  text-indent: 0;
-                }
-                @media @d {
-                  text-indent: 0;
-                }
-              }
-            }
-            */
           }
 
-          & .order_payment {
+          & .order_delivery, .order_payment {
             .flex();
 
             & .checkbox {
@@ -244,12 +108,10 @@
                   }
                 }
 
-                & .payment_title {
-                  color: @colorBlack;
+                & .delivery_title, .payment_title {
                   display: inline-block;
                   width: 90%;
-                  font-weight: bold;
-                  margin-bottom: 0;
+                  margin: 0;
                   position: relative;
                   padding-left: 15px;
 
@@ -261,86 +123,7 @@
                     width: 10px;
                     height: 10px;
                     transform: rotate(90deg);
-                    top: 3px;
-                  }
-
-                  @media @d {
-                    width: 80%;
-                    font-size: 12pt;
-                  }
-                  @media @t, @m {
-                    width: 80%;
-                    font-size: 10pt;
-                  }
-                }
-
-                & .small {
-                  .cols(16);
-                  font-weight: 100;
-                  font-size: 10pt;
-                  margin-bottom: 0;
-                  padding-left: 15px;
-                }
-              }
-            }
-          }
-
-          & .order_delivery {
-            .flex();
-
-            & .checkbox {
-              .cols(16);
-              padding: 10px;
-
-              @media @t {
-                .cols(16);
-              }
-              @media @m {
-                .cols(16);
-              }
-
-              & label {
-                .flex();
-                color: @colorBlack;
-                height: 100%;
-                width: 100%;
-                font-size: 1.2rem;
-                cursor: pointer;
-                align-items: center;
-
-                & input {
-                  &[type = radio] {
-                    display: none;
-
-                    &:checked + p {
-
-                      &:before {
-                        background: url(../images/elements/arrow.svg);
-                        background-repeat: no-repeat;
-                        background-size: 100% 100%;
-                      }
-                    }
-                  }
-                }
-
-                & .delivery_title {
-                  color: @colorBlack;
-                  display: inline-block;
-                  width: 90%;
-                  font-weight: bold;
-                  margin-bottom: 0;
-                  position: relative;
-                  padding-left: 15px;
-
-                  &:before {
-                    .animation();
-                    content: '';
-                    position: absolute;
-                    left: 0;
-                    width: 10px;
-                    height: 10px;
-                    transform: rotate(90deg);
-                    top: 3px;
+                    top: 6px;
                   }
 
                   @media @d {
@@ -368,6 +151,8 @@
             .cols(6);
             margin: 0 auto;
             text-align: center;
+            border: 0;
+            padding: 10px 0;
             
             @media @t, @m {
               .cols(16);

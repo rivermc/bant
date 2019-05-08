@@ -1,18 +1,29 @@
-& .form__callback_form-group {
+& .form__callback_form-group, .form__basket_form-group {
 	position: relative;
 
 	& label.form__group_label {
 		.animation(0.1s);
 		position: absolute;
 		left: 10px;
-		top: 10px;
+		top: 15px;
 		z-index: 10;
 	}
 
 	&.focused {
 
 		& .form__group_label {
-			transform: translateY(-2em);
+			transform: translateY(-1.2em);
+		}
+	}
+
+	& input {
+		.cols(16);
+		font-family: @fontGeom;
+		border: 0;
+		border-bottom: 2px solid @colorRed;
+
+		&:-internal-autofill-selected {
+			background: @colorWhite;
 		}
 	}
 }
@@ -138,6 +149,7 @@
 				.cols(10);
 				.flex();
 				justify-content: space-between;
+				align-items: center;
 				position: absolute;
 				bottom: 60px;
 
@@ -146,8 +158,9 @@
 					margin: 10px 0;
 
 					& label.form__group_label {
-						color: @colorBlack;
-						font-size: 12pt;
+					    color: @colorBlack;
+					    font-size: 12pt;
+                        top: 15px;
 					}
 
 					&.focused {
@@ -158,39 +171,16 @@
 						}
 					}
 
-					& input.callback__form_input {
-						.cols(16);
-						font-family: @fontGeom;
-						border: 0;
-						border-bottom: 2px solid @colorRed;
-						margin: 10px 0;
-						padding: 0 10px;
-						font-size: 12pt;
-
-						&:-internal-autofill-selected {
-							background: @colorWhite;
-						}
-					}
+                    & input {
+                      padding: 0 10px;
+                      margin: 10px 0 0;
+                      font-size: 12pt;
+                    }
 				}
 
 				& button.callback__form_button {
 					.cols(6);
 					.colsOf(2);
-					.animation();
-					background: @colorRed;
-					color: @colorWhite;
-					font-family: @fontGeom;
-					font-size: 12pt;
-					text-align: center;
-					margin: 10px 0;
-					padding: 0 10px;
-					cursor: pointer;
-					border: 0;
-					border-radius: 5px;
-
-					&:hover {
-						background: @colorBlack;
-					}
 				}
 			}
 		}
