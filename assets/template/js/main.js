@@ -302,6 +302,30 @@ $(document).ready(function() {
     };
     basket_init();
 
+
+
+
+    $('.form_input').focus(function(){
+        var callback_group = $(this).parent();
+        callback_group.addClass('focused');
+    });
+
+    $('.form__group_label').click(function(){
+        var callback_group = $(this).parent();
+        callback_group.addClass('focused');
+        callback_group.find('input').focus();
+    });
+
+    $('.form_input').blur(function(){
+        var inputValue = $(this).val();
+        if (inputValue === "") {
+            $(this).removeClass('filled');
+            $(this).parent().removeClass('focused');
+        } else {
+            $(this).addClass('filled');
+        }
+    });
+
 });
 
 

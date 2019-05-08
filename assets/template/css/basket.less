@@ -6,7 +6,7 @@
   padding: 0 0 50px;
 }
 
-#msCart {
+.msCart {
 
   & .basket__empty_cont {
     margin: 100px 0;
@@ -74,6 +74,7 @@
                 font-weight: normal;
                 padding: 15px 0 25px 0;
                 font-size: 1rem;
+                margin: 0;
               }
             }
           }
@@ -128,6 +129,7 @@
             & p {
               color: @colorBlack;
               font-size: 14pt;
+              margin: 0;
             }
           }
 
@@ -139,61 +141,25 @@
               display: table;
             }
 
-            & form {
+            & .form-group {
+              .flex();
+              align-items: center;
+              justify-content: flex-end;
 
-              & .form-group {
-                display: table;
-                margin: 0 0 0 auto;
-                position: relative;
-                
-                & button {
-                  display: block;
-                  border: 0;
-                  
-                  & span {
-                    background: @colorBrown;
-                    color: @colorWhite;
-                    font-size: 12pt;
-                    position: absolute;
-                    right: 0;
-                    transition: all .4s linear;
-                    width: 20px;
-                    height: 20px;
-                    cursor: pointer;
-                    
-                    &:hover {
-                      background: @colorBlack;
-                    }
-                  
-                    &.plus {
-                      top: 0;
-                    }
-    
-                    &.minus {
-                      top: 20px;
-                    }
-                  }
+              & .count {
+                margin: 0 10px;
+
+                & p {
+                  margin: 0;
                 }
+              }
 
-                & input {
-                  border: 0;
-                  border-bottom: 1px solid @colorBrown;
-                  font-size: 12pt;
-                  height: 40px;
-                  width: 70px;
-                  padding: 5px 0 5px 10px;
+              & button {
+                background: transparent;
+                padding: 0;
 
-                  @media @m {
-                    border-radius: 5px 5px 5px 5px;
-                    width: 50px;
-                    font-size: 10pt;
-                  }
-
-                  &[type=number]::-webkit-inner-spin-button,
-                  &[type=number]::-webkit-outer-spin-button {
-                    margin: 0;
-                    background: @colorBrown;
-                  }
+                &.count_product {
+                  color: @colorBlack;
                 }
               }
             }
@@ -211,6 +177,7 @@
             & p {
               color: @colorBlack;
               font-size: 1.4rem;
+              margin: 0;
             }
           }
 
@@ -225,7 +192,7 @@
 
               & button {
                 .animation();
-                background: @colorRedLight url('../images/cart/icon-trash.png');
+                background: @colorRed url('../images/cart/icon-trash.png');
                 background-repeat: no-repeat;
                 background-position: center;
                 height: 25px;
@@ -235,6 +202,7 @@
                 background-size: 70% 70%;
                 cursor: pointer;
                 border: 0;
+                padding: 0;
                 
                 &:hover {
                   background: @colorBlack url('../images/cart/icon-trash.png');

@@ -8,6 +8,7 @@ function basket_init() {
     $('button.count_product').on('click', function() {
         var key = $(this).data('id');
         var input = $('input[data-id=' + key + ']');
+        console.log(input);
         var inputVal = parseInt(input.val());
         var allPrice = $('.product_price[data-id=' + key + ']');
         var productPrice = allPrice.data('price');

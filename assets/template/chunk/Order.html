@@ -4,41 +4,44 @@
             <div class="order_cont">
                 <div class="order_bl">
                     <div class="order_title">
-                        <h2>{'ms2_frontend_credentials' | lexicon}</h2>
+                        <h2 class="h1">{'ms2_frontend_credentials' | lexicon}</h2>
                     </div>
                     <div class="order_form">
                         {foreach ['receiver','phone','email'] as $field}
-                        <input type="text" id="{$field}" placeholder="{('ms2_frontend_' ~ $field) | lexicon}"
-                               name="{$field}" value="{$form[$field]}"
-                               class="form-control{($field in list $errors) ? ' error' : ''}">
-
+                            <div class="form__basket_form-group">
+                                <label class="form__group_label">{('ms2_frontend_' ~ $field) | lexicon}</label>
+                                <input type="text" id="{$field}"  name="{$field}" value="{$form[$field]}" class="form_input">
+                            </div>
                         {/foreach}
-                        <textarea name="comment" id="comment" placeholder="{'ms2_frontend_comment' | lexicon}"
-                                  class="form-control{('comment' in list $errors) ? ' error' : ''}">{$form.comment}</textarea>
+                        <div class="form__basket_form-group">
+                            <label class="form__group_label">Комментарий</label>
+                            <input type="text" name="text" class="form_input">
+                        </div>
                     </div>
                 </div>
                 <div class="order_bl">
                     <div class="order_title">
-                        <h2>{'ms2_frontend_address' | lexicon}</h2>
+                        <h2 class="h1">{'ms2_frontend_address' | lexicon}</h2>
                     </div>
                     <div class="order_form">
+
                         {foreach ['index','region','city'] as $field}
-
-                        <input type="text" id="{$field}" placeholder="{('ms2_frontend_' ~ $field) | lexicon}"
-                               name="{$field}" value="{$form[$field]}"
-                               class="form-control{($field in list $errors) ? ' error' : ''}">
-
+                            <div class="form__basket_form-group">
+                                <label class="form__group_label">{('ms2_frontend_' ~ $field) | lexicon}</label>
+                                <input type="text" id="{$field}"  name="{$field}" value="{$form[$field]}" class="form_input">
+                            </div>
                         {/foreach}
                         {foreach ['street','building','room'] as $field}
-                        <input type="text" id="{$field}" placeholder="{('ms2_frontend_' ~ $field) | lexicon}"
-                               name="{$field}" value="{$form[$field]}"
-                               class="form-control{($field in list $errors) ? ' error' : ''}">
+                            <div class="form__basket_form-group">
+                                <label class="form__group_label">{('ms2_frontend_' ~ $field) | lexicon}</label>
+                                <input type="text" id="{$field}"  name="{$field}" value="{$form[$field]}" class="form_input">
+                            </div>
                         {/foreach}
                     </div>
                 </div>
                 <div class="order_bl">
                     <div class="order_title">
-                        <h2>{'ms2_frontend_deliveries' | lexicon}</h2>
+                        <h2 class="h1">{'ms2_frontend_deliveries' | lexicon}</h2>
                     </div>
                     <div class="order_delivery">
                         {var $i = 0}
@@ -74,7 +77,7 @@
                 </div>
                 <div class="order_bl">
                     <div class="order_title">
-                        <h2>{'ms2_frontend_payments' | lexicon}</h2>
+                        <h2 class="h1">{'ms2_frontend_payments' | lexicon}</h2>
                     </div>
                     <div class="order_payment">
                         {foreach $payments as $payment index=$index}
