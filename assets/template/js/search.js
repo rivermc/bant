@@ -1,5 +1,3 @@
-
-
 $(document).ready(function(){
 	$('.search_input').focus(function(){
 		$(this).addClass('active');
