@@ -33,6 +33,10 @@
 	margin: 20px 0;
 	position: relative;
 
+	@media @d {
+		padding: 75px 0 40px 0;
+	}
+
 	&.card_callback {
 		padding: 40px 0;
 		margin: 40px 0;
@@ -111,8 +115,14 @@
 			position: absolute;
 			background: url('../images/callback/img.jpg');
 			background-repeat: no-repeat;
+			background-size: contain;
 			left: 30px;
 			top: -70px;
+
+			@media @d {
+				width: 310px;
+				height: 300px;
+			}
 		}
 
 		& h2 {
@@ -132,6 +142,12 @@
 			min-height: 340px;
 			margin: 0 0 0 auto;
 			position: relative;
+
+			@media @d {
+				.cols(12);
+				padding: 60px 80px;
+				min-height: 280px;
+			}
 
 			& .form__callback_error {
 				position: absolute;

@@ -32,6 +32,11 @@
 					.cols(7);
 					.colsOf(3);
 
+					@media @d {
+						.colsOf(0);
+						.cols(8);
+					}
+
 					& ul {
 						.flex();
 						align-items: center;
@@ -87,6 +92,10 @@
 					justify-content: space-around;
 					position: relative;
 
+					@media @d {
+						.cols(2.5);
+					}
+
 					& svg {
 
 						& path {
@@ -100,18 +109,13 @@
 						background: @colorRed;
 						position: absolute;
 						top: -10px;
-						left: 45px;
+						left: 30%;
 						width: 20px;
 						height: 20px;
 						border-radius: 25em;
 						text-align: center;
 						align-items: center;
 						justify-content: center;
-
-						@media @d {
-							top: -10px;
-							left: 50px;
-						}
 
 						& .empty {
 
@@ -158,6 +162,10 @@
 				& .header__middle_title {
 					.cols(10);
 
+					@media @d {
+						.cols(9);
+					}
+
 					& p {
 						color: @colorRed;
 						font-size: 16pt;
@@ -169,14 +177,19 @@
 				& .header__middle_contact {
 					.cols(3);
 
+					@media @d {
+						.cols(3.5);
+					}
+
 					& a {
 						display: block;
+
 						&:not(.button) {
-						color: @colorBlack;
-						font-family: @fontGeomBold;
-						font-size: 16pt;
-						text-align: center;
-						margin-bottom: 10px;
+							color: @colorBlack;
+							font-family: @fontGeomBold;
+							font-size: 16pt;
+							text-align: center;
+							margin-bottom: 10px;
 						}
 					}
 				}
@@ -195,6 +208,10 @@
 					justify-content: space-between;
 					align-items: center;
 
+					@media @d {
+						.cols(16);
+					}
+
 					& > ul {
 						.flex();
 						justify-content: space-between;
@@ -209,6 +226,10 @@
 						& > li {
 							margin-bottom: 0;
 							margin-right: 10px;
+
+							@media @d {
+								margin-right: 0;
+							}
 							
 							& > a {
 								.animation();
@@ -279,6 +300,7 @@
 								overflow: hidden;
 								transition-delay: 0.3s;
 								z-index: 100;
+								min-width: 750px;
 
 								& ul {
 									.cols(11);
@@ -368,6 +390,10 @@
 
 				& .header__bottom_search {
 					.cols(3);
+
+					@media @d {
+						margin: 10px 0 0 auto;
+					}
 
 					& form {
 						position: relative;

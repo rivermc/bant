@@ -57,12 +57,20 @@
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
 
+      @media @d {
+        height: 220px;
+      }
+
       & a {
 
         & img {
           .animation(3s);
           min-height: 290px;
           width: 100%;
+
+          @media @d {
+            min-height: 220px;
+          }
         }
       }
     }
