@@ -38,16 +38,18 @@
             </div>
             <div class="header__bottom">
                 <nav class="header__bottom_menu">
-                    [[!pdoMenu?
+                    [[pdoMenu?
                         &parents=`7`
                         &level=`2`
                         &tplInner=`SubmenuBlock`
                     ]]
-                    <ul class="special_link">
-                        <li>
-                            <a class="special_link" href="[[~350]]">[[IncSvg? &svg=`elements/flower.svg`]] 8 марта</a>
-                        </li>
-                    </ul>
+                    [[pdoMenu?
+                        &parents=`7`
+                        &resources=`[[#1.special_link]]`
+                        &level=`0`
+                        &tplOuter=`@INLINE <ul class="special_link">[[+wrapper]]</ul>`
+                        &tpl = `@INLINE <li [[+classes]]><a class="special_link [[#1.special_icon:empty=`nopadding`]]" href="[[+link]]" [[+attributes]]>[[#1.special_icon:notempty=`[[IncSvg? &svg=`[[#1.special_icon]]`]]`]] [[+menutitle]]</a></li>`
+                    ]]
                 </nav>
                 <div class="header__bottom_search">
                     [[$SearchForms]]

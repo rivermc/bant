@@ -229,6 +229,10 @@
 									color: @colorRed;
 									position: relative;
 									padding-left: 34px;
+
+									&.nopadding {
+										padding-left: 10px;
+									}
 									
 									& svg {
 										position: absolute;
@@ -368,13 +372,6 @@
 					& form {
 						position: relative;
 
-						&:hover {
-
-							& input {
-								width: 100%;
-							}
-						}
-
 						& input {
 							.animation();
 							border: 1px solid @colorGray;
@@ -383,6 +380,10 @@
 							padding: 6px 20px;
 							width: 120px;
 							border-radius: 5px;
+
+							&.active {
+								width: 100%;
+							}
 						}
 
 						& button {
