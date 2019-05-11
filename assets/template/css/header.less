@@ -88,7 +88,10 @@
 					position: relative;
 
 					& svg {
-						fill: @colorRed;
+
+						& path {
+							fill: @colorRed;
+						}
 					}
 
 					& .msMiniCart {
@@ -187,14 +190,25 @@
 				position: relative;
 
 				& .header__bottom_menu {
-					.cols(12);
+					.cols(13);
+					.flex();
+					justify-content: space-between;
+					align-items: center;
 
 					& > ul {
 						.flex();
 						justify-content: space-between;
 						align-items: center;
+						flex: 5.5;
+
+						&.special_link {
+							flex: 1;
+							justify-content: flex-end;
+						}
 						
 						& > li {
+							margin-bottom: 0;
+							margin-right: 10px;
 							
 							& > a {
 								.animation();
@@ -204,11 +218,24 @@
 								border: 1px solid transparent;
 								border-radius: 5px;
 								font-size: 12pt;
-								padding: 10px;
+								padding: 10px 10px 8px;
 								
 								&:hover {
 									color: @colorRed;
 									border: 1px solid @colorRed;
+								}
+								
+								&.special_link {
+									color: @colorRed;
+									position: relative;
+									padding-left: 34px;
+									
+									& svg {
+										position: absolute;
+										top: 5px;
+										left: 5px;
+										margin-right: 15px;
+									}
 								}
 								
 							}
@@ -336,7 +363,40 @@
 				}
 
 				& .header__bottom_search {
-					.cols(4);
+					.cols(3);
+
+					& form {
+						position: relative;
+
+						&:hover {
+
+							& input {
+								width: 100%;
+							}
+						}
+
+						& input {
+							.animation();
+							border: 1px solid @colorGray;
+							margin: 0 0 0 auto;
+							display: table;
+							padding: 6px 20px;
+							width: 120px;
+							border-radius: 5px;
+						}
+
+						& button {
+							background: transparent;
+							position: absolute;
+							padding: 0;
+							top: 6px;
+							right: 6px;
+
+							&:hover {
+								transform: scale(1.2);
+							}
+						}
+					}
 				}
 			}
 		}
