@@ -38,5 +38,7 @@ $(document).ready(function() {
             // settings: "unslick"
             // instead of a settings object
         ]
+    }).on('breakpoint', function(event, slick, currentSlide, nextSlide){
+        fast_buy('.fast_buy_button');
     });
 });
