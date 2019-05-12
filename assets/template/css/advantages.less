@@ -7,12 +7,20 @@
 	padding: 20px 0;
 	margin: 20px 0;
 
+	@media @t {
+		padding: 0;
+	}
+
 	& .container {
 
 		& h2 {
 			color: @colorRed;
 			margin-bottom: 60px;
 			text-align: center;
+
+			@media @t {
+				margin-bottom: 40px;
+			}
 		}
 
 		& .advantages__wrap {
@@ -24,16 +32,33 @@
 				.flex();
 				justify-content: space-between;
 
+				@media @t {
+					.cols(16);
+					margin-bottom: 30px;
+				}
+
 				&:nth-child(1), &:nth-child(2) {
 					margin-bottom: 60px;
+
+					@media @t {
+						margin-bottom: 30px;
+					}
 				}
 
 				& .advantages__item_img {
 					.cols(4);
+
+					@media @t {
+						.cols(3);
+					}
 				}
 
 				& .advantages__item_content {
 					.cols(12);
+
+					@media @t {
+						.cols(13);
+					}
 
 					& .advantages__item_title {
 
@@ -41,6 +66,10 @@
 							color: @colorRed;
 							font-size: 13pt;
 							margin-top: 0;
+
+							@media @t {
+								margin-bottom: 10px;
+							}
 						}
 					}
 
@@ -49,6 +78,9 @@
 						& p {
 
 							@media @d {
+								font-size: 11pt;
+							}
+							@media @t {
 								font-size: 11pt;
 							}
 						}

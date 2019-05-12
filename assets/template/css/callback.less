@@ -36,6 +36,9 @@
 	@media @d {
 		padding: 75px 0 40px 0;
 	}
+	@media @t {
+		padding: 75px 0 40px 0;
+	}
 
 	&.card_callback {
 		padding: 40px 0;
@@ -84,6 +87,10 @@
 		position: relative;
 		margin: 0 auto;
 
+		@media @t {
+			.cols(16);
+		}
+
 		&.card_callback__wrap {
 
 			&:before {
@@ -94,7 +101,6 @@
 				background-size: contain;
 				top: -10px;
 			}
-
 		}
 
 		&.callback_pop__wrap {
@@ -123,6 +129,9 @@
 				width: 310px;
 				height: 300px;
 			}
+			@media @t {
+				height: 220px;
+			}
 		}
 
 		& h2 {
@@ -145,6 +154,11 @@
 
 			@media @d {
 				.cols(12);
+				padding: 60px 80px;
+				min-height: 280px;
+			}
+			@media @t {
+				.cols(16);
 				padding: 60px 80px;
 				min-height: 280px;
 			}

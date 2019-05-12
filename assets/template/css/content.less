@@ -9,6 +9,9 @@
 	@media @d {
 		padding: 20px 0;
 	}
+	@media @t {
+		padding: 20px 0;
+	}
 
 	&.mini {
 		margin: 0;
@@ -45,6 +48,9 @@
 			@media @d {
 				margin-bottom: -50px;
 			}
+			@media @t {
+				margin-bottom: -70px;
+			}
 
 			& h2 {
 				color: @colorRed;
@@ -69,6 +75,10 @@
 		background-position: bottom;
 		padding: 140px 0 100px;
 
+		@media @t {
+			padding: 140px 0 40px;
+		}
+
 		& .container{
 
 			& .text_wrap {
@@ -79,16 +89,28 @@
 				& .wrap_left {
 					.cols(8);
 
+					@media @t {
+						.cols(10);
+					}
+
 					& p {
 						color: @colorWhite;
 						font-size: 12pt;
 						margin-bottom: 10px;
+
+						@media @t {
+							font-size: 10pt;
+						}
 					}
 				}
 
 				& .wrap_right {
 					.cols(8);
 					text-align: center;
+
+					@media @t {
+						.cols(6);
+					}
 
 					& img {
 

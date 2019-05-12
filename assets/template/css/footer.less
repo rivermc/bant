@@ -15,6 +15,10 @@ footer {
 
 			& .footer__left {
 				.cols(7);
+
+				@media @t {
+					.cols(12);
+				}
 				
 				& .footer__left_address {
 					margin-bottom: 20px;
@@ -80,8 +84,19 @@ footer {
 					.cols(4);
 				}
 
+				@media @t {
+					.flex();
+					.cols(16);
+					justify-content: space-between;
+					margin-top: 20px;
+				}
+
 				& .footer__right_contact {
 					margin-bottom: 40px;
+
+					@media @t {
+						margin-bottom: 0;
+					}
 
 					& a.phone_link {
 						color: @colorWhite;
