@@ -11,33 +11,33 @@
                     ]]
                 </div>
                 <div class="product__item_instruction">
-                    <div class="instruction_item">
+                    <div class="instruction_item tooltip_target">
                         [[IncSvg? &svg=`card/icon/1.svg`]]
-                        <div class="product__item_instruction_popup">
+                        <div class="product__item_instruction_popup tooltip">
                             <div class="instruction_popup_1 instruction_popup">
                                 <p>По запросу сделаем фото подборку цветов перед сборкой и пришлем фото букета перед отправкой в WhatsApp, Telegram, Viber</p>
                             </div>
                         </div>
                     </div>
-                    <div class="instruction_item">
+                    <div class="instruction_item tooltip_target">
                         [[IncSvg? &svg=`card/icon/2.svg`]]
-                        <div class="product__item_instruction_popup">
+                        <div class="product__item_instruction_popup tooltip">
                             <div class="instruction_popup_1 instruction_popup">
                                 <p>Принимаем заказы в WhatsApp, Telegram, Viber</p>
                             </div>
                         </div>
                     </div>
-                    <div class="instruction_item">
+                    <div class="instruction_item tooltip_target">
                         [[IncSvg? &svg=`card/icon/3.svg`]]
-                        <div class="product__item_instruction_popup">
+                        <div class="product__item_instruction_popup tooltip">
                             <div class="instruction_popup_1 instruction_popup">
                                 <p>Тематическая Мини открытка 5x9см, для самых теплых слов!</p>
                             </div>
                         </div>
                     </div>
-                    <div class="instruction_item">
+                    <div class="instruction_item tooltip_target">
                         [[IncSvg? &svg=`card/icon/4.svg`]]
-                        <div class="product__item_instruction_popup">
+                        <div class="product__item_instruction_popup tooltip">
                             <div class="instruction_popup_1 instruction_popup">
                                 <p>Доставка 24 часа осуществляется для заказов оформленных в рабочие часы мастерской с 9-22.</p>
                             </div>
@@ -64,7 +64,12 @@
                             <a href="#fast_buy_modal" class="button nopreload fast_buy_button" data-id="[[*id]]" data-title="[[*pagetitle]]">Быстрый заказ</a>
                         </div>
                         <div class="share">
-                            <p>Подписаться</p>
+                            <p class="share_button js-share">Подписаться</p>
+                            <div class="product__item_share tooltip">
+                                <div class="share_popup">
+                                    [[$SocialBlock]]
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -73,12 +78,12 @@
                     <button class="shipping_btn">Самовывоз</button>
                     <button class="shipping_btn">Курьером</button>
                     <div class="shipping_item_text">
-                        <div class="shipping_text_1 shipping_text">
+                        <div class="shipping_text_1 shipping_text tooltip">
                             <p>Наши магазины в Санкт-Петербурге:</p>
                             <p>улица Благодатная, 30 (м. Электросила)</p>
                             <p>улица Фурштатская, 46Б (м. Чернышевская)</p>
                         </div>
-                        <div class="shipping_text_2 shipping_text">
+                        <div class="shipping_text_2 shipping_text tooltip">
                             <h2>Зона 1</h2>
                             <ul>
                                 <li>Доставка по Санкт-Петербургу (с 10:00 до 23:00) - 400 рублей (на период 7-8 марта: 500 рублей);</li>

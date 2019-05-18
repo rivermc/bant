@@ -84,45 +84,8 @@
                     position: relative;
                     height: 66px;
 
-                    &:hover {
-
-                      & .product__item_instruction_popup {
-
-                        & .instruction_popup {
-                          opacity: 1;
-                          visibility: visible;
-                        }
-                      }
-                    }
-
                     .product__item_instruction_popup {
-
-                      & .instruction_popup {
-                        .animation();
-                        background: @colorWhite;
-                        box-shadow: 5px 5px 20px -10px @colorBlack;
-                        position: absolute;
-                        width: 550px;
-                        text-align: left;
-                        padding: 20px;
-                        margin: 20px 0;
-                        opacity: 0;
-                        visibility: hidden;
-                        z-index: 999;
-                        top: 100%;
-
-                        &:before {
-                          background: @colorWhite;
-                          box-shadow: -6px -6px 20px -8px @colorBlack;
-                          content: '';
-                          position: absolute;
-                          top: -10px;
-                          left: 55px;
-                          width: 20px;
-                          height: 20px;
-                          transform: rotate(45deg);
-                        }
-                      }
+                      width: 550px;
                     }
                   }
                 }
@@ -183,6 +146,55 @@
                         }
                       }
                     }
+
+                    & .share {
+                      position: relative;
+
+                      & .share_button {
+                        margin: 0;
+                        cursor: pointer;
+
+                      }
+
+                      & .product__item_share {
+                        padding: 20px 10px 14px;
+                        right: 0;
+                        min-width: 200px;
+                        visibility: visible;
+                        opacity: 1;
+                        transition: none;
+                        display: none;
+
+                        &:before {
+                          left: 135px;
+                        }
+
+
+                        & .share_popup {
+                          .flex();
+                          justify-content: space-between;
+
+                          & a {
+
+                            &:hover {
+
+                              & svg {
+                                & path {
+                                  fill: @colorRed;
+                                }
+                              }
+                            }
+
+                            & svg {
+
+                              & path {
+                                .animation();
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
 
@@ -234,14 +246,12 @@
                     .cols(16);
 
                     & .shipping_text {
-                      background: @colorWhite;
-                      box-shadow: 5px 5px 20px -10px @colorBlack;
                       width: 100%;
-                      text-align: left;
-                      padding: 20px;
-                      margin: 20px 0;
-                      display: none;
                       position: relative;
+                      opacity: 1;
+                      visibility: visible;
+                      transition: none;
+                      display: none;
 
                       &:nth-child(2) {
                         &:before {

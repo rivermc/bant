@@ -227,6 +227,16 @@ $(document).ready(function() {
         });
     });
 
+    $('.js-share').click(function(){
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+            $('.product__item_share').slideUp(400).removeClass('active')
+        }
+        else {
+            $(this).addClass('active');
+            $('.product__item_share').slideDown(400).addClass('active');
+        }
+    });
 
     /* ----------------------------------------------------------------------- */
     /* FastBuy init */
