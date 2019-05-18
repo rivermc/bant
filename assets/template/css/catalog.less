@@ -77,6 +77,7 @@
         & .catalog_filter {
           background: @colorRedLight;
           padding: 20px 0;
+          margin-bottom: 10px;
 
           & .container {
 
@@ -84,6 +85,7 @@
 
               & #mse2_filters {
                 .flex();
+                align-items: center;
 
                 & .filter_price {
                   .flex();
@@ -93,20 +95,103 @@
 
                     & .prop_title {
                       .cols(5);
+
+                      & p {
+                        color: @colorRed;
+                        text-transform: uppercase;
+                        margin: 0;
+                      }
                     }
 
                     & .mse2_number_inputs {
-                      .cols(6);
-                    }
+                      .cols(11);
+                      .flex();
+                      align-items: center;
 
-                    & .mse2_number_slider {
-                      .cols(5);
+                      & label {
+                        .cols(3);
+
+                        & input {
+                          font-family: @fontGeom;
+                          border: 0;
+                          border-bottom: 2px solid @colorRed;
+                          width: 100%;
+                          background: transparent;
+                          padding: 0 4px;
+                          font-size: 10pt;
+                        }
+                      }
+
+                      & .mse2_number_slider {
+                        .cols(6);
+                        border: 1px solid @colorRed;
+                        font-size: 9pt;
+                        margin: 0 15px;
+                        height: 6px;
+
+                        & .ui-slider-range {
+                          background: @colorRed;
+                        }
+
+                        & span {
+                          border: 4px solid @colorRed;
+                          cursor: pointer;
+                          border-radius: 50%;
+                          top: -0.45em;
+
+                          &:hover {
+                            border: 4px solid @colorBlack;
+                            background: @colorWhite;
+                          }
+                          &.ui-state-active {
+                            background: @colorRed;
+                            &:hover {
+                              background: @colorRed;
+                            }
+                          }
+                        }
+
+                      }
                     }
                   }
-
                 }
 
-                & #mse2_sort {
+                & .filter_info_block {
+                  .flex();
+
+                  & .shipping_info {
+
+                  }
+
+                  & .address_info {
+
+                  }
+
+                  & .tooltip_target {
+                    margin: 0 10px;
+
+                    & .tooltip {
+                      min-width: 500px;
+                      left: -40px;
+
+                      & p, li {
+                        font-size: 10pt;
+
+                        &.h1 {
+                          color: @colorRed;
+                          margin-bottom: 10px;
+                        }
+                      }
+
+                      & li {
+                        list-style-type: disc;
+                        margin-left: 20px;
+                      }
+                    }
+                  }
+                }
+
+                & .filter_sort {
 
                   & p.total_result {
 
@@ -116,9 +201,12 @@
                   }
 
                   & a.sort {
+                    color: @colorBlack;
+                    font-size: 10pt;
+                    text-transform: uppercase;
+                    cursor: pointer;
 
                     & span {
-
                     }
                   }
 

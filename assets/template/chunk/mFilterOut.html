@@ -4,9 +4,34 @@
             <div class="filter">
                 <form action="[[~[[*id]]]]" method="post" id="mse2_filters">
                     [[+filters]]
-                    <div id="mse2_sort" class="">
+                    <div class="filter_info_block">
+                        <div class="shipping_info tooltip_target">
+                            [[IncSvg? &svg=`elements/shipping.svg`]]
+                            <div class="shipping_tooltip tooltip">
+                                <p class="title h1">СТОИМОСТЬ И СРОКИ ДОСТАВКИ</p>
+                                <p>Доставим букет, уже через 2-3 часа после заказа.</p>
+                                <ul>
+                                    <li>Доставка по Санкт-Петербургу и ЛО от 400 рублей;</li>
+                                    <li>При заказе от 6000 рублей - доставка Бесплатно;</li>
+                                </ul>
+                                <p>Подробный прайс, вы сможете посмотреть здесь</p>
+                            </div>
+                        </div>
+                        <div class="address_info tooltip_target">
+                            [[IncSvg? &svg=`elements/house.svg`]]
+                            <div class="address_tooltip tooltip">
+                                <p class="title h1">НАШИ МАГАЗИНЫ В САНКТ-ПЕТЕРБУРГЕ:</p>
+                                <ul>
+                                    <li>ул. Благодатная, 30 (м. Электросила);</li>
+                                    <li>ул. Фурштатская, 46Б (м. Чернышевская);</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="mse2_sort" class=" filter_sort">
                         <a href="#" data-sort="ms|price" data-dir="[[+mse2_sort:is=`ms|price:desc`:then=`desc`]]" data-default="desc" class="sort nopreload">Цена<span></span></a>
                     </div>
+
                 </form>
             </div>
         </div>
