@@ -209,10 +209,17 @@ $(document).ready(function() {
 /* ----------------------------------------------------------------------- */
 
     $('.shipping_btn').click(function(){
-        var index = $(this).index();
-        $('.shipping_btn').removeClass('active');
-        $(this).addClass('active');
-        $('.shipping_text').slideUp(400).removeClass('active').eq(index - 1).slideDown(400).addClass('active');
+
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+            $('.shipping_text').slideUp(400).removeClass('active')
+        }
+        else {
+            var index = $(this).index();
+            $('.shipping_btn').removeClass('active');
+            $(this).addClass('active');
+            $('.shipping_text').slideUp(400).removeClass('active').eq(index - 1).slideDown(400).addClass('active');
+        }
     });
 
     $('.zoom').click(function(){
