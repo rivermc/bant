@@ -18,10 +18,27 @@
   .cols(3.9);
   margin-bottom: 10px;
 
+  @media @t {
+    .cols(5);
+  }
+  @media @mBig {
+    .cols(7.7);
+  }
+  @media @m {
+    .cols(16);
+  }
+
   & .catalog__main_item {
     position: relative;
     border-radius: 5px;
     margin-bottom: 132px;
+
+    @media @mBig {
+      margin-bottom: 202px;
+    }
+    @media @m {
+      margin-bottom: 202px;
+    }
 
     &:hover {
 
@@ -58,25 +75,24 @@
       border-bottom-left-radius: 0;
 
       @media @d {
-        height: 220px;
+        height: 270px;
       }
       @media @t {
-        height: 220px;
+        height: 250px;
+      }
+      @media @mBig {
+        height: 270px;
+      }
+      @media @m {
+        height: 330px;
       }
 
       & a {
 
         & img {
           .animation(3s);
-          min-height: 290px;
+          height: 100%;
           width: 100%;
-
-          @media @d {
-            min-height: 220px;
-          }
-          @media @t {
-            min-height: 220px;
-          }
         }
       }
     }
@@ -94,6 +110,15 @@
       border-radius: 5px;
       border-top-right-radius: 0;
       border-top-left-radius: 0;
+
+      @media @mBig {
+        position: absolute;
+        padding-bottom: 70px;
+      }
+      @media @m {
+        position: absolute;
+        padding-bottom: 70px;
+      }
 
 
       & .main__item_title {
@@ -158,6 +183,13 @@
           width: 100%;
           position: absolute;
           top: 70px;
+
+          @media @mBig {
+            height: 50px !important;
+          }
+          @media @m {
+            height: 50px !important;
+          }
 
           & a.button {
             font-family: @fontGeomBold;

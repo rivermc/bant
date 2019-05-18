@@ -1,4 +1,5 @@
-@m: ~"only screen and (max-width: 767px)";
+@m: ~"only screen and (max-width: 549px)";
+@mBig: ~"only screen and (min-width: 550px) and (max-width: 767px)";
 @t: ~"only screen and (min-width: 768px) and (max-width: 991px)";
 @d: ~"only screen and (min-width: 992px) and (max-width: 1199px)";
 @dMid: ~"only screen and (min-width: 1200px)and (max-width: 1439px)";
@@ -100,6 +101,12 @@
 @media @t {
 	.container {
 		width: 768px;
+	}
+}
+
+@media @mBig {
+	.container {
+		width: 550px;
 	}
 }
 

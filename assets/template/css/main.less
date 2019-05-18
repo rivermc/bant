@@ -12,6 +12,16 @@
 
 @keyframes cloud { from {background-position: 0% 0 } to { background-position: -1920px 0 }   }
 
+
+@keyframes pulse {
+	from { transform: scale(1); }
+	50% { transform: scale(1.25); }
+	to { transform: scale(1); }
+}
+
+@keyframes modalComeIn { 0% {transform: scale(.8, .8);} 65.5% {transform: scale(1.03, 1.03);} 100% {transform: scale(1, 1);} }
+
+@keyframes modalComeInClose { 0% {transform: translateY(0) scale(1, 1); opacity: 1;} 100% {transform: translateY(35px) scale(.97, .97); opacity: 0;} }
 //-------------------------------------------------------------------------//
 		// Animation //
 //-------------------------------------------------------------------------//
@@ -24,6 +34,7 @@
 
 html {
 	overflow-x: hidden;
+	min-width: 320px;
 
 	&.noscroll {
 		overflow: hidden;
