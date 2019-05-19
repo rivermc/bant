@@ -19,6 +19,10 @@ footer {
 				@media @t {
 					.cols(12);
 				}
+				@media @mBig, @m {
+					width: 100%;
+					order: 1;
+				}
 				
 				& .footer__left_address {
 					margin-bottom: 20px;
@@ -57,10 +61,24 @@ footer {
 			& .footer__center {
 				.cols(4);
 
+				@media @mBig, @m {
+					.cols(16);
+					margin-bottom: 20px;
+				}
+
 				& ul {
+
+					@media @mBig, @m {
+						.flex();
+						justify-content: space-between;
+					}
 
 					& li {
 						margin-bottom: 10px;
+
+						@media @mBig, @m {
+							margin: 0 10px 10px 0;
+						}
 
 						& a {
 							.animation();
@@ -68,6 +86,10 @@ footer {
 							color: @colorWhite;
 							text-transform: uppercase;
 							font-size: 12pt;
+
+							@media @m {
+								font-size: 10pt;
+							}
 							
 							&:hover {
 								color: @colorRed;
@@ -91,11 +113,19 @@ footer {
 					margin-top: 20px;
 				}
 
+				@media @mBig, @m {
+					.cols(16);
+					margin-bottom: 20px;
+				}
+
 				& .footer__right_contact {
 					margin-bottom: 40px;
 
 					@media @t {
 						margin-bottom: 0;
+					}
+					@media @mBig, @m {
+						margin-bottom: 10px;
 					}
 
 					& a.phone_link {
@@ -109,15 +139,20 @@ footer {
 
 					& .popup_callback_button {
 						width: 100%;
+						max-width: 200px;
+						margin: 0 auto;
+						display: block;
 					}
 				}
 
 				& .footer__right_social {
 					.flex();
 					justify-content: space-around;
+					max-width: 220px;
+					margin: 0 auto;
 
 					@media @t {
-						max-width: 220px;
+						margin: 0;
 					}
 
 					& p {

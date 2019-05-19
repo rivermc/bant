@@ -31,6 +31,10 @@
 				font-size: 16pt;
 				text-transform: uppercase;
 				margin: 0;
+
+				@media @t {
+					margin-bottom: 10px;
+				}
 			}
 		}
 	}
@@ -52,16 +56,22 @@
 				& .wrap_left {
 					.cols(9);
 
+					@media @t {
+						.cols(12);
+					}
+
 					& p {
 						color: @colorWhite;
-						font-size: 12pt;
-						margin-bottom: 10px;
 					}
 				}
 
 				& .wrap_right {
 					.cols(7);
 					text-align: center;
+
+					@media @t {
+						.cols(4);
+					}
 
 					& img {
 						max-height: 330px;
@@ -85,17 +95,12 @@
 					.cols(8);
 
 					& h2 {
-						font-family: @fontGeomBold;
-						font-size: 13.4pt;
-						margin-bottom: 20px;
 					}
 
 					& ul {
 
 						& li {
-							font-size: 12pt;
 							margin-bottom: 20px;
-
 						}
 					}
 

@@ -25,6 +25,10 @@
           & .form__callback_form-group {
             .cols(5);
 
+            @media @mBig, @m {
+              .cols(16);
+            }
+
             & label.form__group_label {
               color: @colorGrayDark;
               font-size: 10pt;
@@ -46,6 +50,10 @@
 
             & p {
               margin-top: 30px;
+
+              @media @mBig, @m {
+                margin: 6px 0 20px;
+              }
             }
           }
         }

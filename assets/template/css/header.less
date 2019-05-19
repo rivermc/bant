@@ -40,6 +40,10 @@
 						.colsOf(0);
 						.cols(9);
 					}
+					@media @mBig {
+						.colsOf(0);
+						.cols(12);
+					}
 
 					& ul {
 						.flex();
@@ -49,6 +53,9 @@
 							margin: 0 40px 0 0;
 
 							@media @t {
+								margin: 0 20px 0 0;
+							}
+							@media @mBig {
 								margin: 0 20px 0 0;
 							}
 
@@ -74,6 +81,11 @@
 
 					@media @t {
 						.cols(4);
+					}
+					@media @mBig {
+						.cols(8);
+						order: 1;
+						margin-top: 10px;
 					}
 					
 					& a {
@@ -113,6 +125,9 @@
 					}
 					@media @t {
 						.cols(3);
+					}
+					@media @mBig {
+						.cols(4);
 					}
 
 					& svg {
@@ -171,6 +186,10 @@
 				& .header__middle_logo {
 					.cols(3);
 
+					@media @mBig {
+						.cols(4);
+					}
+
 					& a {
 
 						& svg {
@@ -189,6 +208,10 @@
 						.cols(8);
 					}
 
+					@media @mBig {
+						.cols(11);
+					}
+
 					& p {
 						color: @colorRed;
 						font-size: 16pt;
@@ -196,6 +219,9 @@
 						margin: 0;
 
 						@media @t {
+							font-size: 14pt;
+						}
+						@media @mBig {
 							font-size: 14pt;
 						}
 					}
@@ -211,8 +237,19 @@
 						.cols(4);
 					}
 
+					@media @mBig {
+						.cols(16);
+					}
+
 					& a {
 						display: block;
+
+						&.button {
+							@media @mBig {
+								max-width: 200px;
+								margin: 0 auto;
+							}
+						}
 
 						&:not(.button) {
 							color: @colorBlack;

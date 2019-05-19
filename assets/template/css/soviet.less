@@ -27,10 +27,24 @@
       margin: 0 auto;
       padding: 20px;
 
+      @media @t {
+        width: 95%;
+      }
+      @media @mBig, @m {
+        width: 100%;
+        align-items: flex-start;
+      }
+
       & .soviet__img {
         .cols(6);
         .colsOfR(0.5);
         text-align: center;
+
+        @media @mBig, @m {
+          .colsOfR(0);
+          .cols(3);
+          order: 1;
+        }
 
         & img {
 
@@ -39,6 +53,10 @@
 
       & .soviet__text {
         .cols(8);
+
+        @media @mBig, @m {
+          .cols(12.5);
+        }
 
         & p.h1 {
           color: @colorRed;

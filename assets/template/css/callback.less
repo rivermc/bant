@@ -87,7 +87,7 @@
 		position: relative;
 		margin: 0 auto;
 
-		@media @t {
+		@media @t, @mBig, @m {
 			.cols(16);
 		}
 
@@ -101,7 +101,7 @@
 				background-size: contain;
 				top: -10px;
 
-				@media @t {
+				@media @t, @mBig, @m  {
 					top: -50px;
 					height: 130px;
 				}
@@ -134,18 +134,21 @@
 				width: 310px;
 				height: 300px;
 			}
-			@media @t {
+			@media @t  {
 				height: 220px;
+			}
+			@media @mBig, @m {
+				height: 150px;
 			}
 		}
 
 		& h2 {
 			.cols(16);
-			font-family: @fontGeomBold;
-			color: @colorBlack;
-			font-size: 16pt;
-			text-transform: uppercase;
 			margin-bottom: 60px;
+
+			@media @mBig, @m {
+				margin-bottom: 20px;
+			}
 		}
 
 		& .callback__form_block {
@@ -162,10 +165,15 @@
 				padding: 60px 80px;
 				min-height: 280px;
 			}
-			@media @t {
+			@media @t  {
 				.cols(16);
 				padding: 60px 80px;
 				min-height: 280px;
+			}
+			@media @mBig, @m {
+				.cols(16);
+				padding: 20px 10px;
+				min-height: 250px;
 			}
 
 			& .form__callback_error {
@@ -188,14 +196,31 @@
 				position: absolute;
 				bottom: 60px;
 
+				@media @mBig, @m {
+					bottom: 40px;
+					.cols(14);
+				}
+				@media @m {
+					.cols(14);
+					bottom: 10px;
+				}
+
 				& .form__callback_form-group {
 					.cols(8);
 					margin: 10px 0;
+
+					@media @mBig, @m {
+						.cols(16);
+					}
 
 					& label.form__group_label {
 					    color: @colorBlack;
 					    font-size: 12pt;
                         top: 15px;
+
+						@media @mBig, @m {
+							font-size: 10pt;
+						}
 					}
 
 					&.focused {
@@ -210,12 +235,23 @@
                       padding: 0 10px;
                       margin: 10px 0 0;
                       font-size: 12pt;
+
+						@media @mBig, @m {
+							background: transparent;
+							max-width: 220px;
+						}
                     }
 				}
 
 				& button.callback__form_button {
 					.cols(6);
 					.colsOf(2);
+
+					@media @mBig, @m {
+						.cols(16);
+						.colsOf(0);
+						max-width: 220px;
+					}
 				}
 			}
 		}

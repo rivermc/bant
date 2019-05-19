@@ -41,12 +41,24 @@
 		width: 20px;
 		cursor: pointer;
 
+		@media @m {
+			top: ~'calc(50% - 100px)';
+		}
+
 		&.slick-prev {
 			left: -30px;
 			transform: translateY(-50%) rotate(180deg);
+
+			@media @m {
+				left: 10px;
+			}
 		}
 		&.slick-next {
 			right: -30px;
+
+			@media @m {
+				right: 10px;
+			}
 		}
 	}
 }

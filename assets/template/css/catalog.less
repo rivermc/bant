@@ -34,6 +34,11 @@
           .flex();
           align-items: center;
 
+          @media @mBig, @m {
+            align-items: flex-start;
+            justify-content: space-between;
+          }
+
           & li.first {
 
             & a {
@@ -44,6 +49,15 @@
           & li {
             .cols(4);
             margin-bottom: 0;
+
+            @media @mBig {
+              .cols(5);
+              margin-bottom: 6px;
+            }
+            @media @m {
+              .cols(7.5);
+              margin-bottom: 6px;
+            }
 
             & a {
               .animation();

@@ -66,12 +66,29 @@ h1, .h1 {
 	font-size: 16pt;
 	text-transform: uppercase;
 	margin-bottom: 20px;
+
+	@media @t {
+		font-size: 15pt;
+	}
+	@media @mBig {
+		font-size: 13pt;
+	}
+	@media @m {
+		font-size: 12pt;
+	}
 }
 
 h2, .h2 {
 	font-family: @fontGeomBold;
 	font-size: 13.4pt;
 	margin: 20px 0 10px;
+
+	@media @t {
+		font-size: 12pt;
+	}
+	@media @mBig, @m {
+		font-size: 11pt;
+	}
 }
 
 h3, .h3 {
@@ -82,6 +99,13 @@ h3, .h3 {
 p {
 	font-size: 12pt;
 	margin-bottom: 10px;
+
+	@media @t {
+		font-size: 11pt;
+	}
+	@media @mBig, @m {
+		font-size: 10pt;
+	}
 }
 
 
@@ -89,6 +113,13 @@ ul, ol {
 	& li {
 		font-size: 12pt;
 		margin-bottom: 10px;
+
+		@media @t {
+			font-size: 11pt;
+		}
+		@media @mBig, @m {
+			font-size: 10pt;
+		}
 	}
 }
 
@@ -104,6 +135,13 @@ button, .button {
 	border: 0;
 	display: inline-block;
 	line-height: 1.2em;
+
+	@media @t {
+		font-size: 11pt;
+	}
+	@media @mBig, @m {
+		font-size: 10pt;
+	}
 
 	&:hover {
 		background: @colorBlack;

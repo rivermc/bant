@@ -9,22 +9,22 @@
 	background-repeat: no-repeat;
 	padding: 60px 0;
 
-	@media @t {
+	@media @t, @mBig, @m {
 		padding: 20px 0;
 	}
 
 	& .container { 
 
 		& h2 {
-			font-family: @fontGeomBold;
 			color: @colorRed;
-			font-size: 16pt;
-			text-transform: uppercase;
 			margin-bottom: 60px;
 			text-align: center;
 
 			@media @t {
 				margin-bottom: 40px;
+			}
+			@media @mBig, @m {
+				margin-bottom: 20px;
 			}
 		}
 
@@ -39,20 +39,20 @@
 				list-style: none;
 				counter-reset: my-awesome-counter;
 
+				@media @mBig, @m {
+					.cols(16);
+				}
+
 				&:nth-child(2) {
 					counter-reset: my-awesome-counter +4;
 				}
 
 				& li {
 					counter-increment: my-awesome-counter;
-					font-size: 12pt;
 					margin: 0 0 20px 50px;
 					position: relative;
 
 					@media @d {
-						font-size: 11pt;
-					}
-					@media @t {
 						font-size: 11pt;
 					}
 
@@ -62,6 +62,10 @@
 						font-size: 16pt;
 						position: absolute;
 						left: -30px;
+
+						@media @mBig, @m {
+							font-size: 12pt;
+						}
 					}
 				}
 			}
