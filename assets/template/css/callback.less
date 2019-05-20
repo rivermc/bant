@@ -81,7 +81,7 @@
 		align-items: center;
 		border: 2px solid @colorRed;
 		border-radius: 5px;
-		background: #fff url('../images/callback/bg.jpg');
+		background: @colorWhite url('../images/callback/bg.jpg');
 		background-repeat: no-repeat;
 		background-position: right bottom;
 		position: relative;
@@ -100,6 +100,12 @@
 				background-repeat: no-repeat;
 				background-size: contain;
 				top: -10px;
+
+				@media @d {
+					width: 230px;
+					height: 220px;
+					left: 10px;
+				}
 
 				@media @t, @mBig, @m  {
 					top: -50px;
@@ -197,7 +203,7 @@
 				bottom: 60px;
 
 				@media @mBig, @m {
-					bottom: 40px;
+					bottom: 20px;
 					.cols(14);
 				}
 				@media @m {

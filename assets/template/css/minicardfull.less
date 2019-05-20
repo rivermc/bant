@@ -1,9 +1,17 @@
-.msCardMini {
+.msCartMini {
   .animation();
   top: 20%;
-  right: ~'-350px';
+  right: -350px;
   position: fixed;
   z-index: 999;
+
+  &.active {
+    right: 0;
+  }
+
+  @media @m {
+    right: -290px;
+  }
 
   &.active {
 
@@ -62,6 +70,11 @@
     box-shadow: 5px 5px 20px -10px @colorBlack;
     padding: 20px;
     width: 350px;
+
+    @media @m {
+      padding: 10px;
+      width: 290px;
+    }
   }
 
   & .mini_basket__cont {

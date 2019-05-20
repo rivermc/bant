@@ -38,6 +38,10 @@
               & .product__item_left {
                 .cols(7.5);
 
+                @media @t, @mBig, @m {
+                  .cols(16);
+                }
+
                 & .product__item_img {
                   position: relative;
 
@@ -47,6 +51,10 @@
                     top: 10px;
                     z-index: 100;
                     cursor: pointer;
+
+                    @media @t {
+                      left: 100px;
+                    }
 
                     &:hover {
 
@@ -68,6 +76,9 @@
 
                     & .fotorama {
 
+                      & .fotorama__wrap {
+                        margin: 0 auto;
+                      }
                     }
                   }
                 }
@@ -93,6 +104,10 @@
 
               & .product__item_right {
                 .cols(8);
+
+                @media @t, @mBig, @m {
+                  .cols(16);
+                }
 
                 & .product__title {
 
@@ -149,6 +164,10 @@
 
                     & .share {
                       position: relative;
+
+                      @media @d {
+                        margin: 20px 0 0 auto;
+                      }
 
                       & .share_button {
                         margin: 0;
@@ -244,10 +263,10 @@
 
                   & .shipping_item_text {
                     .cols(16);
+                    position: relative;
 
                     & .shipping_text {
                       width: 100%;
-                      position: relative;
                       opacity: 1;
                       visibility: visible;
                       transition: none;

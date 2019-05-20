@@ -34,7 +34,7 @@
           font-weight: 100;
           margin: 20px 0;
 
-          @media @m {
+          @media @mBig, @m {
             font-size: 12pt;
           }
         }
@@ -46,7 +46,7 @@
           .flex();
           align-items: center;
 
-          @media @m {
+          @media @mBig, @m {
             margin: 10px 0 20px 0;
           }
 
@@ -54,7 +54,7 @@
             border-bottom: 1px dashed @colorGray;
             margin-bottom: 20px;
 
-            @media @m {
+            @media @mBig, @m {
               display: none;
             }
 
@@ -82,9 +82,16 @@
           & .basket__product_image {
             .cols(2);
 
-            @media @m {
+            @media @mBig, @m {
               .cols(16);
               text-align: center;
+            }
+
+            & img {
+
+              @media @mBig, @m {
+                width: 100%;
+              }
             }
 
           }
@@ -93,7 +100,7 @@
             .cols(7);
             padding-left: 10px;
 
-            @media @m {
+            @media @mBig, @m {
               .cols(16);
               margin-bottom: 20px;
             }
@@ -121,7 +128,7 @@
             .cols(2);
             text-align: right;
 
-            @media @m {
+            @media @mBig, @m {
               .cols(5);
               text-align: center;
             }
@@ -137,7 +144,7 @@
             .cols(2);
             text-align: right;
 
-            @media @m {
+            @media @mBig, @m {
               display: table;
             }
 
@@ -169,7 +176,7 @@
             .cols(2.5);
             text-align: right;
 
-            @media @m {
+            @media @mBig, @m {
               .cols(6.5);
               padding-right: 5px;
             }
@@ -184,7 +191,7 @@
           & .basket__product_remove {
             .cols(0.5);
 
-            @media @m {
+            @media @mBig, @m {
               .cols(1.5);
             }
 
@@ -211,7 +218,7 @@
                   background-size: 70% 70%;
                 }
 
-                @media @m {
+                @media @mBig, @m {
                   margin-left: 0;
                 }
 
@@ -239,7 +246,7 @@
         justify-content: flex-end;
         align-items: flex-end;
 
-        @media @m {
+        @media @mBig, @m {
           .cols(16);
           .colsOf(0);
         }
@@ -253,7 +260,7 @@
             @media @t {
               .cols(16);
             }
-            @media @m {
+            @media @mBig, @m {
               .cols(16);
             }
           }
@@ -299,7 +306,6 @@
               color: @colorBlack;
 
               & span {
-
                 color: @colorBlack;
                 font-size: 2.6rem;
               }

@@ -68,30 +68,16 @@
 
     & .main__item_img {
       .cols(16);
-      height: 290px;
       overflow: hidden;
       border-radius: 5px;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
-
-      @media @d {
-        height: 270px;
-      }
-      @media @t {
-        height: 250px;
-      }
-      @media @mBig {
-        height: 270px;
-      }
-      @media @m {
-        height: 330px;
-      }
+      margin-bottom: -4px;
 
       & a {
 
         & img {
           .animation(3s);
-          height: 100%;
           width: 100%;
         }
       }

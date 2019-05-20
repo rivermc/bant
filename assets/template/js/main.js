@@ -208,6 +208,22 @@ $(document).ready(function() {
 /* Card */
 /* ----------------------------------------------------------------------- */
 
+    $('.zoom').click(function(){
+        $('.fotorama__stage__shaft img').unbind('mouseover');
+        $('.fotorama__stage__shaft .fotorama__active img').okzoom({
+            width: 300,
+            height: 300,
+            scaleWidth: 1000,
+            round: true,
+            shadow: "0 0 5px #333333",
+            border: "1px solid #333333"
+        });
+    });
+
+    $('.shipping_text').click(function(){
+        $('.shipping_btn').eq($(this).index()).trigger('click');
+    });
+
     $('.shipping_btn').click(function(){
 
         if ($(this).hasClass('active')) {
@@ -222,16 +238,8 @@ $(document).ready(function() {
         }
     });
 
-    $('.zoom').click(function(){
-        $('.fotorama__stage__shaft img').unbind('mouseover');
-        $('.fotorama__stage__shaft .fotorama__active img').okzoom({
-            width: 300,
-            height: 300,
-            scaleWidth: 1000,
-            round: true,
-            shadow: "0 0 5px #333333",
-            border: "1px solid #333333"
-        });
+    $('.product__item_share').click(function(){
+        $('.js-share').trigger('click');
     });
 
     $('.js-share').click(function(){

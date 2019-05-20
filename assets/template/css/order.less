@@ -17,7 +17,7 @@
           border-bottom: 1px dashed @colorGray;
           padding: 15px 15px 50px;
 
-          @media @m {
+          @media @mBig, @m {
             .cols(16);
             padding: 15px 15px 20px;
           }
@@ -38,7 +38,7 @@
             @media @t {
               .cols(16);
             }
-            @media @m {
+            @media @mBig, @m {
               .cols(16);
             }
 
@@ -80,7 +80,7 @@
               @media @t {
                 .cols(16);
               }
-              @media @m {
+              @media @mBig, @m {
                 .cols(16);
               }
 
@@ -130,7 +130,7 @@
                     width: 80%;
                     font-size: 12pt;
                   }
-                  @media @t, @m {
+                  @media @t, @mBig, @m {
                     width: 80%;
                     font-size: 10pt;
                   }
@@ -154,7 +154,7 @@
             border: 0;
             padding: 10px 0;
             
-            @media @t, @m {
+            @media @t, @mBig, @m {
               .cols(16);
             }
 
@@ -187,7 +187,7 @@
                   @media @d {
                     font-size: 11pt;
                   }
-                  @media @t, @m {
+                  @media @t, @mBig, @m {
                     font-size: 10pt;
                   }
                 }

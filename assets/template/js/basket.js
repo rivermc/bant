@@ -25,10 +25,10 @@ function basket_init() {
     });
 
 
-    $('.msCardMini .minicart_button.open').click(function(){
-        $(this).parents('.msCardMini').addClass('active').css('right', '0');
+    $('.msCartMini .minicart_button.open').click(function(){
+        $(this).parents('.msCartMini').addClass('active');
     });
-    $('.msCardMini .minicart_button.close').click(function(){
-        $(this).parents('.msCardMini').removeClass('active').css('right', '-350px');
+    $('.msCartMini .minicart_button.close').click(function(){
+        $(this).parents('.msCartMini').removeClass('active');
     });
 }
