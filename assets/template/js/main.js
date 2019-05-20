@@ -309,20 +309,20 @@ $(document).ready(function() {
 
 
     miniShop2.Callbacks.Cart.change.response.success = function(response) {
-        getModule('Snippet', 'msCart', 'tpl => MiniCardFull',function (data) {
-            $('.msCardMini').html(data);
+        getModule('Snippet', 'msCart', 'tpl => MiniCartFull',function (data) {
+            $('.msCartMini').html(data);
             basket_init();
         });
     };
     miniShop2.Callbacks.Cart.add.response.success = function(response) {
-        getModule('Snippet', 'msCart', 'tpl => MiniCardFull',function (data) {
-            $('.msCardMini').html(data);
+        getModule('Snippet', 'msCart', 'tpl => MiniCartFull',function (data) {
+            $('.msCartMini').html(data);
             basket_init();
         });
     };
     miniShop2.Callbacks.Cart.remove.response.success = function(response) {
-        getModule('Snippet', 'msCart', 'tpl => MiniCardFull',function (data) {
-            $('.msCardMini').html(data);
+        getModule('Snippet', 'msCart', 'tpl => MiniCartFull',function (data) {
+            $('.msCartMini').html(data);
             basket_init();
         });
     };
