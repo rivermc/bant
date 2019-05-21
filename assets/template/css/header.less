@@ -44,10 +44,19 @@
 						.colsOf(0);
 						.cols(12);
 					}
+					@media @m {
+						.colsOf(0);
+						.cols(16);
+						margin-bottom: 20px;
+					}
 
 					& ul {
 						.flex();
 						align-items: center;
+
+						@media @m {
+							justify-content: space-between;
+						}
 
 						& li {
 							margin: 0 40px 0 0;
@@ -58,6 +67,9 @@
 							@media @mBig {
 								margin: 0 20px 0 0;
 							}
+							@media @m {
+								margin: 0;
+							}
 
 							& a {
 								.animation();
@@ -65,6 +77,10 @@
 								color: @colorBlack;
 								font-size: 12pt;
 								margin: 0;
+
+								@media @m {
+									font-size: 10pt;
+								}
 								
 								&:hover {
 									color: @colorRed;
@@ -87,9 +103,16 @@
 						order: 1;
 						margin-top: 10px;
 					}
+					@media @m {
+						.cols(9);
+					}
 					
 					& a {
 						margin-right: 20px;
+
+						@media @m {
+							margin-right: 14px;
+						}
 
 						&:last-child {
 							margin-right: 0;
@@ -129,6 +152,9 @@
 					@media @mBig {
 						.cols(4);
 					}
+					@media @m {
+						.cols(6.5);
+					}
 
 					& svg {
 
@@ -143,7 +169,7 @@
 						background: @colorRed;
 						position: absolute;
 						top: -10px;
-						left: 30%;
+						left: 34px;
 						width: 20px;
 						height: 20px;
 						border-radius: 25em;
@@ -189,6 +215,10 @@
 					@media @mBig {
 						.cols(4);
 					}
+					@media @m {
+						.cols(16);
+						text-align: center;
+					}
 
 					& a {
 
@@ -207,9 +237,12 @@
 					@media @t {
 						.cols(8);
 					}
-
 					@media @mBig {
 						.cols(11);
+					}
+					@media @m {
+						.cols(16);
+						margin: 20px 0;
 					}
 
 					& p {
@@ -224,6 +257,9 @@
 						@media @mBig {
 							font-size: 14pt;
 						}
+						@media @m {
+							font-size: 12pt;
+						}
 					}
 				}
 
@@ -236,8 +272,10 @@
 					@media @t {
 						.cols(4);
 					}
-
 					@media @mBig {
+						.cols(16);
+					}
+					@media @m {
 						.cols(16);
 					}
 

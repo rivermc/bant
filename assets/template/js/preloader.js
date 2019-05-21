@@ -5,7 +5,10 @@
 
 setTimeout(function() {
     if ($('.preloader').hasClass('active')) {
-        $('.preloader').css('display', 'none');
+        $('.preloader').css('opacity', '0').delay(500).queue(function (next) {
+            $('.preloader').css('display', 'none').removeClass('active');
+            next();
+        });
     }
 } , 2000);
 

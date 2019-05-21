@@ -1,4 +1,4 @@
-.popoup_modal {
+.popup_modal {
   .animationKey(modalComeIn, 0.4s, ease, 1);
   background: @colorWhite;
   box-shadow: 5px 5px 20px -10px @colorBlack;
@@ -8,15 +8,41 @@
   max-width: 800px;
   margin: 0 auto;
   position: relative;
+
+  &.transparent {
+    background: transparent;
+    padding: 0;
+  }
+
   & > div {
     .animationKey(modalComeIn, 0.4s, ease, 1);
+  }
+
+  & .close_button, .mfp-close {
+    background: url(../images/elements/close.svg);
+    background-repeat: no-repeat;
+    padding: 6px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+    z-index: 999;
+
+    &:active {
+      top: 10px;
+    }
+  }
+  button.mfp-close {
+    .hide();
   }
 }
 
 
 &.mfp-removing {
 
-  & .popoup_modal {
+  & .popup_modal {
     .animationKey(modalComeInClose, 0.35s, ease, 1);
     animation-delay: 0.1s;
     animation-fill-mode: forwards;

@@ -11,6 +11,7 @@
 
   @media @m {
     right: -290px;
+    top: 10%;
   }
 
   &.active {
@@ -36,6 +37,11 @@
       top: -36px;
       right: 0;
       width: 200px;
+
+      @media @m {
+        width: 150px;
+        padding: 8px;
+      }
 
       & p.text {
         .cols(12);
@@ -196,12 +202,22 @@
 
       & a {
         font-size: 10pt;
+
+        @media @m {
+          width: 100%;
+        }
       }
 
       & p {
         font-size: 10pt;
         cursor: pointer;
         margin-bottom: 0;
+
+        @media @m {
+          width: 100%;
+          text-align: center;
+          margin: 10px 0;
+        }
       }
     }
   }

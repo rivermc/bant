@@ -14,7 +14,7 @@ function fast_buy(elem) {
                 var productID = $(this.st.el).data('id');
                 var productPagetitle = $(this.st.el).data('title');
 
-                getModule('Chunk', 'OneClickBuy', 'id => ' + productID + ', pagetitle => ' + productPagetitle, function (data) {
+                getModule('Chunk', 'FastBuy', 'id => ' + productID + ', pagetitle => ' + productPagetitle, function (data) {
                     $('.fast_buy_modal').html(data);
                     $('.form_input').focus(function(){
                         var callback_group = $(this).parent();
