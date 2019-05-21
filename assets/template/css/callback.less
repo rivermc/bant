@@ -124,6 +124,16 @@
 			& .callback__form_block {
 				.cols(16);
 			}
+			& h2 {
+				margin-bottom: 0;
+
+				@media @d {
+					margin-bottom: 40px;
+				}
+				@media @t, @mBig, @m {
+					margin-bottom: 30px;
+				}
+			}
 		}
 
 		&:before {
@@ -146,16 +156,13 @@
 			}
 			@media @mBig, @m {
 				height: 150px;
+				left: 0;
 			}
 		}
 
 		& h2 {
 			.cols(16);
 			margin-bottom: 60px;
-
-			@media @mBig, @m {
-				margin-bottom: 20px;
-			}
 		}
 
 		& .callback__form_block {

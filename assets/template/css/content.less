@@ -9,7 +9,7 @@
 	@media @d {
 		padding: 20px 0;
 	}
-	@media @t {
+	@media @t, @mBig, @m {
 		padding: 20px 0;
 	}
 
@@ -63,6 +63,11 @@
 		position: relative;
 		top: 100px;
 
+		@media @mBig, @m {
+			top: 0;
+			margin: 10px 0 -30px;
+		}
+
 		& img {
 			width: 100%;
 
@@ -76,7 +81,10 @@
 		padding: 140px 0 100px;
 
 		@media @t {
-			padding: 140px 0 40px;
+			padding: 160px 0 40px;
+		}
+		@media @mBig, @m {
+			padding: 50px 0;
 		}
 
 		& .container{
@@ -92,6 +100,9 @@
 					@media @t {
 						.cols(10);
 					}
+					@media @mBig, @m {
+						.cols(16);
+					}
 
 					& p {
 						color: @colorWhite;
@@ -104,6 +115,9 @@
 
 					@media @t {
 						.cols(6);
+					}
+					@media @mBig, @m {
+						.cols(8);
 					}
 
 					& img {
