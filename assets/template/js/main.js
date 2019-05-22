@@ -261,6 +261,25 @@ $(document).ready(function() {
     }, 1000);
 
     /* ----------------------------------------------------------------------- */
+    /* mobile menu detect*/
+    /* ----------------------------------------------------------------------- */
+    function detectMobileMenu() {
+        var widthWin = $(window).width();
+        var m = 550;
+        var mBig = 768;
+
+        if (widthWin < m || widthWin < mBig) {
+            $('.header__bottom').addClass('mobile_menu');
+        }
+        else {
+            $('.header__bottom').removeClass('mobile_menu');
+        }
+    }
+    detectMobileMenu();
+    $(window).resize(detectMobileMenu);
+
+
+    /* ----------------------------------------------------------------------- */
     /* Catalog insert Callback */
     /* ----------------------------------------------------------------------- */
 
