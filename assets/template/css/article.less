@@ -30,15 +30,32 @@
     justify-content: space-between;
 
     & .article__teaser {
-      .cols(3.95);
+      .cols(3.75);
       border: 1px solid @colorGray;
       margin-bottom: 20px;
       border-radius: 5px;
       overflow: hidden;
 
+      @media @t {
+        .cols(5);
+      }
+      @media @mBig {
+        .cols(7.75);
+      }
+      @media @m {
+        .cols(16);
+      }
+
       & .article__teaser_img {
         height: 290px;
         overflow: hidden;
+
+        @media @d {
+          height: 220px;
+        }
+        @media @t {
+          height: 200px;
+        }
 
         & a {
 
@@ -54,6 +71,12 @@
             min-height: 290px;
             width: 100%;
 
+            @media @d {
+              height: 220px;
+            }
+            @media @t {
+              height: 200px;
+            }
           }
         }
       }

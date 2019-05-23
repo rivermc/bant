@@ -36,6 +36,11 @@
         position: relative;
         top: 50%;
         transform: translateY(-50%);
+
+        @media @t, @mBig, @m {
+          top: 0;
+          transform: none;
+        }
       }
     }
 
@@ -43,6 +48,10 @@
       padding: 20px 0 60px;
       column-count: 2;
       column-gap: 30px;
+
+      @media @mBig, @m {
+        column-count: 1;
+      }
 
       & h1 {
         color: @colorRed;

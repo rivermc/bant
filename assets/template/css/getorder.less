@@ -29,18 +29,6 @@
 
       & .getorder__title {
         .cols(16);
-
-        & h1 {
-          text-transform: uppercase;
-          font-size: 19pt;
-          letter-spacing: 1px;
-          font-weight: 100;
-          margin: 20px 0;
-
-          @media @m {
-            font-size: 12pt;
-          }
-        }
       }
 
       & .getorder__product {
@@ -55,74 +43,39 @@
           align-items: center;
           margin-bottom: 20px;
           
-          @media @m {
+          @media @mBig, @m {
             .cols(16);
-            margin: 10px 0 20px 0;
+            margin: 0 0 20px 0;
           }
 
           & .getorder__product_image {
             .cols(6);
-
-            @media @t {
-              .cols(16);
-              text-align: center;
-            }
-            @media @m {
-              .cols(16);
-              text-align: center;
-            }
+            .colsOfR(0.5);
 
             & img {
               max-height: 200px;
             }
-
           }
 
-          & .getorder__product_title {
-            .cols(10);
+          & .getorder__product_text {
+            .cols(9.5);
 
-            @media @t {
-              .cols(16);
-            }
-            @media @m {
-              .cols(16);
-              margin-bottom: 10px;
-            }
+            & .getorder__product_title {
 
-            & a {
-              color: @colorBlack;
-              font-size: 13pt;
-              display: inline-block;
-              margin-bottom: 10px;
-              width: 90%;
+              & a {
+                color: @colorBlack;
+              }
 
-              @media @t {
-                font-size: 13pt;
+              & p {
+                color: @colorBlack;
+                font-size: 9.5pt;
               }
             }
 
-            & p {
-              font-size: 9.5pt;
-              color: @colorBlack;
+            & .getorder__product_allprice {
 
-            }
-          }
-
-          & .getorder__product_allprice {
-            .cols(10);
-            .colsOf(6);
-            
-            @media @t, @m {
-              .cols(16);
-              .colsOf(0);
-            }
-
-            & p {
-              color: @colorBlack;
-              font-size: 14pt;
-              
-              @media @m {
-                font-size: 11pt;
+              & p {
+                margin-bottom: 4px;
               }
             }
           }
@@ -134,38 +87,36 @@
         border-bottom: 1px dashed @colorGray;
         padding-bottom: 20px;
         
-        @media @m {
+        @media @mBig, @m {
           .cols(16);
         }
 
         & .getorder__total_cont {
 
           & h2 {
-            text-transform: uppercase;
-            font-size: 19pt;
-            letter-spacing: 1px;
-            font-weight: 100;
-            margin: 20px 0;
             text-align: right;
 
-            @media @m {
-              font-size: 12pt;
+            @media @mBig, @m {
               text-align: left;
             }
           }
 
           & p {
-            font-size: 10pt;
             color: @colorBlack;
+            font-size: 10pt;
             text-align: right;
             
-            @media @m {
+            @media @mBig, @m {
               text-align: left;
             }
 
             & span {
               color: @colorBlack;
               font-size: 26pt;
+
+              @media @mBig,@m {
+                font-size: 18pt;
+              }
             }
           }
         }
@@ -174,7 +125,7 @@
       & .getorder__info {
         .cols(8);
         
-        @media @m {
+        @media @mBig, @m {
           .cols(16);
         }
 
@@ -182,28 +133,13 @@
 
           & .getorder__info_block {
 
-            & h2 {
-              text-transform: uppercase;
-              font-size: 19pt;
-              letter-spacing: 1px;
-              font-weight: 100;
-              margin: 20px 0;
-
-              @media @m {
-                font-size: 12pt;
-              }
-            }
 
             & p {
               color: @colorBlack;
               font-size: 14pt;
               
-              @media @m {
+              @media @mBig,@m {
                 font-size: 9pt;
-              }
-
-              & span {
-
               }
             }
           }

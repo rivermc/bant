@@ -2,6 +2,10 @@
   background: @colorRedLight;
   padding: 40px 0;
 
+  @media @m {
+    padding: 0;
+  }
+
   & .container {
 
     & .article__other_title {
@@ -14,25 +18,13 @@
         font-family: @fontGeomBold;
         color: @colorRed;
         font-size: 13.4pt;
+
+        @media @m {
+          .cols(16);
+        }
       }
 
       & a {
-        .animation();
-        background: @colorRed;
-        color: @colorWhite;
-        padding: 6px 25px;
-        font-size: 12pt;
-        text-align: center;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-        cursor: pointer;
-        border: 0;
-        width: auto;
-
-        &:hover {
-          background: @colorBlack;
-        }
       }
     }
 
