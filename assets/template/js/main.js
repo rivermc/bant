@@ -227,15 +227,14 @@ $(document).ready(function() {
     $('.shipping_btn').click(function(){
 
         if ($(this).hasClass('active')) {
-            $(this).removeClass('active');
-            $('.shipping_text').slideUp(400).removeClass('active')
+            $('.shipping_text').slideUp(400).toggleClass('active');
         }
         else {
             var index = $(this).index();
             $('.shipping_btn').removeClass('active');
-            $(this).addClass('active');
-            $('.shipping_text').slideUp(400).removeClass('active').eq(index - 1).slideDown(400).addClass('active');
+            $('.shipping_text').slideUp(400).removeClass('active').eq(index - 1).slideDown(400).toggleClass('active');
         }
+        $(this).toggleClass('active');
     });
 
     $('.product__item_share').click(function(){
@@ -244,13 +243,19 @@ $(document).ready(function() {
 
     $('.js-share').click(function(){
         if ($(this).hasClass('active')) {
-            $(this).removeClass('active');
-            $('.product__item_share').slideUp(400).removeClass('active')
+            $('.product__item_share').slideUp(400).toggleClass('active');
         }
         else {
-            $(this).addClass('active');
-            $('.product__item_share').slideDown(400).addClass('active');
+            $('.product__item_share').slideDown(400).toggleClass('active');
         }
+        $(this).toggleClass('active');
+    });
+    $('.tooltip_target').click(function(){
+        $('.tooltip_target').removeClass('active');
+        $(this).toggleClass('active');
+    });
+    $('.tooltip_target').mouseenter(function(){
+        $('.tooltip_target').removeClass('active');
     });
 
     /* ----------------------------------------------------------------------- */
@@ -264,7 +269,7 @@ $(document).ready(function() {
     /* mobile menu detect*/
     /* ----------------------------------------------------------------------- */
     function detectMobileMenu() {
-        var widthWin = $(window).width();
+        var widthWin = $('body, html').width();
         var m = 550;
         var mBig = 768;
 

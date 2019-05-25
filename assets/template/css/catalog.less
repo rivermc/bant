@@ -32,11 +32,10 @@
 
         & ul {
           .flex();
-          align-items: center;
+          align-items: flex-start;
+          justify-content: space-between;
 
           @media @mBig, @m {
-            align-items: flex-start;
-            justify-content: space-between;
           }
 
           & li.first {
@@ -47,7 +46,7 @@
           }
 
           & li {
-            .cols(4);
+            .cols(3.8);
             margin-bottom: 0;
 
             @media @mBig {
@@ -100,9 +99,15 @@
               & #mse2_filters {
                 .flex();
                 align-items: center;
+                position: relative;
 
                 & .filter_price {
                   .flex();
+
+                  @media @mBig, @m {
+                    width: 100%;
+                    margin-bottom: 20px;
+                  }
 
                   & .filter_price_top {
                     .flex();
@@ -164,7 +169,6 @@
                             }
                           }
                         }
-
                       }
                     }
                   }
@@ -172,6 +176,7 @@
 
                 & .filter_info_block {
                   .flex();
+                  margin: 0 50px 0 0;
 
                   & .shipping_info {
 
@@ -182,11 +187,50 @@
                   }
 
                   & .tooltip_target {
-                    margin: 0 10px;
+                    margin: 0 20px 0 0;
+                    
+                    @media @m {
+                      position: initial;
+                    }
 
                     & .tooltip {
                       min-width: 500px;
                       left: -40px;
+
+                      @media @d {
+                        min-width: 400px;
+                        left: -100px;
+                      }
+                      @media @t {
+                        min-width: 400px;
+                        left: -300px;
+                      }
+                      @media @mBig {
+                        min-width: 400px;
+                        left: -5px;
+                      }
+                      @media @m {
+                        left: 2.5%;
+                        margin: 10px 0;
+                        width: 90%;
+                        min-width: auto;
+                      }
+
+                      &:before {
+
+                        @media @d {
+                          left: 105px;
+                        }
+                        @media @t {
+                          left: 305px;
+                        }
+                        @media @mBig {
+                          left: 10px;
+                        }
+                        @media @m {
+                          display: none;
+                        }
+                      }
 
                       & p, li {
                         font-size: 10pt;
