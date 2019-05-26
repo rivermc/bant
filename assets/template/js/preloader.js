@@ -19,7 +19,7 @@ $(document).ready(function() {
 /* ----------------------------------------------------------------------- */
 
 
-    setTimeout(function () {
+    setTimeout(function() {
 
         $('.preloader').css('opacity', '0').delay(500).queue(function (next) {
             $('.preloader').css('display', 'none').removeClass('active');
@@ -29,12 +29,12 @@ $(document).ready(function() {
     }, 400);
 
 
-    $('.preloader').click(function () {
+    $('.preloader').click(function() {
         $(this).css('display', 'none').removeClass('active');
     });
 
 
-    $('a').click(function () {
+    $('a').click(function() {
 
         if (!$(this).hasClass('nopreload')) {
             $('.preloader').css('display', 'block').delay(100).queue(function (next) {

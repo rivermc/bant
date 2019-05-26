@@ -250,13 +250,8 @@ $(document).ready(function() {
         }
         $(this).toggleClass('active');
     });
-    $('.tooltip_target').click(function(){
-        $('.tooltip_target').removeClass('active');
-        $(this).toggleClass('active');
-    });
-    $('.tooltip_target').mouseenter(function(){
-        $('.tooltip_target').removeClass('active');
-    });
+
+
 
     /* ----------------------------------------------------------------------- */
     /* FastBuy init */

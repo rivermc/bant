@@ -115,6 +115,11 @@
                     & .prop_title {
                       .cols(5);
 
+                      @media @m {
+                        .cols(16);
+                        margin-bottom: 10px;
+                      }
+
                       & p {
                         color: @colorRed;
                         text-transform: uppercase;
@@ -127,8 +132,16 @@
                       .flex();
                       align-items: center;
 
+                      @media @m {
+                        .cols(16);
+                      }
+
                       & label {
                         .cols(3);
+
+                        @media @m {
+                          .cols(4);
+                        }
 
                         & input {
                           font-family: @fontGeom;
@@ -191,6 +204,7 @@
                     
                     @media @m {
                       position: initial;
+                      margin: 0 10px 0 0;
                     }
 
                     & .tooltip {
@@ -264,7 +278,19 @@
                     text-transform: uppercase;
                     cursor: pointer;
 
-                    & span {
+                    &:after {
+                      content: "↑↓";
+                    }
+
+                    &.active {
+
+                      &:after {
+                        display: none;
+                      }
+                    }
+
+                    @media @m {
+                      font-size: 8pt;
                     }
                   }
 
