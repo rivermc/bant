@@ -104,7 +104,7 @@
       }
       @media @m {
         position: absolute;
-        padding-bottom: 70px;
+        padding-bottom: 50px;
       }
 
 
@@ -127,6 +127,10 @@
         & p {
           color: @colorGrayDark;
           font-size: 10pt;
+
+          @media @m {
+            margin: 0;
+          }
         }
       }
 
@@ -176,6 +180,7 @@
           }
           @media @m {
             height: 50px !important;
+            top: 55px;
           }
 
           & a.button {
