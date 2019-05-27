@@ -277,9 +277,11 @@
                     font-size: 10pt;
                     text-transform: uppercase;
                     cursor: pointer;
+                    margin-right: 10px;
 
                     &:after {
                       content: "↑↓";
+                      min-width: 15px;
                     }
 
                     &.active {
@@ -291,6 +293,12 @@
 
                     @media @m {
                       font-size: 8pt;
+                    }
+
+                    & span {
+                      &:after {
+                        min-width: 15px;
+                      }
                     }
                   }
 
