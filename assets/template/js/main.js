@@ -264,7 +264,8 @@ $(document).ready(function() {
     /* mobile menu detect*/
     /* ----------------------------------------------------------------------- */
     function detectMobileMenu() {
-        var widthWin = $('body, html').width();
+        var widthWin = $(window).width() + 15;
+        console.log(widthWin);
         var m = 550;
         var mBig = 768;
 
@@ -277,6 +278,17 @@ $(document).ready(function() {
     }
     detectMobileMenu();
     $(window).resize(detectMobileMenu);
+
+    /* ----------------------------------------------------------------------- */
+    /* Mobile Menu */
+    /* ----------------------------------------------------------------------- */
+
+    $('.js-mobile_menu').click(function(){
+        $('.mobile_menu').toggleClass('active');
+    });
+    $('.header .close_button').click(function(){
+        $('.mobile_menu').toggleClass('active');
+    });
 
 
     /* ----------------------------------------------------------------------- */

@@ -21,6 +21,7 @@
 	& .container {
 
 		& .header {
+			position: relative;
 			
 			& .header__top {
 				.flex();
@@ -310,6 +311,17 @@
 					}
 				}
 			}
+			
+			& .mobile_menu_button {
+				display: none;
+				
+				@media @mBig, @m {
+					display: block;
+					cursor: pointer;
+					position: absolute;
+					bottom: 45px;
+				}
+			}
 
 			& .header__bottom {
 				.flex();
@@ -341,6 +353,7 @@
 					}
 
 					& .header__bottom_menu {
+						.cols(16);
 
 						& ul, .special_link {
 							width: 100%;
@@ -434,6 +447,10 @@
 								@media @t {
 									font-size: 10pt;
 									padding: 6px 4px 4px;
+								}
+								@media @mBig, @m {
+									font-size: 10pt;
+									padding: 6px 10px 2px;
 								}
 								
 								&:hover {
