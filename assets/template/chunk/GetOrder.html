@@ -1,67 +1,66 @@
 <div id="msCart">
     {if !count($products)}
-    <div class="basket__empty_cont">
-        <div class="container">
-            <p>
-                {'ms2_cart_is_empty' | lexicon}
-            </p>
+        <div class="basket__empty_cont">
+            <div class="container">
+                <p>
+                    {'ms2_cart_is_empty' | lexicon}
+                </p>
+            </div>
         </div>
-    </div>
-    [[$CarouselItems]]
+        [[$CarouselItems]]
     {else}
-    {$_modx->lexicon->load('minishop2:product')}
+        {$_modx->lexicon->load('minishop2:product')}
 
-    <div class="container">
-        <div class="getorder__cont">
-            <div class="getorder__title">
-                <h1>Ваш заказ</h1>
-            </div>
-            <div class="getorder__product">
-                {foreach $products as $product}
-                <div class="getorder__product_cont getorder__product_item" id="{$product.key}">
-                    <div class="getorder__product_image">
-                        <a href="{$product.id | url}"><img src="{$product.image}" title="{$product.pagetitle}" alt="{$product.pagetitle}"></a>
-                    </div>
-                    <div class="getorder__product_text">
-                        <div class="getorder__product_title">
-                            <a href="{$product.id | url}" class="h3">{$product.pagetitle}</a>
-                            <p><b>Артикул</b>: {$product.article}</p>
-                            {foreach $product.options as $name => $value}
-                            <p><b>{('ms2_product_' ~ $name) | lexicon}</b>: {$value}</p>
-                            {/foreach}
+        <div class="container">
+            <div class="getorder__cont">
+                <div class="getorder__title">
+                    <h1>Ваш заказ</h1>
+                </div>
+                <div class="getorder__product">
+                    {foreach $products as $product}
+                    <div class="getorder__product_cont getorder__product_item" id="{$product.key}">
+                        <div class="getorder__product_image">
+                            <a href="{$product.id | url}"><img src="{$product.image}" title="{$product.pagetitle}" alt="{$product.pagetitle}"></a>
                         </div>
-                        <div class="getorder__product_allprice">
-                            <p>Количество: {$product.count} шт.</p>
-                            <p>Стоимость: {$product.price} <span class="rub">Р</span></p>
-                            <p>Итого: <span class="product_price" data-id="{$product.key}" data-price="{$product.price}">{$product.count * $product.price}</span> <span class="rub">Р</span></p>
+                        <div class="getorder__product_text">
+                            <div class="getorder__product_title">
+                                <a href="{$product.id | url}" class="h3">{$product.pagetitle}</a>
+                                <p><b>Артикул</b>: {$product.article}</p>
+                                {foreach $product.options as $name => $value}
+                                <p><b>{('ms2_product_' ~ $name) | lexicon}</b>: {$value}</p>
+                                {/foreach}
+                            </div>
+                            <div class="getorder__product_allprice">
+                                <p>Количество: {$product.count} шт.</p>
+                                <p>Стоимость: {$product.price} <span class="rub">Р</span></p>
+                                <p>Итого: <span class="product_price" data-id="{$product.key}" data-price="{$product.price}">{$product.count * $product.price}</span> <span class="rub">Р</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    {/foreach}
+                </div>
+                <div class="getorder__info">
+                    <div class="getorder__info_cont">
+                        <div class="getorder__info_block">
+                            <h2>Данные заказа</h2>
+                            <p>Покупатель: <span>[[+address.receiver]]</span></p>
+                            <p>Телефон: <span>[[+address.phone]]</span></p>
+                            <p>Город: <span>[[+address.city]]</span></p>
+                            <p>Улица: <span>[[+address.street]]</span></p>
+                            <p>Дом: <span> [[+address.building]]</span></p>
+                            <p>Квартира/офис:<span>[[+address.room]]</span></p>
                         </div>
                     </div>
                 </div>
-                {/foreach}
-            </div>
-            <div class="getorder__info">
-                <div class="getorder__info_cont">
-                    <div class="getorder__info_block">
-                        <h2>Данные заказа</h2>
-                        <p>Покупатель: <span>[[+address.receiver]]</span></p>
-                        <p>Телефон: <span>[[+address.phone]]</span></p>
-                        <p>Почта: <span>[[+user.email]]</span></p>
-                        <p>Город: <span>[[+address.city]]</span></p>
-                        <p>Улица: <span>[[+address.street]]</span></p>
-                        <p>Дом: <span> [[+address.building]]</span></p>
-                        <p>Квартира/офис:<span>[[+address.room]]</span></p>
+                <div class="getorder__total">
+                    <div class="getorder__total_cont">
+                        <h2>Общая стоимость</h2>
+                        <p>Товаров в корзине: <span class="ms2_total_count">{$total.cart_count}</span> шт.</p>
+                        <p>На сумму: <span class="ms2_total_cost">{$total.cost}</span> <span class="rub">Р</span></p>
                     </div>
                 </div>
             </div>
-            <div class="getorder__total">
-                <div class="getorder__total_cont">
-                    <h2>Общая стоимость</h2>
-                    <p>Товаров в корзине: <span class="ms2_total_count">{$total.cart_count}</span> шт.</p>
-                    <p>На сумму: <span class="ms2_total_cost">{$total.cost}</span> <span class="rub">Р</span></p>
-                </div>
-            </div> 
         </div>
-    </div>
     {/if}
 </div>
 

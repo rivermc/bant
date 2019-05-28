@@ -58,7 +58,9 @@ function fast_buy(elem) {
                                     miniShop2.Message.error(data.message);
                                     if (data.fields) {
                                         var errors = data.fields;
+                                        console.log(errors);
                                         errors.forEach(function(item) {
+                                            console.log(item);
                                             $('.fast_buy_modal [name=' + item + ']').addClass('shake').delay(800).queue(function(next){ $('.fast_buy_modal [name=' + item + ']').removeClass('shake');  next(); });
                                         });
                                     }

@@ -30,7 +30,7 @@
 				color: @colorRed;
 				font-size: 16pt;
 				text-transform: uppercase;
-				margin: 0;
+				margin: 0 0 30px;
 
 				@media @t, @mBig, @m {
 					margin-bottom: 10px;
@@ -57,7 +57,7 @@
 					.cols(9);
 
 					@media @t {
-						.cols(12);
+						.cols(11);
 					}
 					@media @mBig, @m {
 						.cols(16);
@@ -112,6 +112,8 @@
 
 						& li {
 							margin-bottom: 20px;
+							list-style-type: disc;
+							margin-left: 15px;
 
 							@media @t, @mBig, @m {
 								margin-bottom: 10px;

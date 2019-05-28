@@ -100,9 +100,8 @@
                     &:checked + p {
 
                       &:before {
-                        background: url(../images/elements/arrow.svg);
-                        background-repeat: no-repeat;
-                        background-size: 100% 100%;
+                        background: @colorRed;
+                        border: 1px solid @colorRed;
                       }
                     }
                   }
@@ -117,13 +116,22 @@
 
                   &:before {
                     .animation();
+                    border: 1px solid @colorGray;
                     content: '';
                     position: absolute;
                     left: 0;
-                    width: 10px;
-                    height: 10px;
-                    transform: rotate(90deg);
+                    width: 8px;
+                    height: 8px;
                     top: 6px;
+                    background: transparent;
+                    border-radius: 50%;
+
+                    @media @d {
+                      top: 4px;
+                    }
+                    @media @t, @mBig, @m {
+                      top: 2px;
+                    }
                   }
 
                   @media @d {
@@ -183,6 +191,10 @@
                 
                 & p {
                   font-size: 12pt;
+
+                  &.subtitle {
+                    margin-top: 10px;
+                  }
                   
                   @media @d {
                     font-size: 11pt;

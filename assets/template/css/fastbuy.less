@@ -106,14 +106,14 @@
               &:checked + p {
 
                 &:before {
-                  background: url(../images/elements/arrow.svg);
-                  background-repeat: no-repeat;
-                  background-size: 100% 100%;
+                  background: @colorRed;
+                  border: 1px solid @colorRed;
                 }
               }
             }
           }
           & .checkbox {
+            .cols(16);
 
             @media @mBig, @m {
               .cols(16);
@@ -131,12 +131,14 @@
                 &:before {
                   .animation();
                   content: '';
+                  border: 1px solid @colorGray;
                   position: absolute;
                   left: 0;
-                  width: 10px;
-                  height: 10px;
-                  transform: rotate(90deg);
-                  top: 3px;
+                  width: 8px;
+                  height: 8px;
+                  top: 2px;
+                  background: transparent;
+                  border-radius: 50%;
                 }
 
                 &.h3 {

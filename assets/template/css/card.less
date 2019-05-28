@@ -226,8 +226,16 @@
                         transition: none;
                         display: none;
 
+                        @media @mBig, @m {
+                          right: -150%;
+                        }
+
                         &:before {
                           left: 135px;
+
+                          @media @mBig, @m {
+                            left: 20px;
+                          }
                         }
 
 
@@ -240,6 +248,7 @@
                             &:hover {
 
                               & svg {
+
                                 & path {
                                   fill: @colorRed;
                                 }

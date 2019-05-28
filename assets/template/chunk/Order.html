@@ -7,7 +7,7 @@
                         <h2 class="h1">{'ms2_frontend_credentials' | lexicon}</h2>
                     </div>
                     <div class="order_form">
-                        {foreach ['receiver','phone','email'] as $field}
+                        {foreach ['receiver','phone', 'email'] as $field}
                             <div class="form__basket_form-group">
                                 <label class="form__group_label">{('ms2_frontend_' ~ $field) | lexicon}</label>
                                 <input type="text" id="{$field}"  name="{$field}" value="{$form[$field]}" class="form_input">
@@ -25,7 +25,7 @@
                     </div>
                     <div class="order_form">
 
-                        {foreach ['index','region','city'] as $field}
+                        {foreach ['city'] as $field}
                             <div class="form__basket_form-group">
                                 <label class="form__group_label">{('ms2_frontend_' ~ $field) | lexicon}</label>
                                 <input type="text" id="{$field}"  name="{$field}" value="{$form[$field]}" class="form_input">
@@ -58,18 +58,18 @@
                                             {if $i == '0'}
                                                 checked="checked"
                                             {/if}>
-                                            {set $i = $i + 1}
-                                            {if $delivery.logo?}
-                                                {$delivery.name}
-                                                <img src="{$delivery.logo}" alt="{$delivery.name}" title="{$delivery.name}"/>
-                                            {else}
-                                                <p class="delivery_title h2">{$delivery.name}</p>
-                                            {/if}
-                                            {if $delivery.description?}
-                                                <p class="small">
-                                                    {$delivery.description}
-                                                </p>
-                                            {/if}
+                                    {set $i = $i + 1}
+                                    {if $delivery.logo?}
+                                        {$delivery.name}
+                                        <img src="{$delivery.logo}" alt="{$delivery.name}" title="{$delivery.name}"/>
+                                    {else}
+                                        <p class="delivery_title h2">{$delivery.name}</p>
+                                    {/if}
+                                    {if $delivery.description?}
+                                        <p class="small">
+                                            {$delivery.description}
+                                        </p>
+                                    {/if}
                                 </label>
                             </div>
                         {/foreach}
@@ -112,8 +112,7 @@
                             <button type="submit" name="ms2_action" value="order/submit" class="btn btn-default btn-primary ms2_link">
                                 {'ms2_frontend_order_submit' | lexicon}
                             </button>
-                            <p>&nbsp;</p>
-                            <p>В ближайшее время наш менеджер свяжется с Вами для уточнения условий доставки заказа.</p>
+                            <p class="subtitle">В ближайшее время наш менеджер свяжется с Вами для уточнения условий доставки заказа.</p>
                         </div>
                     </div>
                 </div>
