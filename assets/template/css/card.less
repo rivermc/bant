@@ -170,6 +170,7 @@
                     justify-content: space-between;
 
                     & .product__item_price {
+                      padding-right: 20px;
 
                       @media @m {
                         margin-bottom: 10px;
@@ -205,16 +206,26 @@
                     }
 
                     & .share {
+                      .flex();
+                      align-items: center;
                       position: relative;
+                      margin-left: 30px;
 
                       @media @d {
                         margin: 20px 0 0 auto;
+                      }
+                      @media @m {
+                        margin: 10px 0;
+                        width: 30%;
+                      }
+
+                      & svg {
+                        margin-right: 10px;
                       }
 
                       & .share_button {
                         margin: 0;
                         cursor: pointer;
-
                       }
 
                       & .product__item_share {
@@ -226,14 +237,14 @@
                         transition: none;
                         display: none;
 
-                        @media @mBig, @m {
-                          right: -150%;
+                        @media @m {
+                          right: -30%;
                         }
 
                         &:before {
                           left: 135px;
 
-                          @media @mBig, @m {
+                          @media  @m {
                             left: 20px;
                           }
                         }

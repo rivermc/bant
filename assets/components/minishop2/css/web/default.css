@@ -38,7 +38,6 @@ div.jGrowl > .ui-state-highlight {
 #msOrder .radio img { max-height: 30px; margin-top: -2px; padding: 0 10px; }
 #msOrder .required-star { display: none; }
 #msOrder .required .required-star { display: inline; }
-#msOrder .error { border: 1px solid brown !important; }
 #msOrder .required-star { color: brown; }
 /* Logs */
 .msProductsLog, .msGalleryLog, .msCartLog, .msOrderLog, .msGetOrderLog {

@@ -265,7 +265,6 @@ $(document).ready(function() {
     /* ----------------------------------------------------------------------- */
     function detectMobileMenu() {
         var widthWin = $(window).width() + 15;
-        console.log(widthWin);
         var m = 550;
         var mBig = 768;
 
@@ -357,9 +356,15 @@ $(document).ready(function() {
             basket_init();
         });
     };
+    miniShop2.Callbacks.Order.submit.response.error = function(response) {
+        $('html, body').animate({scrollTop:$('.order_cont').offset().top}, 400, 'swing', function() {
+            for (var i = 0; i < response.data.length; i++) {
+                $('#msOrder .order_form input[name=' + response.data[i] + ']').addClass('shake').delay(800).queue(function(next){ $('#msOrder .order_form input').removeClass('shake');  next(); });
+            }
+        });
+    };
+
     basket_init();
-
-
 
 
     $('.form_input').focus(function(){
