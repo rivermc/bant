@@ -68,33 +68,12 @@
       max-height: 280px;
       position: relative;
 
-      &:hover {
-        & .main__item_notification {
-          opacity: 1;
-          visibility: visible;
-        }
-      }
-
       & a {
 
         & img {
           .animation(3s);
           width: 100%;
         }
-      }
-
-      & .main__item_notification {
-        .animation();
-        color: @colorWhite;
-        background: @colorRed;
-        position: absolute;
-        bottom: 0;
-        margin: 10px 10px;
-        padding: 10px;
-        font-size: 10pt;
-        text-align: center;
-        opacity: 0;
-        visibility: hidden;
       }
     }
 
