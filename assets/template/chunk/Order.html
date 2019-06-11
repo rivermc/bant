@@ -13,30 +13,6 @@
                                 <input type="text" id="{$field}"  name="{$field}" value="{$form[$field]}" class="form_input">
                             </div>
                         {/foreach}
-                        <div class="form__basket_form-group">
-                            <label class="form__group_label">Комментарий</label>
-                            <input type="text" name="text" class="form_input">
-                        </div>
-                    </div>
-                </div>
-                <div class="order_bl">
-                    <div class="order_title">
-                        <h2 class="h1">{'ms2_frontend_address' | lexicon}</h2>
-                    </div>
-                    <div class="order_form">
-
-                        {foreach ['city'] as $field}
-                            <div class="form__basket_form-group">
-                                <label class="form__group_label">{('ms2_frontend_' ~ $field) | lexicon}</label>
-                                <input type="text" id="{$field}"  name="{$field}" value="{$form[$field]}" class="form_input">
-                            </div>
-                        {/foreach}
-                        {foreach ['street','building','room'] as $field}
-                            <div class="form__basket_form-group">
-                                <label class="form__group_label">{('ms2_frontend_' ~ $field) | lexicon}</label>
-                                <input type="text" id="{$field}"  name="{$field}" value="{$form[$field]}" class="form_input">
-                            </div>
-                        {/foreach}
                     </div>
                 </div>
                 <div class="order_bl">
@@ -47,7 +23,7 @@
                         {var $i = 0}
                         {foreach $deliveries as $delivery index=$index}
                             {var $checked = !$order.delivery && $index == 0 || $delivery.id == $order.delivery}
-                            <div class="checkbox">
+                            <div class="checkbox tooltip_target ">
                                 <label class="delivery input_parent">
                                     <input  type="radio"
                                             name="delivery"
@@ -71,6 +47,46 @@
                                         </p>
                                     {/if}
                                 </label>
+                                {if $delivery.id == 1}
+                                <div class="order_bl tooltip delivery_order_bl">
+                                    <div class="order_title">
+                                        <h2 class="h3">Адрес магазина</h2>
+                                    </div>
+                                    <div class="order_form_address">
+                                        <div class="checkbox">
+                                            <label class="delivery input_parent">
+                                                <input type="radio" name="pickupA" value="[[#1.SiteAddress]]" id="pickupA_0">
+                                                <p class="delivery_title">[[#1.SiteAddress]]</p>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="delivery input_parent">
+                                                <input type="radio" name="pickupA" value="[[#1.SiteAddress2]]" id="pickupA_1">
+                                                <p class="delivery_title">[[#1.SiteAddress2]]</p>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/if}
+                                {if $delivery.id == 2}
+                                    <div class="order_bl tooltip delivery_order_bl">
+                                        <div class="order_title">
+                                            <h2 class="h3">{'ms2_frontend_address' | lexicon}</h2>
+                                        </div>
+                                        <div class="order_form">
+                                            {foreach ['nameShipping', 'phoneShipping', 'dateShipping', 'addressShipping'] as $field}
+                                            <div class="form__basket_form-group">
+                                                <label class="form__group_label">{('ms2_frontend_' ~ $field) | lexicon}</label>
+                                                <input type="text" id="{$field}"  name="{$field}" value="{$form[$field]}" class="form_input">
+                                            </div>
+                                            {/foreach}
+                                            <div class="form__basket_form-group">
+                                                <label class="form__group_label">Комментарий</label>
+                                                <input type="text" name="text" class="form_input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                {/if}
                             </div>
                         {/foreach}
                     </div>
@@ -81,25 +97,25 @@
                     </div>
                     <div class="order_payment">
                         {foreach $payments as $payment index=$index}
-                        {var $checked = !$order.payment && $index == 0 || $payment.id == $order.payment}
-                        <div class="checkbox">
-                            <label class="payment input_parent">
-                                <input type="radio" name="payment" value="{$payment.id}" id="payment_{$payment.id}"
-                                       {$checked ? 'checked' : ''}>
-                                {if $payment.logo?}
-                                <img src="{$payment.logo}" alt="{$payment.name}" title="{$payment.name}"/>
-                                {else}
-                                <p class="payment_title h2">
-                                    {$payment.name}
-                                </p>
-                                {/if}
-                                {if $payment.description?}
-                                <p class="small">
-                                    {$payment.description}
-                                </p>
-                                {/if}
-                            </label>
-                        </div>
+                            {var $checked = !$order.payment && $index == 0 || $payment.id == $order.payment}
+                            <div class="checkbox">
+                                <label class="payment input_parent">
+                                    <input type="radio" name="payment" value="{$payment.id}" id="payment_{$payment.id}"
+                                           {$checked ? 'checked' : ''}>
+                                    {if $payment.logo?}
+                                    <img src="{$payment.logo}" alt="{$payment.name}" title="{$payment.name}"/>
+                                    {else}
+                                    <p class="payment_title h2">
+                                        {$payment.name}
+                                    </p>
+                                    {/if}
+                                    {if $payment.description?}
+                                    <p class="small">
+                                        {$payment.description}
+                                    </p>
+                                    {/if}
+                                </label>
+                            </div>
                         {/foreach}
                     </div>
                 </div>

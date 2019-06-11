@@ -1,7 +1,7 @@
 .tooltip_target {
   position: relative;
 
-  &:hover, &.active {
+  &:not(.hover_disable):hover, &.active {
     & .tooltip {
       opacity: 1;
       visibility: visible;

@@ -22,6 +22,79 @@
             padding: 15px 15px 20px;
           }
 
+          &.delivery_order_bl {
+            .cols(16);
+
+            & .order_form_address {
+
+              & label {
+                display: block;
+                margin: 10px 0;
+                cursor: pointer;
+
+                & input {
+                  &[type = radio] {
+                    display: none;
+
+                    &:checked + p {
+
+                      &:before {
+                        background: @colorRed;
+                        border: 1px solid @colorRed;
+                      }
+                    }
+                  }
+                }
+
+                & .delivery_title{
+                  display: inline-block;
+                  width: 90%;
+                  margin: 0;
+                  position: relative;
+                  padding-left: 15px;
+                  font-size: 10pt;
+
+                  &:before {
+                    .animation();
+                    border: 1px solid @colorGray;
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    width: 8px;
+                    height: 8px;
+                    top: 6px;
+                    background: transparent;
+                    border-radius: 50%;
+
+                    @media @d {
+                      top: 4px;
+                    }
+                    @media @t, @mBig, @m {
+                      top: 2px;
+                    }
+                  }
+
+                  @media @d {
+                    width: 80%;
+                    font-size: 12pt;
+                  }
+                  @media @t, @mBig, @m {
+                    width: 80%;
+                    font-size: 10pt;
+                  }
+                }
+
+                &.focused {
+
+                  & .form__group_label {
+                    color: @colorRed;
+                    font-size: 11pt;
+                  }
+                }
+              }
+            }
+          }
+
           & .order_title {
 
             & h2 {
@@ -75,7 +148,7 @@
 
             & .checkbox {
               .cols(16);
-              padding: 10px;
+              margin: 10px;
 
               @media @t {
                 .cols(16);
@@ -84,7 +157,7 @@
                 .cols(16);
               }
 
-              & label {
+              & > label {
                 .flex();
                 color: @colorBlack;
                 height: 100%;

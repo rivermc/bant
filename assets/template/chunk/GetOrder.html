@@ -27,7 +27,7 @@
                                 <a href="{$product.id | url}" class="h3">{$product.pagetitle}</a>
                                 <p><b>Артикул</b>: {$product.article}</p>
                                 {foreach $product.options as $name => $value}
-                                <p><b>{('ms2_product_' ~ $name) | lexicon}</b>: {$value}</p>
+                                    <p><b>{('ms2_product_' ~ $name) | lexicon}</b>: {$value}</p>
                                 {/foreach}
                             </div>
                             <div class="getorder__product_allprice">
@@ -43,12 +43,21 @@
                     <div class="getorder__info_cont">
                         <div class="getorder__info_block">
                             <h2>Данные заказа</h2>
-                            <p>Покупатель: <span>[[+address.receiver]]</span></p>
-                            <p>Телефон: <span>[[+address.phone]]</span></p>
-                            <p>Город: <span>[[+address.city]]</span></p>
-                            <p>Улица: <span>[[+address.street]]</span></p>
-                            <p>Дом: <span> [[+address.building]]</span></p>
-                            <p>Квартира/офис:<span>[[+address.room]]</span></p>
+                            [[+address.receiver:notempty=`<p>Заказчик: <span>[[+address.receiver]]</span></p>`]]
+                            [[+address.phone:notempty=`<p>Телефон заказчика: <span>[[+address.phone]]</span></p>`]]
+                            [[+delivery.id:is=`1`:then=`
+                                <h3>Самовывоз</h3>
+                                [[+address.pickupA:notempty=`<p>Адрес магазина: <span>[[+address.pickupA]]</span></p>`]]
+                            `]]
+                            [[+delivery.id:is=`2`:then=`
+                                <h3>Доставка</h3>
+                                [[+address.nameShipping:notempty=`<p>Получатель: <span>[[+address.nameShipping]]</span></p>`]]
+                                [[+address.phoneShipping:notempty=`<p>Телефон получателя: <span>[[+address.phoneShipping]]</span></p>`]]
+                                [[+address.dateShipping:notempty=`<p>Дата и время доставки: <span>[[+address.dateShipping]]</span></p>`]]
+                                [[+address.addressShipping:notempty=`<p>Адрес доставки: <span>[[+address.addressShipping]]</span></p>`]]
+                            `]]
+
+
                         </div>
                     </div>
                 </div>

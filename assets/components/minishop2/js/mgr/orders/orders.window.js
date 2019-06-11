@@ -157,6 +157,11 @@ Ext.extend(miniShop2.window.UpdateOrder, miniShop2.window.Default, {
         var all = {
             receiver: {},
             phone: {},
+            addressShipping: {},
+            nameShipping: {},
+            phoneShipping: {},
+            dateShipping: {},
+            pickupA: {},
             index: {},
             country: {},
             region: {},
@@ -175,6 +180,7 @@ Ext.extend(miniShop2.window.UpdateOrder, miniShop2.window.Default, {
                     name: 'addr_' + field,
                     fieldLabel: _('ms2_' + field)
                 });
+                console.log('ms2_' + field);
                 all[field].anchor = '100%';
                 tmp.push(all[field]);
             }

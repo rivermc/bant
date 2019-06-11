@@ -31,4 +31,12 @@ function basket_init() {
     $('.msCartMini .minicart_button.close').click(function(){
         $(this).parents('.msCartMini').removeClass('active');
     });
+
+    $('input[name=delivery]').change(function() {
+        $('input[name=delivery]').parents('.checkbox').removeClass('tooltip_target');
+        console.log('click');
+        console.log($('input[name=delivery]').parents('.checkbox'));
+        $(this).parents('.checkbox').addClass('tooltip_target');
+    });
+
 }
