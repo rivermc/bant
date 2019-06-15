@@ -22,11 +22,11 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED
             $output['fields'][] = "name";
         }
         // проверяем поле email
-        if($_REQUEST['email']==''){
+        /*if($_REQUEST['email']==''){
             $output['success'] = false;
             $output['message'] = "Заполните все обязательные поля";
             $output['fields'][] = "email";
-        }
+        }*/
         // проверяем поле phone
         if($_REQUEST['phone']==''){
             $output['success'] = false;
@@ -62,7 +62,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED
         	$modx->log(E_ERROR, print_r($arr,1));
         	// формируем заказ
         	$miniShop2->order->add('receiver', $_REQUEST['name']);
-        	$miniShop2->order->add('email', $_REQUEST["email"]);
+        	//$miniShop2->order->add('email', $_REQUEST["email"]);
         	$miniShop2->order->add('phone', $_REQUEST["phone"]);
         	$miniShop2->order->add('comment', $_REQUEST["text"]);
         	$miniShop2->order->add('index', $_REQUEST["index"]);
@@ -73,6 +73,11 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED
         	$miniShop2->order->add('room', $_REQUEST["room"]);
         	$miniShop2->order->add('payment', $_REQUEST["payment"]);
         	$miniShop2->order->add( 'delivery', $_REQUEST["delivery"]);
+        	$miniShop2->order->add( 'pickupA', $_REQUEST["pickupA"]);
+        	$miniShop2->order->add( 'nameShipping', $_REQUEST["nameShipping"]);
+        	$miniShop2->order->add( 'phoneShipping', $_REQUEST["phoneShipping"]);
+        	$miniShop2->order->add( 'dateShipping', $_REQUEST["dateShipping"]);
+        	$miniShop2->order->add( 'addressShipping', $_REQUEST["addressShipping"]);
 	        $orderfeed = $miniShop2->order->submit();
 
         	$arr = json_decode($orderfeed,true);
@@ -80,12 +85,13 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED
         	// логируем каждый шаг
         	$modx->log(E_ERROR, print_r($arr,1));
 
-	        if($arr['success']==true&&$arr["data"]["msorder"]){
-	            $output["location"] = $modx->makeUrl(13,'',array('msorder' => $arr["data"]["msorder"]));
+	        if($arr['success'] == true && $arr["data"]["msorder"]){
+	            $output["order"] = $arr["data"]["msorder"];
 	        }
 
             $output['success'] = true;
             $output['message'] = "Ваш заказ оформлен";
+        	$modx->log(E_ERROR, print_r($output,1));
         }
     }
     else{

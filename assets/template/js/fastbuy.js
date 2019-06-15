@@ -19,15 +19,7 @@ function fast_buy(elem) {
                     $('.form_input').focus(function(){
                         var callback_group = $(this).parent();
                         callback_group.addClass('focused');
-                    });
-
-                    $('.form__group_label').click(function(){
-                        var callback_group = $(this).parent();
-                        callback_group.addClass('focused');
-                        callback_group.find('input').focus();
-                    });
-
-                    $('.form_input').blur(function(){
+                    }).blur(function(){
                         var inputValue = $(this).val();
                         if (inputValue === "") {
                             $(this).removeClass('filled');
@@ -36,6 +28,28 @@ function fast_buy(elem) {
                             $(this).addClass('filled');
                         }
                     });
+
+                    $('.form__group_label').click(function(){
+                        var callback_group = $(this).parent();
+                        callback_group.addClass('focused');
+                        callback_group.find('input').focus();
+                    });
+
+                    $('input[name=phone], input[name=phoneShipping]').usPhoneFormat({format: 'x-xxx-xxx-xxxx'});
+
+
+
+                    $('input[name=delivery]').change(function(e) {
+                        var input_checked = ($('input[name=delivery]:checked'));
+                        var input_checked_index = input_checked.data('index');
+                        $('.change_block').fadeOut(400);
+                        setTimeout(function(){
+                            $('.delivery_block_' + input_checked_index).fadeIn(400);
+                        }, 400);
+                    });
+
+
+
 
                     $('.ajax_form_offer').submit(function(e){
                         e.preventDefault();
@@ -50,8 +64,8 @@ function fast_buy(elem) {
                                 console.log(data);
                                 if(data.success){
                                     miniShop2.Message.success(data.message);
-                                    if(data.data.msorder){
-                                        window.location.href = "/cart?msorder="+data.data.msorder;
+                                    if(data.order){
+                                        window.location.href = "/cart?msorder=" + data.order;
                                     }
                                 }
                                 else{

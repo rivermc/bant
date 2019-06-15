@@ -49,12 +49,20 @@
       & .ajax_form_offer {
         .flex();
         justify-content: space-between;
+        align-items: flex-start;
+
+        @media @mBig, @m {
+          padding-bottom: 30px;
+        }
 
         & .form__callback_form-group {
           .cols(7);
 
-          @media @mBig, @m {
+          @media @mBig {
             .cols(7.8);
+          }
+          @media @m {
+            .cols(16);
           }
 
           & label.form__group_label {
@@ -78,6 +86,13 @@
             width: 100%;
             background: transparent;
 
+            @media @t {
+              font-size: 11pt;
+            }
+            @media @mBig, @m  {
+              font-size: 10pt;
+            }
+
             &:-internal-autofill-selected {
               background: @colorWhite;
             }
@@ -94,6 +109,18 @@
           .cols(7);
           .flex();
           margin: 10px 0;
+          position: relative;
+
+
+          & .change_block {
+            &.delivery_block_2 {
+              display: none;
+            }
+
+            .form__callback_form-group {
+              .cols(16);
+            }
+          }
 
           @media @mBig, @m {
             .cols(16);
@@ -118,6 +145,7 @@
             @media @mBig, @m {
               .cols(16);
             }
+
             & label {
               & p {
                 .animation();
