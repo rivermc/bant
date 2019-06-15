@@ -7,7 +7,7 @@
 (function () {
 // initializes touch and scroll events
     var supportTouch = $.support.touch,
-        scrollEvent = "touchmove scroll",
+        //scrollEvent = "touchmove scroll",
         touchStartEvent = supportTouch ? "touchstart" : "mousedown",
         touchStopEvent = supportTouch ? "touchend" : "mouseup",
         touchMoveEvent = supportTouch ? "touchmove" : "mousemove";
@@ -50,7 +50,7 @@
  
                 $this
                     .bind(touchMoveEvent, moveHandler)
-                    .one(touchStopEvent, function (event) {
+                    .one(touchStopEvent, function () {
 
                         $this.unbind(touchMoveEvent, moveHandler);
 
@@ -71,7 +71,7 @@
                                     .trigger(start.coords[0] > stop.coords[0] ? "swipeleft" : "swiperight");
                                    //console.log('Start X: ' + start.coords[0]);
                                    //console.log('Stop X: ' + stop.coords[0]);
-                            };                          
+                            }
                         }
 
                         start = stop = undefined;
@@ -338,19 +338,19 @@ $(document).ready(function() {
 
 
 
-    miniShop2.Callbacks.Cart.change.response.success = function(response) {
+    miniShop2.Callbacks.Cart.change.response.success = function() {
         getModule('Snippet', 'msCart', 'tpl => MiniCartFull',function (data) {
             $('.msCartMini').html(data);
             basket_init();
         });
     };
-    miniShop2.Callbacks.Cart.add.response.success = function(response) {
+    miniShop2.Callbacks.Cart.add.response.success = function() {
         getModule('Snippet', 'msCart', 'tpl => MiniCartFull',function (data) {
             $('.msCartMini').html(data);
             basket_init();
         });
     };
-    miniShop2.Callbacks.Cart.remove.response.success = function(response) {
+    miniShop2.Callbacks.Cart.remove.response.success = function() {
         getModule('Snippet', 'msCart', 'tpl => MiniCartFull',function (data) {
             $('.msCartMini').html(data);
             basket_init();
@@ -370,15 +370,7 @@ $(document).ready(function() {
     $('.form_input').focus(function(){
         var callback_group = $(this).parent();
         callback_group.addClass('focused');
-    });
-
-    $('.form__group_label').click(function(){
-        var callback_group = $(this).parent();
-        callback_group.addClass('focused');
-        callback_group.find('input').focus();
-    });
-
-    $('.form_input').blur(function(){
+    }).blur(function(){
         var inputValue = $(this).val();
         if (inputValue === "") {
             $(this).removeClass('filled');
@@ -387,6 +379,18 @@ $(document).ready(function() {
             $(this).addClass('filled');
         }
     });
+
+    $('.form__group_label').click(function(){
+        var callback_group = $(this).parent();
+        callback_group.addClass('focused');
+        callback_group.find('input').focus();
+    });
+
+    /* ----------------------------------------------------------------------- */
+    /* Input Phone  */
+    /* ----------------------------------------------------------------------- */
+
+    $('input[name=phone], input[name=phoneShipping]').usPhoneFormat({format: 'x-xxx-xxx-xxxx',});
 
 });
 

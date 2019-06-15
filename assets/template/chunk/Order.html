@@ -9,7 +9,7 @@
                     <div class="order_form">
                         {foreach ['receiver','phone'] as $field}
                             <div class="form__basket_form-group">
-                                <label class="form__group_label">{('ms2_frontend_' ~ $field) | lexicon}</label>
+                                <label for="{$field}" class="form__group_label">{('ms2_frontend_' ~ $field) | lexicon}</label>
                                 <input type="text" id="{$field}"  name="{$field}" value="{$form[$field]}" class="form_input">
                             </div>
                         {/foreach}
@@ -55,7 +55,7 @@
                                     <div class="order_form_address">
                                         <div class="checkbox">
                                             <label class="delivery input_parent">
-                                                <input type="radio" name="pickupA" value="[[#1.SiteAddress]]" id="pickupA_0">
+                                                <input type="radio" name="pickupA" value="[[#1.SiteAddress]]" id="pickupA_0" checked>
                                                 <p class="delivery_title">[[#1.SiteAddress]]</p>
                                             </label>
                                         </div>
@@ -76,13 +76,13 @@
                                         <div class="order_form">
                                             {foreach ['nameShipping', 'phoneShipping', 'dateShipping', 'addressShipping'] as $field}
                                             <div class="form__basket_form-group">
-                                                <label class="form__group_label">{('ms2_frontend_' ~ $field) | lexicon}</label>
+                                                <label for="{$field}" class="form__group_label">{('ms2_frontend_' ~ $field) | lexicon}</label>
                                                 <input type="text" id="{$field}"  name="{$field}" value="{$form[$field]}" class="form_input">
                                             </div>
                                             {/foreach}
                                             <div class="form__basket_form-group">
-                                                <label class="form__group_label">Комментарий</label>
-                                                <input type="text" name="text" class="form_input">
+                                                <label for="comment_text" class="form__group_label">Комментарий</label>
+                                                <input id="comment_text" type="text" name="text" class="form_input">
                                             </div>
                                         </div>
                                     </div>
