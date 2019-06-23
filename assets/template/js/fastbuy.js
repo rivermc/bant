@@ -61,18 +61,18 @@ function fast_buy(elem) {
                             data: msg,
                             dataType: "json",
                             success: function(data) {
-                                console.log(data);
-                                if(data.success){
+                                if (data.success){
                                     miniShop2.Message.success(data.message);
-                                    if(data.order){
-                                        window.location.href = "/cart?msorder=" + data.order;
+                                    if (data.order){
+                                        setTimeout(() => {
+                                            window.location.href = "/cart?msorder=" + data.order;
+                                        }, 1000);
                                     }
                                 }
-                                else{
+                                else {
                                     miniShop2.Message.error(data.message);
                                     if (data.fields) {
                                         var errors = data.fields;
-                                        console.log(errors);
                                         errors.forEach(function(item) {
                                             console.log(item);
                                             $('.fast_buy_modal [name=' + item + ']').addClass('shake').delay(800).queue(function(next){ $('.fast_buy_modal [name=' + item + ']').removeClass('shake');  next(); });
