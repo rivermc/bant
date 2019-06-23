@@ -34,9 +34,13 @@ function basket_init() {
 
     $('input[name=delivery]').change(function() {
         $('input[name=delivery]').parents('.checkbox').removeClass('tooltip_target');
-        console.log('click');
-        console.log($('input[name=delivery]').parents('.checkbox'));
         $(this).parents('.checkbox').addClass('tooltip_target');
+        if ($(this).val() === '2') {
+            $('.order_total .subtitle').show();
+        }
+        else {
+            $('.order_total .subtitle').hide();
+        }
     });
 
 }
