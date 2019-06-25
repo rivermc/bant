@@ -29,7 +29,7 @@ class Callback {
     if (check == 'true') {
       $('#' + idForm).fadeOut(500).delay(8000).queue(function(next) {
         $('#' + idForm).fadeIn(500);
-        ('#' + idForm).prev().empty();
+        $('#' + idForm).prev().empty();
         next();
       });
       setTimeout(function() {
