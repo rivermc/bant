@@ -3,7 +3,7 @@
 	[[+pop:isnot=`true`:then=`<div class="container">`]]
         <div class="callback__wrap [[+class:notempty=`[[+class]]`]]__wrap">
         	<div class="callback__form_block">
-				<h2 class="h1">[[+title:empty=`СОСТАВИМ ИНДИВИДУАЛЬНЫЙ БУКЕТ ЦВЕТОВ, С УЧЕТОМ ВАШИХ ПОЖЕЛАНИЙ И НА НУЖНУЮ СУММУ`:else=`[[+title]]`]]</h2>
+				<h2 class="h1">[[+type:is=`catalog`:then=`[[#[[+id]].CatalogCallbackTitle]]`:else=`[[+title:empty=`СОСТАВИМ ИНДИВИДУАЛЬНЫЙ БУКЕТ ЦВЕТОВ, С УЧЕТОМ ВАШИХ ПОЖЕЛАНИЙ И НА НУЖНУЮ СУММУ`:else=`[[+title]]`]]`]]</h2>
 				<div class="form__callback_error"></div>
 				<form action="POST" class="callback__form" id="callback__form_[[+class]]">
 				    <div class="form__callback_form-group">
