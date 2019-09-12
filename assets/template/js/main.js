@@ -209,6 +209,7 @@ $(document).ready(function() {
 /* ----------------------------------------------------------------------- */
 
     $('.zoom').click(function(){
+      $(this).fadeOut(400);
         $('.fotorama__stage__shaft img').unbind('mouseover');
         $('.fotorama__stage__shaft .fotorama__active img').okzoom({
             width: 300,
@@ -217,6 +218,12 @@ $(document).ready(function() {
             round: true,
             shadow: "0 0 5px #333333",
             border: "1px solid #333333"
+        });
+        $('.ok-listener').click( () => {
+          $(this).fadeIn(400);
+          $('.fotorama__stage__shaft img').off();
+          $('body').css('cursor', 'default');
+          $('#ok-loupe, .ok-listener').remove();
         });
     });
 
