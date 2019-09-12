@@ -41,12 +41,16 @@
             <div class="mobile_menu_button js-mobile_menu">[[IncSvg? &svg=`elements/burger.svg`]]</div>
             <div class="header__bottom">
                 <nav class="header__bottom_menu">
-                    [[pdoMenu?
-                        &parents=`7`
+                    [[!pdoMenu?
+                        &parents=`[[#1.catalog_menu_id]]`
+                        &displayStart=`1`
                         &level=`2`
+                        &levelClass=`level`
+                        &tpl=`@INLINE <li[[+classes]] data-level="[[+level]]"><a href="[[+link]]" [[+attributes]]>[[+menutitle]]</a>[[+wrapper]]</li>`
+                        &tplStart=`@INLINE <li [[+classes]]><a href="[[+link]]" [[+attributes]]>[[+menutitle]]</a>[[+wrapper]]</li>`
                         &tplInner=`SubmenuBlock`
                         &where=`{"template:=":5}`
-                    ]]
+                     ]]
                     [[!pdoMenu?
                         &parents=`7`
                         &resources=`[[#1.special_link]]`

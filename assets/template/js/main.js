@@ -397,6 +397,13 @@ $(document).ready(function() {
     $('input[name=phone], input[name=phoneShipping]').usPhoneFormat({format: 'x-xxx-xxx-xxxx'});
 
 
+    $('header li').each(function(index, item) {
+      if ($(item).data('level') > 2) {
+        $(item).parent().parent().remove();
+      }
+    });
+
+
 });
 
 
