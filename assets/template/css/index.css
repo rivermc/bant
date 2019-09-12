@@ -3682,6 +3682,11 @@ ul.breadcrumb li a {
 .card .container .card__wrap .card__main .product .product__item .product__item_wrap .product__item_right .shipping_block > p {
   width: 100%;
 }
+.card .container .card__wrap .card__main .product .product__item .product__item_wrap .product__item_right .shipping_block .shipping_link {
+  color: #333333;
+  font-size: 10.4pt;
+  text-decoration: underline;
+}
 .card .container .card__wrap .card__main .product .product__item .product__item_wrap .product__item_right .shipping_block .shipping_btn {
   background: #ffffff;
   border: 1px solid #8c003d;
