@@ -420,6 +420,18 @@ button:hover,
 .button:hover {
   background: #333333;
 }
+.text_center {
+  text-align: center;
+}
+.text_left {
+  text-align: left;
+}
+.text_right {
+  text-align: right;
+}
+.main_page_title {
+  margin: 50px 0 20px;
+}
 .jGrowl-notification .jGrowl-close {
   padding: 0 10px;
 }
