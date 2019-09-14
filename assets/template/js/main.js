@@ -327,7 +327,7 @@ $(document).ready(function() {
     console.log(catalog_id);
 
     getModule('Chunk', 'Callback', 'class => catalog_cards, type => catalog, id =>  ' + catalog_id + ', text_button => Заказать',function (data) {
-        $('#mse2_results .item_slick_wrap').eq(8).before(data);
+        $('#mse2_results .item_slick_wrap').eq(16).before(data);
         new Callback();
     });
 
@@ -335,7 +335,7 @@ $(document).ready(function() {
         var catalog_id = $('.catalog__page').data('id');
         console.log(catalog_id);
         getModule('Chunk', 'Callback', 'class => catalog_cards, type => catalog, id => ' + catalog_id + ', text_button => Заказать',function (data) {
-            $('#mse2_results .item_slick_wrap').eq(8).before(data);
+            $('#mse2_results .item_slick_wrap').eq(16).before(data);
             new Callback();
             fast_buy('.fast_buy_button');
         });
