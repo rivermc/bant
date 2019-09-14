@@ -42,12 +42,10 @@
             <div class="header__bottom">
                 <nav class="header__bottom_menu">
                     [[!pdoMenu?
-                        &parents=`[[#1.catalog_menu_id]]`
-                        &displayStart=`1`
-                        &level=`2`
+                        &parents=`7`
+                        &resources=`[[#1.catalog_menu_id]]`
                         &levelClass=`level`
-                        &tpl=`@INLINE <li[[+classes]] data-level="[[+level]]"><a href="[[+link]]" [[+attributes]]>[[+menutitle]]</a>[[+wrapper]]</li>`
-                        &tplStart=`@INLINE <li [[+classes]]><a href="[[+link]]" [[+attributes]]>[[+menutitle]]</a>[[+wrapper]]</li>`
+                        &tpl=`CatalogMenuItem`
                         &tplInner=`SubmenuBlock`
                         &where=`{"template:=":5}`
                      ]]
