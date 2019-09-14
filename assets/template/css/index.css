@@ -2910,13 +2910,19 @@ ul.breadcrumb li a {
   }
 }
 .catalog .catalog__main .catalog__page .msearch2 .catalog_filter .container .filter #mse2_filters .filter_info_block .tooltip_target .tooltip p,
-.catalog .catalog__main .catalog__page .msearch2 .catalog_filter .container .filter #mse2_filters .filter_info_block .tooltip_target .tooltip li {
+.catalog .catalog__main .catalog__page .msearch2 .catalog_filter .container .filter #mse2_filters .filter_info_block .tooltip_target .tooltip li,
+.catalog .catalog__main .catalog__page .msearch2 .catalog_filter .container .filter #mse2_filters .filter_info_block .tooltip_target .tooltip a {
+  color: #333333;
   font-size: 10pt;
 }
 .catalog .catalog__main .catalog__page .msearch2 .catalog_filter .container .filter #mse2_filters .filter_info_block .tooltip_target .tooltip p.h1,
-.catalog .catalog__main .catalog__page .msearch2 .catalog_filter .container .filter #mse2_filters .filter_info_block .tooltip_target .tooltip li.h1 {
+.catalog .catalog__main .catalog__page .msearch2 .catalog_filter .container .filter #mse2_filters .filter_info_block .tooltip_target .tooltip li.h1,
+.catalog .catalog__main .catalog__page .msearch2 .catalog_filter .container .filter #mse2_filters .filter_info_block .tooltip_target .tooltip a.h1 {
   color: #8c003d;
   margin-bottom: 10px;
+}
+.catalog .catalog__main .catalog__page .msearch2 .catalog_filter .container .filter #mse2_filters .filter_info_block .tooltip_target .tooltip a {
+  text-decoration: underline;
 }
 .catalog .catalog__main .catalog__page .msearch2 .catalog_filter .container .filter #mse2_filters .filter_info_block .tooltip_target .tooltip li {
   list-style-type: disc;

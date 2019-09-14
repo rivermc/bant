@@ -249,7 +249,8 @@
                         }
                       }
 
-                      & p, li {
+                      p, li, a {
+                        color: @colorBlack;
                         font-size: 10pt;
 
                         &.h1 {
@@ -258,7 +259,11 @@
                         }
                       }
 
-                      & li {
+                      a {
+                        text-decoration: underline;
+                      }
+
+                      li {
                         list-style-type: disc;
                         margin-left: 20px;
                       }
