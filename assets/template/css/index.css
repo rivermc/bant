@@ -2720,7 +2720,6 @@ ul.breadcrumb li a {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: space-between;
 }
 .catalog .container .catalog__top nav.catalog__menu ul li {
   width: 23.75%;
