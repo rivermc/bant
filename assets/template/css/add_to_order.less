@@ -1,0 +1,49 @@
+.add_to_order {
+  background: url('../images/bg/1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 40px 0;
+  padding: 40px 0 0;
+
+  @media @m {
+    margin: 10px 0;
+  }
+
+  &__title {
+
+    h3 {
+      color: @colorRed;
+    }
+  }
+
+  &__content {
+
+    .menu__nav {
+
+      ul {
+        .flex();
+
+        li {
+          margin-right: 10px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          a {
+            .animation();
+            color: @colorBlack;
+
+            &:hover {
+              color: @colorRed;
+            }
+          }
+        }
+      }
+    }
+
+    &_items {
+
+    }
+  }
+}

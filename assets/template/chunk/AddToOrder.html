@@ -1,0 +1,23 @@
+<div class="add_to_order" data-id="[[*id]]">
+    <div class="container">
+        <div class="add_to_order__title">
+            <h3 class="h1 page_title">Добавьте к букету красивый подарок</h3>
+        </div>
+        <div class="add_to_order__content">
+            <nav class="menu__nav js_add_to_order_menu">
+                [[pdoMenu?
+                    &parents=`447`
+                    &level=`1`
+                    &tplInner=`SubmenuBlock`
+                    &tpl=`AddToOrderMenuItem`
+                    &where = `{"template":"5"}`
+                ]]
+            </nav>
+            <div class="add_to_order__content_items slick__block">
+                <div id="mse2_results">
+                    <div  class="js_add_to_order_target js_slick_add_to_order slick__catalog_wrap"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

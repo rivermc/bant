@@ -4,36 +4,33 @@
 
 .slick__block {
 
-	& .container {
+	& .slick__catalog_title {
+		.flex();
+		justify-content: space-between;
+		align-items: center;
 
-		& .slick__catalog_title {
-			.flex();
-			justify-content: space-between;
-			align-items: center;
+		& h2 {
+			color: @colorRed;
+		}
 
-			& h2 {
-				color: @colorRed;
-			}
+		& button {
 
-			& button {
+		}
+	}
 
+
+	& .slick__catalog_wrap {
+
+		& .slick-track {
+			padding-bottom: 60px;
+
+			@media @mBig, @m {
+				padding: 0;
 			}
 		}
 
-
-		& .slick__catalog_wrap {
-
-			& .slick-track {
-				padding-bottom: 60px;
-
-				@media @mBig, @m {
-					padding: 0;
-				}
-			}
-
-			& .item_slick_wrap {
-				padding: 5px;
-			}
+		& .item_slick_wrap {
+			padding: 5px;
 		}
 	}
 }

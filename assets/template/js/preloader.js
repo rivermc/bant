@@ -34,7 +34,7 @@ $(document).ready(function() {
     });
 
 
-    $('a').click(function() {
+    $('a').click(function(e) {
 
         if (!$(this).hasClass('nopreload')) {
             $('.preloader').css('display', 'block').delay(100).queue(function (next) {
