@@ -1318,10 +1318,15 @@ footer .container .footer .footer__right .footer__right_social a svg path {
   width: auto;
 }
 .callback .callback__wrap.callback_pop__wrap:before {
-  height: 220px;
+  display: none;
 }
 .callback .callback__wrap.callback_pop__wrap .callback__form_block {
   width: 100%;
+  min-height: 250px;
+}
+.callback .callback__wrap.callback_pop__wrap .callback__form_block .callback__form {
+  width: 100%;
+  position: static;
 }
 .callback .callback__wrap.callback_pop__wrap h2 {
   margin-bottom: 0;
