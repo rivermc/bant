@@ -4761,3 +4761,18 @@ ul.breadcrumb li a {
   height: 20px;
   transform: rotate(45deg);
 }
+.policy__block {
+  margin-bottom: 20px;
+}
+.policy__block .container ul.breadcrumb li {
+  color: #999999;
+}
+.policy__block .container ul.breadcrumb li a {
+  color: #999999;
+}
+.policy__block_title h1 {
+  color: #8c003d;
+}
+.policy__block_text a {
+  color: #8c003d;
+}
