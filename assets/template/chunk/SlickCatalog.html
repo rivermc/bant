@@ -5,9 +5,11 @@
             [[+class:is=`slick__main`:then=`<a href="[[#[[+idParent]].uri]]" class="button">Смотреть все</a>`]]
         </div>
         <div class="slick__catalog_wrap">
-            [[msProducts?
+            [[!msProducts?
                 &parents=`[[+idParent]]`
+                &resources=`[[+resources]]`
                 &tpl=`CatalogItem`
+                &sortby=`[[+sortby]]`
                 &limit=`12`
                 &where=`{"template": "8"}`
             ]]
