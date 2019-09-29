@@ -11,7 +11,7 @@ class Callback {
     $.ajax({
       type:'POST',
       url:"/assets/template/php/sendForm.php",
-      data:msg,
+      data:msg+"&IDForm=" + idForm,
       cache:false,
       beforeSend: function() {
         $('#' + idForm + ' button').prop('disabled', true);
