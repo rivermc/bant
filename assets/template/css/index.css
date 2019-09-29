@@ -1410,13 +1410,13 @@ footer .container .footer .footer__right .footer__right_social a svg path {
   }
 }
 .callback .callback__wrap .callback__form_block .form__callback_error {
-  position: absolute;
-  bottom: 60px;
+  position: relative;
 }
 .callback .callback__wrap .callback__form_block .form__callback_error p {
   color: #8c003d;
   font-family: 'Geom', sans-serif;
-  font-size: 14pt;
+  font-size: 12pt;
+  margin: 0;
 }
 .callback .callback__wrap .callback__form_block .callback__form {
   width: 62.5%;
