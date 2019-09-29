@@ -3818,7 +3818,7 @@ ul.breadcrumb li a {
 }
 #msCart .container .getorder__cont .getorder__product .getorder__product_cont .getorder__product_text .getorder__product_title p {
   color: #333333;
-  font-size: 9.5pt;
+  margin: 0 0 10px;
 }
 #msCart .container .getorder__cont .getorder__product .getorder__product_cont .getorder__product_text .getorder__product_allprice p {
   margin-bottom: 4px;

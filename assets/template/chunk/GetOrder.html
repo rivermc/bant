@@ -28,8 +28,8 @@
                         </div>
                         <div class="getorder__product_text">
                             <div class="getorder__product_title">
-                                <a href="{$product.id | url}" class="h3">{$product.pagetitle}</a>
-                                <p><b>Артикул</b>: {$product.article}</p>
+                                <a href="{$product.id | url}" class="h2">{$product.pagetitle}</a>
+                                <p class="h3"><b>Артикул</b>: {$product.article}</p>
                                 {foreach $product.options as $name => $value}
                                     <p><b>{('ms2_product_' ~ $name) | lexicon}</b>: {$value}</p>
                                 {/foreach}
