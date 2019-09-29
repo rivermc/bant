@@ -13,15 +13,16 @@ $theme = 'Пришла заявка Bant';
 
 if ( $phone != '' ) {
           
-  $emailTo = "web@2f-vsk.ru";
-  $emailFrom ="web@2f-vsk.ru";
+  $emailTo = "web@2f-vsk.ru,tyrina_svetlana@mail.ru,bant_floristic@mail.ru,info@bant-buket.ru,m_protasev@mail.ru";
+  $emailFrom ="bant_floristic@mail.ru";
 
   $emailTitle = $theme;
   $emailTitle = iconv("utf-8","windows-1251",$emailTitle);
   $emailTitle = convert_cyr_string($emailTitle, "w", "k");
 
   $emailText="<html><head></head><body>";
-  $emailText.="<b>Телефон:</b> {$phone}";
+  $emailText.="<p><b>Тема:</b> {$theme}</p>";
+  $emailText.="<p><b>Телефон:</b> {$phone}</p>";
   $emailText.="</body></html>";
   $emailText=iconv("utf-8","windows-1251",$emailText);
   $emailText=convert_cyr_string($emailText, "w", "k");
