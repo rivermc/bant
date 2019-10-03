@@ -4792,3 +4792,17 @@ ul.breadcrumb li a {
 .add_to_order__content .menu__nav ul li a:hover {
   color: #8c003d;
 }
+.error_404__content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 100px 0 200px;
+}
+.error_404__content_text {
+  width: 43.75%;
+}
+.error_404__content_img {
+  width: 56.25%;
+  text-align: center;
+}
