@@ -109,6 +109,26 @@
                                     <strong>{$total.cost}</strong> {'ms2_frontend_currency' | lexicon}
                                 </h3>
                                 {/block}
+
+                                <div class="data_order"  style="width:90%;margin:auto;">
+                                    <h2>Данные заказа</h2>
+                                    [[+address.receiver:notempty=`<p>Заказчик: <span>[[+address.receiver]]</span></p>`]]
+                                    [[+address.phone:notempty=`<p>Телефон заказчика: <span>[[+address.phone]]</span></p>`]]
+                                    [[+delivery.id:is=`1`:then=`
+                                        <h3>Самовывоз</h3>
+                                        [[+address.pickupA:notempty=`<p>Адрес магазина: <span>[[+address.pickupA]]</span></p>`]]
+                                    `]]
+                                    [[+delivery.id:is=`2`:then=`
+                                        <h3>Доставка</h3>
+                                        [[+address.nameShipping:notempty=`<p>Получатель: <span>[[+address.nameShipping]]</span></p>`]]
+                                        [[+address.phoneShipping:notempty=`<p>Телефон получателя: <span>[[+address.phoneShipping]]</span></p>`]]
+                                        [[+address.dateShipping:notempty=`<p>Дата и время доставки: <span>[[+address.dateShipping]]</span></p>`]]
+                                        [[+address.addressShipping:notempty=`<p>Адрес доставки: <span>[[+address.addressShipping]]</span></p>`]]
+                                    `]]
+                                    [[+delivery.id:is=`3`:then=`
+                                        <h3>Заказ в один клик</h3>
+                                    `]]
+                                </div>
                             </td>
                         </tr>
                     </table>
@@ -119,33 +139,6 @@
         </tr>
     </table>
     <!-- /body -->
-    <!-- footer -->
-    <table style="clear:both !important;width: 100%;">
-        <tr>
-            <td></td>
-            <td class="container">
-                <!-- content -->
-                <div class="content">
-                    <table style="width:100%;text-align: center;">
-                        <tr>
-                            <td align="center">
-                                <p style="{$style.p}">
-                                    {block 'footer'}
-                                    <a href="{$site_url}" style="color: #999999;">
-                                        {'site_name' | option}
-                                    </a>
-                                    {/block}
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <!-- /content -->
-            </td>
-            <td></td>
-        </tr>
-    </table>
-    <!-- /footer -->
 </div>
 </body>
 </html>
