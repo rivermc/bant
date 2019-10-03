@@ -1267,22 +1267,22 @@ footer .container .footer .footer__right .footer__right_social a svg path {
   display: none;
 }
 .callback:before {
+  background: #eadfe3;
   content: '';
   position: absolute;
   width: 200%;
   height: 50%;
   left: -50%;
-  background: #eadfe3;
   bottom: 0;
 }
 .callback .callback__wrap {
   display: flex;
   flex-wrap: wrap;
   width: 85%;
-  align-items: center;
-  border: 2px solid #8c003d;
-  border-radius: 5px;
   background: #ffffff url('../images/callback/bg.jpg');
+  border: 2px solid #8c003d;
+  align-items: center;
+  border-radius: 5px;
   background-repeat: no-repeat;
   background-position: right bottom;
   position: relative;
@@ -1322,19 +1322,13 @@ footer .container .footer .footer__right .footer__right_social a svg path {
 }
 .callback .callback__wrap.callback_pop__wrap .callback__form_block {
   width: 100%;
-  min-height: 250px;
 }
 .callback .callback__wrap.callback_pop__wrap .callback__form_block .callback__form {
   width: 100%;
   position: static;
 }
 .callback .callback__wrap.callback_pop__wrap h2 {
-  margin-bottom: 0;
-}
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .callback .callback__wrap.callback_pop__wrap h2 {
-    margin-bottom: 40px;
-  }
+  margin-bottom: 40px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 550px) and (max-width: 767px), only screen and (max-width: 549px) {
   .callback .callback__wrap.callback_pop__wrap h2 {
@@ -1384,7 +1378,6 @@ footer .container .footer .footer__right .footer__right_social a svg path {
   flex-wrap: wrap;
   align-items: center;
   padding: 80px;
-  min-height: 340px;
   margin: 0 0 0 auto;
   position: relative;
 }
@@ -1392,21 +1385,18 @@ footer .container .footer .footer__right .footer__right_social a svg path {
   .callback .callback__wrap .callback__form_block {
     width: 75%;
     padding: 60px 80px;
-    min-height: 280px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .callback .callback__wrap .callback__form_block {
     width: 100%;
     padding: 60px 80px;
-    min-height: 280px;
   }
 }
 @media only screen and (min-width: 550px) and (max-width: 767px), only screen and (max-width: 549px) {
   .callback .callback__wrap .callback__form_block {
     width: 100%;
     padding: 20px 10px;
-    min-height: 250px;
   }
 }
 .callback .callback__wrap .callback__form_block .form__callback_error {
@@ -3057,6 +3047,7 @@ ul.breadcrumb li a {
 }
 .item_slick_wrap .catalog__main_item .main__item_content .main__item_title a h2 {
   margin: 0;
+  min-height: 2.4em;
 }
 .item_slick_wrap .catalog__main_item .main__item_content .main__item_article {
   width: 100%;

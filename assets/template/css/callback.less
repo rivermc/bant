@@ -1,4 +1,4 @@
-& .form__callback_form-group, .form__basket_form-group {
+.form__callback_form-group, .form__basket_form-group {
 	position: relative;
 
 	& label.form__group_label {
@@ -28,7 +28,7 @@
 	}
 }
 
-& .callback {
+.callback {
 	padding: 95px 0 40px;
 	margin: 20px 0;
 	position: relative;
@@ -70,22 +70,22 @@
 	}
 
 	&:before {
+		background: @colorRedLight;
 		content: '';
 		position: absolute;
 		width: 200%;
 		height: 50%;
 		left: -50%;
-		background: @colorRedLight;
 		bottom: 0;
 	}
 
-	& .callback__wrap {
+	.callback__wrap {
 		.flex();
 		.cols(13.6);
-		align-items: center;
-		border: 2px solid @colorRed;
-		border-radius: 5px;
 		background: @colorWhite url('../images/callback/bg.jpg');
+		border: 2px solid @colorRed;
+		align-items: center;
+		border-radius: 5px;
 		background-repeat: no-repeat;
 		background-position: right bottom;
 		position: relative;
@@ -125,9 +125,8 @@
 				display: none;
 			}
 
-			& .callback__form_block {
+			.callback__form_block {
 				.cols(16);
-				min-height: 250px;
 
 				.callback__form {
 					.cols(16);
@@ -135,12 +134,9 @@
 				}
 			}
 
-			& h2 {
-				margin-bottom: 0;
+			h2 {
+				margin-bottom: 40px;
 
-				@media @d {
-					margin-bottom: 40px;
-				}
 				@media @t, @mBig, @m {
 					margin-bottom: 30px;
 				}
@@ -171,7 +167,7 @@
 			}
 		}
 
-		& h2 {
+		h2 {
 			.cols(16);
 			margin-bottom: 60px;
 
@@ -180,35 +176,31 @@
 			}
 		}
 
-		& .callback__form_block {
+		.callback__form_block {
 			.cols(10);
 			.flex();
 			align-items: center;
 			padding: 80px;
-			min-height: 340px;
 			margin: 0 0 0 auto;
 			position: relative;
 
 			@media @d {
 				.cols(12);
 				padding: 60px 80px;
-				min-height: 280px;
 			}
 			@media @t  {
 				.cols(16);
 				padding: 60px 80px;
-				min-height: 280px;
 			}
 			@media @mBig, @m {
 				.cols(16);
 				padding: 20px 10px;
-				min-height: 250px;
 			}
 
-			& .form__callback_error {
+			.form__callback_error {
 				position: relative;
 
-				& p {
+				p {
 					color: @colorRed;
 					font-family: @fontGeom;
 					font-size: 12pt;
@@ -216,7 +208,7 @@
 				}
 			}
 
-			& .callback__form {
+			.callback__form {
 				.cols(10);
 				.flex();
 				justify-content: space-between;
@@ -233,7 +225,7 @@
 					bottom: 10px;
 				}
 
-				& .form__callback_form-group {
+				.form__callback_form-group {
 					.cols(7);
 					margin: 10px 0;
 
@@ -241,10 +233,10 @@
 						.cols(16);
 					}
 
-					& label.form__group_label {
+					label.form__group_label {
 					    color: @colorBlack;
 					    font-size: 12pt;
-                        top: 15px;
+							top: 15px;
 
 						@media @mBig, @m {
 							font-size: 10pt;
@@ -259,19 +251,19 @@
 						}
 					}
 
-                    & input {
-                      padding: 0 10px;
-                      margin: 10px 0 0;
-                      font-size: 12pt;
+					input {
+						padding: 0 10px;
+						margin: 10px 0 0;
+						font-size: 12pt;
 
 						@media @mBig, @m {
 							background: transparent;
 							max-width: 220px;
 						}
-                    }
+					}
 				}
 
-				& button.callback__form_button {
+				button.callback__form_button {
 					.cols(8);
 					.colsOf(1);
 
