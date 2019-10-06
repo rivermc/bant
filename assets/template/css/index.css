@@ -2957,7 +2957,7 @@ ul.breadcrumb li a {
 }
 .item_slick_wrap {
   width: 24.375%;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .item_slick_wrap {
