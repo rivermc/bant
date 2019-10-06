@@ -15,7 +15,6 @@ class Callback {
       cache:false,
       beforeSend: function() {
         $('#' + idForm + ' button').prop('disabled', true);
-        self_this.callbackAnimation('true', idForm);
       },
       success:function(data) {
         self_this.callbackAnimation(data, idForm);
@@ -48,7 +47,7 @@ class Callback {
     this.regex = regex.test(phone);
   }
 
-  startSend(e){
+  startSend(e) {
     e.preventDefault();
     var idForm = $(e.currentTarget).parents('form').attr('id');
     var inputs = $(e.currentTarget).parents('form').find('input');

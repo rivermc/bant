@@ -1359,8 +1359,7 @@ footer .container .footer .footer__right .footer__right_social a svg path {
 }
 @media only screen and (min-width: 550px) and (max-width: 767px), only screen and (max-width: 549px) {
   .callback .callback__wrap:before {
-    height: 150px;
-    left: 0;
+    display: none;
   }
 }
 .callback .callback__wrap h2 {
@@ -1409,13 +1408,14 @@ footer .container .footer .footer__right .footer__right_social a svg path {
   margin: 0;
 }
 .callback .callback__wrap .callback__form_block .callback__form {
-  width: 62.5%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
+  position: relative;
   bottom: 60px;
+  top: 0;
 }
 @media only screen and (min-width: 550px) and (max-width: 767px), only screen and (max-width: 549px) {
   .callback .callback__wrap .callback__form_block .callback__form {

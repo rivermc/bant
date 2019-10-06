@@ -162,8 +162,7 @@
 				height: 220px;
 			}
 			@media @mBig, @m {
-				height: 150px;
-				left: 0;
+				display: none;
 			}
 		}
 
@@ -209,12 +208,13 @@
 			}
 
 			.callback__form {
-				.cols(10);
+				.cols(16);
 				.flex();
 				justify-content: space-between;
 				align-items: center;
-				position: absolute;
+				position: relative;
 				bottom: 60px;
+				top: 0;
 
 				@media @mBig, @m {
 					bottom: 20px;

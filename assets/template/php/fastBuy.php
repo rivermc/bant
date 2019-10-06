@@ -12,15 +12,15 @@ $modx->error->message = null;
 $output = array();
 $output['success'] = true;
 // проверяем, что идет ajax запрос
-if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
     // проверяем антиспам поля и ID ресурса
-    if($_REQUEST["user"]=='' && $_REQUEST["username"]=='' && $_REQUEST['id']){
+    if ($_REQUEST["user"]=='' && $_REQUEST["username"]=='' && $_REQUEST['id']) {
         // проверяем поле name
-        if($_REQUEST['name']==''){
+        /* if ($_REQUEST['name']=='') {
             $output['success'] = false;
             $output['message'] = "Заполните все обязательные поля";
             $output['fields'][] = "name";
-        }
+        } */
         // проверяем поле email
         /*if($_REQUEST['email']==''){
             $output['success'] = false;
