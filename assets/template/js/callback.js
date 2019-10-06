@@ -106,5 +106,7 @@ class Callback {
         $(this).addClass('filled');
       }
     });
+
+    $('input[name=phone], input[name=phoneShipping]').usPhoneFormat({format: 'x-xxx-xxx-xxxx'});
   }
 }
