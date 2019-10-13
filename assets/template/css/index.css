@@ -4093,6 +4093,11 @@ ul.breadcrumb li a {
   margin-bottom: 0;
   padding-left: 15px;
 }
+#msOrder .order_forms .container .order_cont .order_bl .order_delivery .checkbox > label .small .shipping_link,
+#msOrder .order_forms .container .order_cont .order_bl .order_payment .checkbox > label .small .shipping_link {
+  color: #333333;
+  text-decoration: underline;
+}
 #msOrder .order_forms .container .order_cont .order_bl.order_bl_last {
   width: 37.5%;
   margin: 0 auto;
