@@ -13,8 +13,8 @@ $theme = 'Пришла заявка Bant';
 
 if ( $phone != '' ) {
           
-  $emailTo = "web@2f-vsk.ru, tyrina_svetlana@mail.ru, bant_floristic@mail.ru, m_protasev@mail.ru";
-  $emailFrom ="web@2f-vsk.ru";
+  $emailTo = "tyrina_svetlana@mail.ru, bant_floristic@mail.ru, m_protasev@mail.ru";
+  $emailFrom ="info@bant-buket.ru";
 
   $emailTitle = $theme;
   $emailTitle = iconv("utf-8","windows-1251",$emailTitle);
