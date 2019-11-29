@@ -147,6 +147,7 @@ html {
   src: url('../fonts/Geom.woff') format('woff'), url('../fonts/Geom.ttf') format('truetype'), url('../fonts/Geom.eot?#iefix') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'GeomBold';
@@ -154,6 +155,7 @@ html {
   src: url('../fonts/GeomBold.woff') format('woff'), url('../fonts/GeomBold.ttf') format('truetype'), url('../fonts/GeomBold.eot?#iefix') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'GeomMed';
@@ -161,6 +163,7 @@ html {
   src: url('../fonts/GeomMed.woff') format('woff'), url('../fonts/GeomMed.ttf') format('truetype'), url('../fonts/GeomMed.eot?#iefix') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'GeomLight';
@@ -168,6 +171,7 @@ html {
   src: url('../fonts/GeomLight.woff') format('woff'), url('../fonts/GeomLight.ttf') format('truetype'), url('../fonts/GeomLight.eot?#iefix') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'rub';
