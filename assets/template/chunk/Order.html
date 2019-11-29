@@ -37,7 +37,7 @@
                                     {set $i = $i + 1}
                                     {if $delivery.logo?}
                                         {$delivery.name}
-                                        <img src="{$delivery.logo}" alt="{$delivery.name}" title="{$delivery.name}"/>
+                                        <img data-src="{$delivery.logo}" alt="{$delivery.name}"  class="lazyload" title="{$delivery.name}"/>
                                     {else}
                                         <p class="delivery_title h2">{$delivery.name}</p>
                                     {/if}
@@ -103,7 +103,7 @@
                                     <input type="radio" name="payment" value="{$payment.id}" id="payment_{$payment.id}"
                                            {$checked ? 'checked' : ''}>
                                     {if $payment.logo?}
-                                    <img src="{$payment.logo}" alt="{$payment.name}" title="{$payment.name}"/>
+                                    <img data-src="{$payment.logo}" alt="{$payment.name}" title="{$payment.name}" class="lazyload"/>
                                     {else}
                                     <p class="payment_title h2">
                                         {$payment.name}

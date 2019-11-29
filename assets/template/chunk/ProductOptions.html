@@ -9,12 +9,12 @@
                     </div>
                     <div class="prop_img select active" data-count="{$key}" >
                         <input checked="checked" type="radio" id="{$name}-{$key}" name="options[{$name}]" nameoption="{$name}" value="{$value}" hidden="hidden">
-                        <img src="/assets/template/images/properties/{$name}/{$value}.jpg" alt="{$value}" title="{$value}">
+                        <img data-src="/assets/template/images/properties/{$name}/{$value}.jpg" alt="{$value}" title="{$value}" class="lazyload">
                     </div>
                 {else}
                     <div class="prop_img select"  data-count="{$key}">
                         <input type="radio" id="{$name}-{$key}" name="options[{$name}]" nameoption="{$name}" value="{$value}" hidden="hidden">
-                        <img src="/assets/template/images/properties/{$name}/{$value}.jpg" alt="{$value}" title="{$value}">
+                        <img data-src="/assets/template/images/properties/{$name}/{$value}.jpg" alt="{$value}" title="{$value}" class="lazyload">
                     </div>
                 {/if}
             {else}

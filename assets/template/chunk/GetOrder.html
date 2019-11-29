@@ -18,13 +18,13 @@
                     <p>Наш менеджер свяжется с Вами в ближайшее время</p>
                 </div>
                 <div class="getorder__image">
-                    <img src="/assets/template/images/elements/ok.png" alt="">
+                    <img data-src="/assets/template/images/elements/ok.png" alt="" class="lazyload">
                 </div>
                 <div class="getorder__product">
                     {foreach $products as $product}
                     <div class="getorder__product_cont getorder__product_item" id="{$product.key}">
                         <div class="getorder__product_image">
-                            <a href="{$product.id | url}"><img src="{$product.image}" title="{$product.pagetitle}" alt="{$product.pagetitle}"></a>
+                            <a href="{$product.id | url}"><img data-src="{$product.image}" title="{$product.pagetitle}" alt="{$product.pagetitle}" class="lazyload"></a>
                         </div>
                         <div class="getorder__product_text">
                             <div class="getorder__product_title">

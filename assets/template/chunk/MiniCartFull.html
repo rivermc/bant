@@ -2,7 +2,7 @@
     <div class="button">
         <p class="text">Ваш заказ </p>
         <div class="minicart_basket_count">
-            <img src="/assets/template/images/elements/basket.svg" alt="">
+            <img data-src="/assets/template/images/elements/basket.svg"  class="lazyload" alt="">
             <p class="minicart_total_count">{$total.count}</p>
         </div>
     </div>
@@ -12,7 +12,7 @@
             <div class="mini_basket__cont">
                 <div class="mini_basket__title">
                     <h2 class="h1">Корзина</h2>
-                    <p class="minicart_button close"><img src="/assets/template/images/elements/arrow-double.svg" alt=""></p>
+                    <p class="minicart_button close"><img data-src="/assets/template/images/elements/arrow-double.svg"  class="lazyload" alt=""></p>
                     <p class="empty_text">{'ms2_cart_is_empty' | lexicon}</p>
                 </div>
             </div>
@@ -21,13 +21,13 @@
         <div class="mini_basket__cont">
             <div class="mini_basket__title">
                 <h2 class="h1">Корзина</h2>
-                <p class="minicart_button close"><img src="/assets/template/images/elements/arrow-double.svg" alt=""></p>
+                <p class="minicart_button close"><img data-src="/assets/template/images/elements/arrow-double.svg"  class="lazyload" alt=""></p>
             </div>
             <div class="mini_basket__product">
                 {foreach $products as $product}
                     <div class="mini_basket__product_cont mini_basket__product_item" id="{$product.key}">
                         <div class="mini_basket__product_image">
-                            <a href="{$product.id | url}"><img src="{$product.image}" title="{$product.pagetitle}" alt="{$product.pagetitle}"></a>
+                            <a href="{$product.id | url}"><img data-src="{$product.image}" title="{$product.pagetitle}"  class="lazyload" alt="{$product.pagetitle}"></a>
                         </div>
                         <div class="mini_basket__product_content">
                             <div class="mini_basket__product_title">
