@@ -747,7 +747,7 @@ header .container .header .header__middle .header__middle_contact a:not(.button)
   font-family: 'GeomBold', sans-serif;
   font-size: 16pt;
   text-align: center;
-  margin-bottom: 10px;
+  margin: 0 40px 10px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   header .container .header .header__middle .header__middle_contact a:not(.button) {
