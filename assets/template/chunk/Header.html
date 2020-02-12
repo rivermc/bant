@@ -48,14 +48,18 @@
                         &tpl=`CatalogMenuItem`
                         &tplInner=`SubmenuBlock`
                         &where=`{"template:=":5}`
+                        &tplOuter = `@INLINE
+                            <ul>
+                                [[+wrapper]]
+                                <li><a class="special_link" href="[[#[[#1.special_link:strip]].uri]]">[[IncSvg? &svg=`[[#1.special_icon]]`]] [[#[[#1.special_link:strip]].pagetitle]]</a></li>
+                            </ul>
+                        `
                      ]]
-                    [[!pdoMenu?
-                        &parents=`7`
-                        &resources=`[[#1.special_link]]`
-                        &level=`0`
-                        &tplOuter=`@INLINE <ul class="special_link">[[+wrapper]]</ul>`
-                        &tpl = `@INLINE <li [[+classes]]><a class="special_link [[#1.special_icon:empty=`nopadding`]]" href="[[+link]]" [[+attributes]]>[[IncSvg? &svg=`[[#1.special_icon]]`]] [[+menutitle]]</a></li>`
-                    ]]
+
+
+
+
+
                 </nav>
                 <div class="header__bottom_search">
                     [[$SearchForms]]
