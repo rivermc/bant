@@ -58,7 +58,7 @@ $(document).ready(function() {
     getModule(
       'Snippet',
       'msProducts',
-      'parents => '+ id +', tpl => CatalogItem, limit => 12, where => {"template": "8"}',
+      'parents => '+ id +', tpl => CatalogItem, limit => 12, where => {"template": "8"}, sortby => {"Data.popular":"DESC"}',
       function (data) {
         $('.js_slick_add_to_order').slick('unslick');
         $('.js_add_to_order_target').html(data);
