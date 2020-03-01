@@ -326,14 +326,14 @@ $(document).ready(function() {
     var catalog_id = $('.catalog__page').data('id');
 
     getModule('Chunk', 'Callback', 'class => catalog_cards, type => catalog, id =>  ' + catalog_id + ', text_button => Заказать',function (data) {
-        $('#mse2_results .item_slick_wrap').eq(16).before(data);
+        $('#mse2_results:not(.mse2_result_add_to) .item_slick_wrap').eq(16).before(data);
         new Callback();
     });
 
     $(document).on('mse2_load', function() {
         var catalog_id = $('.catalog__page').data('id');
         getModule('Chunk', 'Callback', 'class => catalog_cards, type => catalog, id => ' + catalog_id + ', text_button => Заказать',function (data) {
-            $('#mse2_results .item_slick_wrap').eq(16).before(data);
+            $('#mse2_results:not(.mse2_result_add_to) .item_slick_wrap').eq(16).before(data);
             new Callback();
             fast_buy('.fast_buy_button');
         });
