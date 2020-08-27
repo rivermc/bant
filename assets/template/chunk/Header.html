@@ -49,10 +49,16 @@
                         &tplInner=`SubmenuBlock`
                         &where=`{"template:=":5}`
                         &tplOuter = `@INLINE
-                            <ul>
-                                [[+wrapper]]
-                                <li><a class="special_link" href="[[#[[#1.special_link:strip]].uri]]">[[IncSvg? &svg=`[[#1.special_icon]]`]] [[#[[#1.special_link:strip]].menutitle]]</a></li>
-                            </ul>
+                          <ul>
+                            [[+wrapper]]
+                            [[#1.special_link:notempty=`
+                              <li>
+                                <a class="special_link" href="[[#[[#1.special_link:strip]].uri]]">
+                                  [[IncSvg? &svg=`[[#1.special_icon]]`]] [[#[[#1.special_link:strip]].menutitle]]
+                                </a>
+                              </li>
+                            `]]
+                          </ul>
                         `
                      ]]
                 </nav>

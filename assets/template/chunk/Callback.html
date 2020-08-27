@@ -1,18 +1,26 @@
 <div class="close_button mfp-close"></div>
 <div class="callback [[+class:notempty=`[[+class]]`]]">
 	<div class="[[+pop:isnot=`true`:then=`container`]]">
-        <div class="callback__wrap [[+class:notempty=`[[+class]]`]]__wrap">
-        	<div class="callback__form_block">
-				<h2 class="h1">[[+type:is=`catalog`:then=`[[#[[+id]].CatalogCallbackTitle]]`:else=`[[+title:notempty=`[[+title]]`:default=`СОСТАВИМ ИНДИВИДУАЛЬНЫЙ БУКЕТ ЦВЕТОВ, С УЧЕТОМ ВАШИХ ПОЖЕЛАНИЙ И НА НУЖНУЮ СУММУ`]]`]]</h2>
-				<div class="form__callback_error"></div>
-				<form action="POST" class="callback__form" id="callback__form_[[+class]]">
-				    <div class="form__callback_form-group">
-                        <label class="form__group_label">Ваш телефон</label>
-                        <input type="text" name="phone" class="callback__form_input callback__form_input_phone">
-                    </div>
-					<button type="submit" class="callback__form_button">[[+text_button]]</button>
-				</form>
-			</div>
-        </div>
+    <div class="callback__wrap [[+class:notempty=`[[+class]]`]]__wrap">
+      <div class="callback__form_block">
+        <h2 class="h1">
+          [[+type:is=`catalog`:then=`
+            [[#[[+id]].CatalogCallbackTitle]]
+          `:else=`
+            [[+title:notempty=`[[+title]]
+          `:default=`
+            СОСТАВИМ ИНДИВИДУАЛЬНЫЙ БУКЕТ ЦВЕТОВ, С УЧЕТОМ ВАШИХ ПОЖЕЛАНИЙ И НА НУЖНУЮ СУММУ
+          `]]
+        </h2>
+        <div class="form__callback_error"></div>
+        <form action="POST" class="callback__form" id="callback__form_[[+class]]">
+          <div class="form__callback_form-group">
+            <label class="form__group_label">Ваш телефон</label>
+            <input type="text" name="phone" class="callback__form_input callback__form_input_phone">
+          </div>
+          <button type="submit" class="callback__form_button">[[+text_button]]</button>
+        </form>
+      </div>
+    </div>
 	</div>
 </div>
