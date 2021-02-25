@@ -3,9 +3,15 @@
 <main>
     <div class="b2b">
         <div class="container">
-            <div class="b2b_title">
+            <div class="b2b__title">
                 <h1>[[*longtitle]]</h1>
             </div>
+            [[*OfferLink:notempty=`
+              <div class="b2b__offer">
+                <p class="b2b__offer_text">[[*OfferText]]</p>
+                <a class="b2b__offer_link button nopreload" href="[[*OfferLink]]"  target="_blank">Посмотреть</a>
+              </div>
+            `]]
         </div>
         [[$Callback_b2b?
             &title = `Получить индивидуальное предложение, учитывая бюджет и Ваши пожелания`

@@ -1,13 +1,26 @@
 & .b2b {
 
-  & .container {
+  &__title {
 
-    & .b2b_title {
+    & h1 {
+      color: @colorRed;
+      text-align: center;
+    }
+  }
 
-      & h1 {
-        color: @colorRed;
-        text-align: center;
-      }
+  &__offer {
+    text-align: center;
+
+    &_text {
+      color: @colorRed;
+      font-size: 14pt;
+      margin: 10px 0 0;
+      display: block;
+    }
+
+    &_link {
+      font-size: 12pt;
+      margin: 10px auto;
     }
   }
 }
