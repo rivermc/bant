@@ -71,7 +71,7 @@
                                             <h2 class="h3">{'ms2_frontend_address' | lexicon}</h2>
                                         </div>
                                         <div class="order_form">
-                                            {foreach ['nameShipping', 'phoneShipping', 'dateShipping', 'addressShipping'] as $field}
+                                            {foreach ['nameShipping', 'phoneShipping', 'dateShipping', 'addressShipping', 'textPostCard'] as $field}
                                             <div class="form__basket_form-group">
                                                 <label for="{$field}" class="form__group_label">{('ms2_frontend_' ~ $field) | lexicon}</label>
                                                 <input type="text" id="{$field}"  name="{$field}" value="{$form[$field]}" class="form_input">
