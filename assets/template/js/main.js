@@ -11,13 +11,13 @@
         touchStartEvent = supportTouch ? "touchstart" : "mousedown",
         touchStopEvent = supportTouch ? "touchend" : "mouseup",
         touchMoveEvent = supportTouch ? "touchmove" : "mousemove";
- 
+
     // handles swipe up and swipe down
     $.event.special.swipeupdown = {
         setup: function () {
             var thisObject = this;
             var $this = $(thisObject);
- 
+
             $this.bind(touchStartEvent, function (event) {
                 var data = event.originalEvent.touches ?
                         event.originalEvent.touches[ 0 ] :
@@ -28,12 +28,12 @@
                         origin: $(event.target)
                     },
                     stop;
- 
+
                 function moveHandler(event) {
                     if (!start) {
                         return;
                     }
- 
+
                     var data = event.originalEvent.touches ?
                         event.originalEvent.touches[ 0 ] :
                         event;
@@ -41,13 +41,13 @@
                         time: (new Date).getTime(),
                         coords: [ data.pageX, data.pageY ]
                     };
- 
+
                     // prevent scrolling
                     if (Math.abs(start.coords[1] - stop.coords[1]) > 10) {
                         event.preventDefault();
                     }
                 }
- 
+
                 $this
                     .bind(touchMoveEvent, moveHandler)
                     .one(touchStopEvent, function () {
@@ -79,7 +79,7 @@
             });
         }
     };
- 
+
 //Adds the events to the jQuery events special collection
     $.each({
         swipedown: "swipeupdown",
@@ -92,7 +92,7 @@
         };
     });
  //Adds the events to the jQuery events special collection
-    
+
 })();
 
 
@@ -109,7 +109,7 @@ function preventDefault(e) {
   e = e || window.event;
   if (e.preventDefault)
       e.preventDefault();
-  e.returnValue = false;  
+  e.returnValue = false;
 }
 
 function preventDefaultForScrollKeys(e) {
@@ -131,10 +131,10 @@ function disableScroll() {
 function enableScroll() {
     if (window.removeEventListener)
         window.removeEventListener('DOMMouseScroll', preventDefault, false);
-    window.onmousewheel = document.onmousewheel = null; 
-    window.onwheel = null; 
-    window.ontouchmove = null;  
-    document.onkeydown = null;  
+    window.onmousewheel = document.onmousewheel = null;
+    window.onwheel = null;
+    window.ontouchmove = null;
+    document.onkeydown = null;
 }
 
 
@@ -402,8 +402,18 @@ $(document).ready(function() {
     $('input[name=phone], input[name=phoneShipping]').usPhoneFormat({format: 'x-xxx-xxx-xxxx'});
 
 
+		var vazaCost = 0;
+    $('input[name=vaza]').change(function() {
+			vazaCost = $(this).val()
+			if (vazaCost == -1) {
+				vazaCost = 0;
+			}
+		});
+
+		miniShop2.Callbacks.Order.getcost.response.success = function(data) {
+			$('#ms2_order_cost').text(miniShop2.Utils.formatPrice(parseInt(data.data.cost, 10) + parseInt(vazaCost, 10)))
+		};
 
 });
 
 
-  

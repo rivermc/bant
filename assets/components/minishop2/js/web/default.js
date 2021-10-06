@@ -234,7 +234,7 @@
         },
         setup: function () {
             miniShop2.Cart.cart = '#msCart';
-            miniShop2.Cart.miniCart = '.msMiniCart';
+            miniShop2.Cart.miniCart = '#msMiniCart';
             miniShop2.Cart.miniCartNotEmptyClass = 'full';
             miniShop2.Cart.countInput = 'input[name=count]';
             miniShop2.Cart.totalWeight = '.ms2_total_weight';
@@ -361,6 +361,8 @@
             miniShop2.Order.payments = '#payments';
             miniShop2.Order.deliveryInput = 'input[name="delivery"]';
             miniShop2.Order.inputParent = '.input-parent';
+            miniShop2.Order.vazaInput = 'input[name="vaza"]';
+						miniShop2.Order.vazaInputUniquePrefix = 'input#vaza_';
             miniShop2.Order.paymentInput = 'input[name="payment"]';
             miniShop2.Order.paymentInputUniquePrefix = 'input#payment_';
             miniShop2.Order.deliveryInputUniquePrefix = 'input#delivery_';
@@ -401,7 +403,6 @@
         add: function (key, value) {
             var callbacks = miniShop2.Order.callbacks;
             var old_value = value;
-					console.log('asdasd')
             callbacks.add.response.success = function (response) {
                 (function (key, value, old_value) {
                     var $field = $('[name="' + key + '"]', miniShop2.Order.order);
@@ -426,16 +427,15 @@
                                 miniShop2.Order.getcost();
                             }
                             break;
-                        case 'vaza':
-														console.log('wft')
-                            $field = $(miniShop2.Order.paymentInputUniquePrefix + response.data[key]);
-                            if (response.data[key] != old_value) {
-                                $field.trigger('click');
-                            }
-                            else {
-                                miniShop2.Order.getcost();
-                            }
-                            break;
+												case 'vaza':
+													$field = $(miniShop2.Order.vazaInputUniquePrefix + response.data[key]);
+													if (response.data[key] != old_value) {
+														$field.trigger('click');
+													}
+													else {
+														miniShop2.Order.getcost();
+													}
+													break;
                         //default:
                     }
                     $field.val(response.data[key]).removeClass('error').closest(miniShop2.Order.inputParent).removeClass('error');
