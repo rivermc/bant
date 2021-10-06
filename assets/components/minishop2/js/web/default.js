@@ -380,7 +380,8 @@
                         var $this = $(this);
                         var key = $this.attr('name');
                         var value = $this.val();
-                        miniShop2.Order.add(key, value);
+                        var unique = $this.data('value');
+                        miniShop2.Order.add(key, value, unique);
                     });
                 var $deliveryInputChecked = $(miniShop2.Order.deliveryInput + ':checked', miniShop2.Order.order);
                 $deliveryInputChecked.trigger('change');
@@ -400,7 +401,7 @@
                 $paymentInputs.filter(':visible:first').trigger('click');
             }
         },
-        add: function (key, value) {
+        add: function (key, value, unique) {
             var callbacks = miniShop2.Order.callbacks;
             var old_value = value;
             callbacks.add.response.success = function (response) {
@@ -428,7 +429,7 @@
                             }
                             break;
 												case 'vaza':
-													$field = $(miniShop2.Order.vazaInputUniquePrefix + response.data[key]);
+													$field = $(miniShop2.Order.vazaInputUniquePrefix + response.data[unique]);
 													if (response.data[key] != old_value) {
 														$field.trigger('click');
 													}

@@ -404,10 +404,7 @@ $(document).ready(function() {
 
 		var vazaCost = 0;
     $('input[name=vaza]').change(function() {
-			vazaCost = $(this).val()
-			if (vazaCost == -1) {
-				vazaCost = 0;
-			}
+			vazaCost = $(this).data('value')
 		});
 
 		miniShop2.Callbacks.Order.getcost.response.success = function(data) {

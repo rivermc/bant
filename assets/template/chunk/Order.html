@@ -93,10 +93,10 @@
                     <h2 class="h1">Вода и ваза для букета</h2>
                   </div>
                   <div class="order_payment">
-                    {foreach [['glass', 650], ['plastic', 450], ['kulec', '-1'], ['none', '-1']] as $field}
+                    {foreach [['glass', 650, 'Стеклянная ваза - 600р.'], ['plastic', 450, 'Пластиковый аква-бокс - 450р.'], ['kulec', '0', 'Водном кулек - 0р.'], ['none', '0', 'Без вазы - 0р.']] as $field}
                       <div class="checkbox">
                         <label class="input_parent">
-                          <input type="radio" name="vaza" value="{$field[1]}" id="vaza_{$field[0]}" {$field[0] == 'none' ? 'checked' : ''}>
+                          <input type="radio" name="vaza" value="{$field[2]}" data-value="{$field[1]}" id="vaza_{$field[0]}" {$field[0] == 'none' ? 'checked' : ''}>
                           <p class="payment_title h2">
                             {if ($field[0] == 'glass')}
                               Стеклянная ваза - 600р.
