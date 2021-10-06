@@ -31,6 +31,7 @@ $xpdo_meta_map['msOrderAddress']= array (
 	'dateShipping' => NULL,
 	'pickupA' => NULL,
 	'textPostCard' => NULL,
+	'vaza' => NULL,
   ),
   'fieldMeta' =>
   array (
@@ -172,6 +173,13 @@ $xpdo_meta_map['msOrderAddress']= array (
           'null' => true,
         ),
     'textPostCard' =>
+        array (
+          'dbtype' => 'varchar',
+          'precision' => '255',
+          'phptype' => 'string',
+          'null' => true,
+        ),
+    'vaza' =>
         array (
           'dbtype' => 'varchar',
           'precision' => '255',

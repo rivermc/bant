@@ -79,6 +79,7 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTE
         	$miniShop2->order->add( 'dateShipping', $_REQUEST["dateShipping"]);
         	$miniShop2->order->add( 'addressShipping', $_REQUEST["addressShipping"]);
         	$miniShop2->order->add( 'textPostCard', $_REQUEST["textPostCard"]);
+        	$miniShop2->order->add( 'vaza', $_REQUEST["vaza"]);
 	        $orderfeed = $miniShop2->order->submit();
 
         	$arr = json_decode($orderfeed,true);

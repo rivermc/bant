@@ -170,7 +170,8 @@ Ext.extend(miniShop2.window.UpdateOrder, miniShop2.window.Default, {
             phoneShipping: {},
             dateShipping: {},
             pickupA: {},
-						textPostCard: {}
+						textPostCard: {},
+						vaza: {}
         };
         var fields = [], tmp = [];
         for (var i = 0; i < miniShop2.config['order_address_fields'].length; i++) {

@@ -128,7 +128,8 @@ $fields = array(
     'phoneShipping' => 'phoneShipping',
     'dateShipping' => 'dateShipping',
     'pickupA' => 'pickupA',
-    'textPostCard' => 'textPostCard'
+    'textPostCard' => 'textPostCard',
+    'vaza' => 'vaza'
 );
 // Apply custom fields
 if (!empty($userFields)) {
